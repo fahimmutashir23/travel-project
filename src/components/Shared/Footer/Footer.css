@@ -1,20 +1,15 @@
 .e-card {
     background: transparent;
     position: relative;
-    width: 1560px;
-    height: 330px;
     overflow: hidden;
   }
   
   .wave {
     position: absolute;
-    width: 2500px;
+    width: 100vw;
     height: 2200px;
     opacity: 0.6;
-    left: 0;
-    top: 0;
-    margin-left: -40%;
-    margin-bottom: -50%;
+    top: 0px;
     background: linear-gradient(744deg,#978aec 50%,#00ddeb);
   }
   
