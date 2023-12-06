@@ -8,6 +8,7 @@ import "aos/dist/aos.css";
 import Provider from "./Provider/Provider";
 AOS.init();
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
+import SignUpModal from "../../Utils/SignUpModal.jsx/SignUpModal";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(
@@ -22,6 +23,7 @@ const Navbar = () => {
 
   const navLinks = (
     <>
+    <SignUpModal id='my_modal_3'></SignUpModal>
       <li>
         <NavLink to="/" className="hover:underline">Home</NavLink>
       </li>
@@ -32,7 +34,7 @@ const Navbar = () => {
         <NavLink to="/hotel" className="hover:underline">Hotel</NavLink>
       </li>
       <li>
-        <NavLink to="/signUp" className="hover:underline">SignUp</NavLink>
+        <NavLink onClick={() => document.getElementById("my_modal_3").showModal()} className="hover:underline">SignUp</NavLink>
       </li>
     </>
   );
