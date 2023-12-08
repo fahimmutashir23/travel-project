@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar/Sidebar";
 
 const MainLayout = () => {
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-8xl mx-auto">
       <Navbar />
       <div className="flex gap-2 relative">
         <div className="">
