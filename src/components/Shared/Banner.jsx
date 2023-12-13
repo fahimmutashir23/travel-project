@@ -1,17 +1,18 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, A11y, Autoplay } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation, A11y, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/bundle";
+import BannerSearch from "../../Utils/BannerSearch/BannerSearch";
 
 const Banner = () => {
-  const bannerImg = [
-    "https://jufailitech.com/envatoitems/travilo/html/assets/images/resources/misc/boats.jpg",
-    "https://azim.hostlin.com/Travic/assets/images/banner/banner-3.jpg",
-    "https://demo.smartnfc.org/trekeel/assets/images/gallery/destination-img.jpg",
-    "https://azim.hostlin.com/Travic/assets/images/banner/banner-3.jpg",
-    "https://azim.hostlin.com/Travic/assets/images/banner/banner-3.jpg",
-    "https://i.postimg.cc/jdPVZmjv/woman-standing-rock-atuh-beach-nusa-penida-island-bali-indonesia.jpg",
-  ];
+  // const bannerImg = [
+  //   "https://jufailitech.com/envatoitems/travilo/html/assets/images/resources/misc/boats.jpg",
+  //   "https://azim.hostlin.com/Travic/assets/images/banner/banner-3.jpg",
+  //   "https://demo.smartnfc.org/trekeel/assets/images/gallery/destination-img.jpg",
+  //   "https://azim.hostlin.com/Travic/assets/images/banner/banner-3.jpg",
+  //   "https://azim.hostlin.com/Travic/assets/images/banner/banner-3.jpg",
+  //   "https://i.postimg.cc/jdPVZmjv/woman-standing-rock-atuh-beach-nusa-penida-island-bali-indonesia.jpg",
+  // ];
   return (
     <div className="overflow-hidden" data-aos="zoom-in">
       <div
@@ -33,9 +34,7 @@ const Banner = () => {
                     <p className="font-bold text-xl lg:text-2xl mb-2 text-orange-600">
                       Discover the Planet
                     </p>
-                    <p className="font-semibold text-white text-xs lg:text-5xl">
-                      Create your memories with us.
-                    </p>
+                    <BannerSearch></BannerSearch>
                   </div>
                 </div>
               </div>

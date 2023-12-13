@@ -26,11 +26,11 @@ const MainLayout = () => {
         <div
           className={`rounded-lg relative ${
             open
-              ? "w-[50px] overflow-hidden transition-all duration-1000"
-              : "block w-60 transition-all duration-1000"
+              ? "w-[50px] bg-[#00AAF8] min-h-screen transition-all duration-1000"
+              : "w-60 transition-all duration-1000"
           }`}
         >
-          <div className={`fixed bg-[#00AAF8] w-60 min-h-screen px-4 py-2 rounded-md`}>
+          <div className={`fixed ${open? "": 'bg-[#00AAF8] w-60' } min-h-screen px-4 py-2 rounded-md transition-all duration-1000`}>
             <div className="text-black absolute  z-30">
               {open ? (
                 <FaArrowRight onClick={() => setOpen(!open)}></FaArrowRight>

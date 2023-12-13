@@ -51,7 +51,7 @@ const Navbar = () => {
   return (
     <div className="">
       <div className="flex">
-        <div className="navbar bg-base-100 max-w-6xl mx-auto fixed z-20">
+        <div className="navbar bg-base-100 fixed z-20">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn px-1 lg:hidden">
