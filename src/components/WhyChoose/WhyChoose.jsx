@@ -11,17 +11,23 @@ const WhyChoose = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto">
                 <div className="flex-1 justify-center items-center">
-                    <img src="https://max-themes.net/demos/grandtour/upload/Map-Marker-300x300.png" alt="" className="w-36 text-center justify-center" />
+                   <div className="flex justify-center">
+                   <img src="https://max-themes.net/demos/grandtour/upload/Map-Marker-300x300.png" alt="" className="w-36 text-center justify-center" />
+                   </div>
                     <h1 className="text-center">Handpicked Hotels</h1>
                     <p className="text-center">Lorem ipsum dolor sit amet, consect adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa</p>
                 </div>
                 <div>
+                    <div className="flex justify-center">
                     <img src="https://max-themes.net/demos/grandtour/upload/Worldwide-Location-300x300.png" alt="" className="w-36 text-center  justify-center" />
+                    </div>
                     <h1 className="text-center">World Class Service</h1>
                     <p className="text-center">Lorem ipsum dolor sit amet, consect adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa</p>
                 </div>
                 <div>
+                    <div className="flex justify-center">
                     <img src="https://max-themes.net/demos/grandtour/upload/Hot-Air-Balloon-300x300.png" alt="" className="w-36 text-center  justify-center" />
+                    </div>
                     <h1 className="text-center">Best Price Guarantee</h1>
                     <p className="text-center">Lorem ipsum dolor sit amet, consect adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa</p>
                 </div>
