@@ -20,7 +20,7 @@ const MainLayout = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-8xl mx-auto">
       <Navbar />
       <div className="flex gap-2 relative mt-24">
         <div
