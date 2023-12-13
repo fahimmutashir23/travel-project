@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { FaCar, FaHome, FaHotel, FaPlaneArrival } from "react-icons/fa";
+import { FaCar, FaHome, FaHotel } from "react-icons/fa";
+import { MdFlightTakeoff } from "react-icons/md";
 
 const searchCategory = [
   { icon: <FaHome></FaHome>, name: "Search All", title: 'Where to Go' },
   { icon: <FaHotel></FaHotel>, name: "Search Hotel", title: 'Stay Somewhere great'},
-  { icon: <FaPlaneArrival></FaPlaneArrival>, name: "Search Air", title: 'Explore Air Journey' },
+  { icon: <MdFlightTakeoff />, name: "Search Air", title: 'Explore Air Journey' },
   { icon: <FaCar></FaCar>, name: "Search Car", title: 'Explore Car Journey'},
 ];
 

@@ -9,7 +9,7 @@ const Navbar = () => {
   const [theme, setTheme] = useState(
     localStorage?.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
-  const {user, logOutUser} = useAuth()
+  const { user, logOutUser } = useAuth();
 
   const handleToggle = (e) => {
     if (e.target.checked) {
@@ -26,26 +26,31 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-    <SignUpModal id='my_modal_3'></SignUpModal>
-    <SignInModal id='my_modal_2'></SignInModal>
+      <SignUpModal id="my_modal_3"></SignUpModal>
+      <SignInModal id="my_modal_2"></SignInModal>
       <li>
-        <NavLink to="/" className="hover:underline">Home</NavLink>
+        <NavLink to="/" className="hover:underline">
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/flight" className="hover:underline">Flight</NavLink>
+        <NavLink to="/flight" className="hover:underline">
+          Flight
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/hotel" className="hover:underline">Hotel</NavLink>
+        <NavLink to="/hotel" className="hover:underline">
+          Hotel
+        </NavLink>
       </li>
       <li>
-        <NavLink onClick={() => document.getElementById("my_modal_3").showModal()} className="hover:underline">SignUp</NavLink>
+        <NavLink
+          onClick={() => document.getElementById("my_modal_3").showModal()}
+          className="hover:underline"
+        >
+          SignUp
+        </NavLink>
       </li>
-     { user? <li>
-        <button onClick={() => logOutUser()} className="hover:underline">LogOut</button>
-      </li> :
-      <li>
-        <NavLink onClick={() => document.getElementById("my_modal_2").showModal()} className="hover:underline">SignIn</NavLink>
-      </li>}
     </>
   );
   return (
@@ -55,7 +60,7 @@ const Navbar = () => {
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn px-1 lg:hidden">
-               <TiThMenu></TiThMenu>
+                <TiThMenu></TiThMenu>
               </label>
               <ul
                 tabIndex={0}
@@ -83,6 +88,9 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="navbar-end">
+            {
+              user? <p>Hi! <span className="text-violet-500">{user.displayName}</span></p> : ''
+            }
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
@@ -96,14 +104,37 @@ const Navbar = () => {
                 tabIndex={0}
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-40"
               >
-                <button>
+                <li>
+                  <button className="hover:underline">Profile</button>
+                </li>
+                <li>
+                  <button className="hover:underline">My Bookings</button>
+                </li>
+                <li>
+                  <button className="hover:underline">Favorite</button>
+                </li>
+                <hr />
+                {user ? (
                   <li>
-                    <p></p>
+                    <button
+                      onClick={() => logOutUser()}
+                      className="hover:underline"
+                    >
+                      LogOut
+                    </button>
                   </li>
+                ) : (
                   <li>
-                    <a>LogOut</a>
+                    <NavLink
+                      onClick={() =>
+                        document.getElementById("my_modal_2").showModal()
+                      }
+                      className="hover:underline"
+                    >
+                      SignIn
+                    </NavLink>
                   </li>
-                </button>
+                )}
               </ul>
             </div>
 

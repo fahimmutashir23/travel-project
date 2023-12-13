@@ -1,14 +1,13 @@
 import { useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
-
-
+import { Button } from "@mui/material";
+import { Google } from "@mui/icons-material";
 
 // eslint-disable-next-line react/prop-types
 const SignInModal = ({ id }) => {
   const [errorMsg, setErrMsg] = useState("");
-  const { signInUser } = useAuth();
-
+  const { signInUser, googleSignIn } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,18 +15,24 @@ const SignInModal = ({ id }) => {
     const password = e.target.password.value;
 
     signInUser(email, password)
-    .then(res => {
-      if(res.user){
-        toast('successfully Sign In')
-        e.target.reset()
-      }
-    })
-    .catch(err => {
-      if(err){
-        setErrMsg('Your email and password was wrong')
-      }
-    })
+      .then((res) => {
+        if (res.user) {
+          toast("successfully Sign In");
+          e.target.reset();
+        }
+      })
+      .catch((err) => {
+        if (err) {
+          setErrMsg("Your email and password was wrong");
+        }
+      });
   };
+
+  const handleGoogleSignIn = () => {
+      googleSignIn()
+      .then(console.log('success'))
+  }
+
   return (
     <div>
       <dialog id={id} className="modal">
@@ -77,6 +82,11 @@ const SignInModal = ({ id }) => {
                   Submit
                 </button>
               </form>
+              <div className="flex justify-center mt-4">
+                <Button onClick={handleGoogleSignIn} variant="outlined" startIcon={<Google />}>
+                  Continue with Google
+                </Button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,19 +1,21 @@
 import { NavLink, Outlet } from "react-router-dom";
 import Navbar from "../components/Shared/Navbar";
 import Footer from "../components/Shared/Footer/Footer";
-// import Sidebar from "../components/Sidebar/Sidebar";
-import { FaArrowLeft, FaArrowRight, FaHotel } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaCar, FaHotel, FaPhone, FaTrain } from "react-icons/fa";
+import { MdAttractions, MdFlightTakeoff } from "react-icons/md";
+import { FcPlanner } from "react-icons/fc";
+import destinationIcon from "../assets/icon/destination (1).png"
 import { useState } from "react";
 
 const sideBarItem = [
-  { path: "/", icon: <FaHotel></FaHotel>, name: "Hotel" },
-  { path: "/hotel", icon: <FaHotel></FaHotel>, name: "Hotel" },
-  { path: "/abc", icon: <FaHotel></FaHotel>, name: "Hotel" },
-  { path: "/s", icon: <FaHotel></FaHotel>, name: "Hotel" },
-  { path: "/sf", icon: <FaHotel></FaHotel>, name: "Hotel" },
-  { path: "/sfd", icon: <FaHotel></FaHotel>, name: "Hotel" },
-  { path: "/sdf", icon: <FaHotel></FaHotel>, name: "Hotel" },
-  { path: "/sdf", icon: <FaHotel></FaHotel>, name: "Hotel" },
+  { path: "/", icon: <FaHotel />, name: "Hotels" },
+  { path: "/hotel", icon: <MdFlightTakeoff />, name: "Flights" },
+  { path: "/abc", icon: <FaTrain />, name: "Trains" },
+  { path: "/s", icon: <FaCar />, name: "Cars" },
+  { path: "/sf", icon: <MdAttractions />, name: "Attractions & Tours" },
+  { path: "/sfd", icon: <FcPlanner />, name: "Travel Planer" },
+  { path: "/sdf", icon: <img src={destinationIcon} className="w-5" />, name: "Destination" },
+  { path: "/sdf", icon: <FaPhone />, name: "Talk with us" },
 ];
 
 const MainLayout = () => {
