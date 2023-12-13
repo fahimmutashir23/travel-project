@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 // eslint-disable-next-line react/prop-types
 const SignUpModal = ({ id }) => {
   const [errorMsg, setErrMsg] = useState("");
   const [countries, setCountry] = useState(null);
+  const { signUpUser, updateUser } = useAuth();
+  const axiosPublic = useAxiosPublic();
 
   useEffect(() => {
     fetch("/country.json")
@@ -21,17 +26,47 @@ const SignUpModal = ({ id }) => {
     const photo = e.target.photo.files[0];
     const info = { name, email, country, password, reTypePassword, photo };
     console.log(info);
+
+    if (password !== reTypePassword) {
+      return setErrMsg("Re-Type-Password was not match");
+    }
+
+    signUpUser(email, password)
+      .then((res) => {
+        if (res.user) {
+          toast("successfully Sign Up");
+          updateUser({
+            displayName: name,
+            photoURL: "oihf",
+          })
+          const userInfo = {
+            name : name,
+            email: email,
+            country: country,
+            profileImage : '',
+            active_status : "active"
+          };
+          axiosPublic.post('/users', userInfo)
+          .then(res => console.log(res.data))
+
+          e.target.reset();
+        }
+      })
+      .catch((err) => {
+        if (err) {
+          setErrMsg("Your email and password was wrong");
+        }
+      });
   };
   return (
     <div>
-      
-        <dialog id={id} className="modal">
-          <div className="modal-box bg-transparent backdrop-blur-2xl">
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                ✕
-              </button>
+      <dialog id={id} className="modal">
+        <div className="modal-box bg-transparent backdrop-blur-2xl">
+          <form method="dialog">
+            {/* if there is a button in form, it will close the modal */}
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
             </form>
             <div>
               <div className="">
@@ -72,7 +107,7 @@ const SignUpModal = ({ id }) => {
                       name="country"
                       className="border-0 border-b-2 bg-transparent border-gray-300 text-gray-900 text-sm block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
                     >
-                      {countries?.map((country,idx) => (
+                      {countries?.map((country, idx) => (
                         <option className="bg-gray-800" key={idx}>
                           {country.country}
                         </option>
@@ -83,9 +118,8 @@ const SignUpModal = ({ id }) => {
                     <input
                       type="password"
                       name="password"
-                      id="password"
-                      className="block input py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
-                      placeholder="password"
+                      className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      placeholder=""
                       required
                     />
                     <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
@@ -96,13 +130,12 @@ const SignUpModal = ({ id }) => {
                     <input
                       type="password"
                       name="reTypePassword"
-                      id="password"
-                      className="block input py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
-                      placeholder="Re-Type-password"
+                      className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      placeholder=""
                       required
                     />
                     <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-8 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                      Password
+                      Re-Type-Password
                     </label>
                   </div>
                   <div className="relative z-0 w-full mb-6 group">
@@ -129,8 +162,8 @@ const SignUpModal = ({ id }) => {
                 </form>
               </div>
             </div>
-          </div>
-        </dialog>
+        </div>
+      </dialog>
     </div>
   );
 };

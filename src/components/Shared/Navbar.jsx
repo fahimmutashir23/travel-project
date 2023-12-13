@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 import SignUpModal from "../../Utils/SignUpModal.jsx/SignUpModal";
+import SignInModal from "../../Utils/SignInModal.jsx/SignInModal";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(
     localStorage?.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
+  const {user, logOutUser} = useAuth()
 
   const handleToggle = (e) => {
     if (e.target.checked) {
@@ -24,6 +27,7 @@ const Navbar = () => {
   const navLinks = (
     <>
     <SignUpModal id='my_modal_3'></SignUpModal>
+    <SignInModal id='my_modal_2'></SignInModal>
       <li>
         <NavLink to="/" className="hover:underline">Home</NavLink>
       </li>
@@ -36,12 +40,18 @@ const Navbar = () => {
       <li>
         <NavLink onClick={() => document.getElementById("my_modal_3").showModal()} className="hover:underline">SignUp</NavLink>
       </li>
+     { user? <li>
+        <button onClick={() => logOutUser()} className="hover:underline">LogOut</button>
+      </li> :
+      <li>
+        <NavLink onClick={() => document.getElementById("my_modal_2").showModal()} className="hover:underline">SignIn</NavLink>
+      </li>}
     </>
   );
   return (
     <div className="">
-      <div className="flex ">
-        <div className="navbar bg-base-100 max-w-6xl mx-auto">
+      <div className="flex">
+        <div className="navbar bg-base-100 max-w-6xl mx-auto fixed z-20">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn px-1 lg:hidden">
