@@ -22,7 +22,8 @@ const BannerSearch = () => {
       <p className="font-semibold text-white text-xs lg:text-5xl">
         {title}
       </p>
-      <div className="flex items-center justify-center gap-6 text-xl my-4">
+      <div className="py-4 px-16 rounded-xl backdrop-blur-[4px]">
+      <div className="flex items-center justify-center gap-6 text-xl mb-4">
         {searchCategory?.map((item, idx) => (
           <div
             key={idx}
@@ -55,6 +56,7 @@ const BannerSearch = () => {
           </button>
         </div>
       </form>
+      </div>
     </div>
   );
 };

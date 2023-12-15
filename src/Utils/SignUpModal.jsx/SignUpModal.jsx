@@ -1,20 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import useCountry from "../../Hooks/useCountry";
 
 // eslint-disable-next-line react/prop-types
 const SignUpModal = ({ id }) => {
   const [errorMsg, setErrMsg] = useState("");
-  const [countries, setCountry] = useState(null);
   const { signUpUser, updateUser } = useAuth();
   const axiosPublic = useAxiosPublic();
-
-  useEffect(() => {
-    fetch("/country.json")
-      .then((res) => res.json())
-      .then((data) => setCountry(data));
-  }, []);
+  const countries = useCountry()
 
   const handleSubmit = (e) => {
     e.preventDefault();
