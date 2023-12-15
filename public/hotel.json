@@ -1,0 +1,75 @@
+[
+  {
+    "hotel_name": "The Westin",
+    "hotel_location": "Gulshan-2, Dhaka, Bangladesh",
+    "hotel_country": "Bangladesh",
+    "hotel_room": [
+      {
+        "room_id": 1,
+        "room_name": "Deluxe King Room Non smoking",
+        "room_price": 320,
+        "sleeps": 2,
+        "beds": "1 King bed",
+        "room_img": "",
+        "room_details": [
+          "Non-Smoking",
+          "40m",
+          "Privet Bathroom",
+          "Air Conditioning",
+          "Refrigerator"
+        ]
+      },
+      {
+        "room_id": 2,
+        "room_name": "Deluxe Two Queen Room Non smoking",
+        "room_price": 320,
+        "sleeps": 3,
+        "beds": "2 Queen beds",
+        "room_img": "",
+        "room_details": [
+          "Non-Smoking",
+          "40m",
+          "Privet Bathroom",
+          "Air Conditioning",
+          "Refrigerator"
+        ]
+      },
+      {
+        "room_id": 3,
+        "room_name": "Strip View King Room Non smoking",
+        "room_price": 320,
+        "sleeps": 2,
+        "beds": "1 King bed",
+        "room_img": "",
+        "room_details": [
+          "Non-Smoking",
+          "40m",
+          "Privet Bathroom",
+          "Air Conditioning",
+          "Refrigerator"
+        ]
+      }
+    ],
+    "guest_review": {
+      "ratings": 5,
+      "description": "This was a good experience for me"
+    },
+    "Service": [
+      "Indoor Swimming Pool",
+      "Outdoor Swimming Pool",
+      "Casino",
+      "Sauna",
+      "Spa",
+      "Massage Room",
+      "Fitness Room",
+      "ParkingFree",
+      "Bowling Alley",
+      "Restaurant",
+      "Meeting Room",
+      "Multi-Function Room",
+      "Currency Exchange",
+      "Luggage Storage",
+      "24-Hour Front Desk"
+    ]
+  }
+]
