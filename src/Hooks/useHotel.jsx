@@ -12,6 +12,7 @@ const useHotel = () => {
             return res.data
         }
     })
+    
     return [hotels, refetch, isPending]
 };
 
