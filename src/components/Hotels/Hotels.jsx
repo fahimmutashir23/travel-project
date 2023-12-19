@@ -1,10 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import useHotel from "../../Hooks/useHotel";
 import Loader from "../../Utils/Loader/Loader";
 
 const Hotels = () => {
-//   const [hotels, isPending] = useHotel();
 
 const axiosPublic = useAxiosPublic()
 
