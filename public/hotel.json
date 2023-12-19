@@ -3,6 +3,10 @@
     "hotel_name": "The Westin",
     "hotel_location": "Gulshan-2, Dhaka, Bangladesh",
     "hotel_country": "Bangladesh",
+    "description": "The Westin in Gulshan-2, Dhaka, Bangladesh, offers luxurious accommodations and a host of top-notch amenities, ensuring a premium and relaxing stay for guests seeking unparalleled comfort and convenience.",
+    "from": "2023-11-27T18:00:00.000Z",
+    "to": "2023-11-29T18:00:00.000Z",
+    "category": "Modern",
     "hotel_room": [
       {
         "room_id": 1,
@@ -10,6 +14,9 @@
         "room_price": 320,
         "sleeps": 2,
         "beds": "1 King bed",
+        "bedrooms": "3",
+        "bathrooms": "2",
+        "guests": "6",
         "room_img": "",
         "room_details": [
           "Non-Smoking",
