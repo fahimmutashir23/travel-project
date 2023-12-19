@@ -7,6 +7,7 @@
     "from": "2023-11-27T18:00:00.000Z",
     "to": "2023-11-29T18:00:00.000Z",
     "category": "Modern",
+    "hotel_img": "https://i.ibb.co/YLSL600/The-Westin.jpg",
     "hotel_room": [
       {
         "room_id": 1,
@@ -17,7 +18,12 @@
         "bedrooms": "3",
         "bathrooms": "2",
         "guests": "6",
-        "room_img": "",
+        "room_img": [
+          "https://i.ibb.co/9y2smRz/download-4.jpg",
+          "https://i.ibb.co/Xk6mPtc/images.jpg",
+          "https://i.ibb.co/y4j9q1g/images-1.jpg"
+        ],
+        "available": "true",
         "room_details": [
           "Non-Smoking",
           "40m",
@@ -32,7 +38,13 @@
         "room_price": 320,
         "sleeps": 3,
         "beds": "2 Queen beds",
-        "room_img": "",
+        "guestRoom": "Guest Room",
+        "room_img": [
+          "https://i.ibb.co/tHCXMr4/images-2.jpg",
+          "https://i.ibb.co/zF89q6b/images-3.jpg",
+          "https://i.ibb.co/JRT6dCt/images-4.jpg"
+        ],
+        "available": "true",
         "room_details": [
           "Non-Smoking",
           "40m",
@@ -47,7 +59,13 @@
         "room_price": 320,
         "sleeps": 2,
         "beds": "1 King bed",
-        "room_img": "",
+        "guestRoom": "Guest Room",
+        "room_img": [
+          "https://i.ibb.co/TkD1ngX/images-5.jpg",
+          "https://i.ibb.co/Tcsxd74/images-6.jpg",
+          "https://i.ibb.co/PgN2rdq/images-7.jpg"
+        ],
+        "available": "true",
         "room_details": [
           "Non-Smoking",
           "40m",
@@ -77,6 +95,285 @@
       "Currency Exchange",
       "Luggage Storage",
       "24-Hour Front Desk"
+    ]
+  },
+  {
+    "hotel_name": "Luxury Haven",
+    "hotel_location": "Downtown, New York, USA",
+    "hotel_country": "USA",
+    "description": "Luxury Haven in Downtown, New York, USA, offers opulent accommodations and a range of premium amenities for a luxurious and comfortable stay.",
+    "from": "2023-12-01T15:00:00.000Z",
+    "to": "2023-12-03T12:00:00.000Z",
+    "category": "Luxury",
+    "hotel_img": "https://i.ibb.co/M8Bt13V/Haven-Luxury.jpg",
+    "hotel_room": [
+      {
+        "room_id": 1,
+        "room_name": "Executive Suite",
+        "room_price": 450,
+        "sleeps": 2,
+        "beds": "1 King bed",
+        "bedrooms": "2",
+        "bathrooms": "2",
+        "guests": "4",
+        "room_img": [
+          "https://i.ibb.co/q04Qnxd/li-yang-a8i-CZvtr-Hp-Q-unsplash.jpg",
+          "https://i.ibb.co/9ZB3hyk/markus-spiske-g5-ZIXjz-RGds-unsplash.jpg",
+          "https://i.ibb.co/BfZHq3B/christopher-jolly-Gqb-U78bd-JFM-unsplash.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "50m",
+          "Private Bathroom",
+          "Jacuzzi",
+          "Mini Bar"
+        ]
+      },
+      {
+        "room_id": 2,
+        "room_name": "Deluxe Queen Room",
+        "room_price": 350,
+        "sleeps": 2,
+        "beds": "1 Queen bed",
+        "guestRoom": "Guest Room",
+        "room_img": [
+          "https://i.ibb.co/fvqZZqS/rosewood-carlyle-presidential-suite-LUXESUITE0122-0046808a88924e57922d78c7f1d9ca60.jpg",
+          "https://i.ibb.co/kHQSPn8/download.jpg",
+          "https://i.ibb.co/QMzXWkH/superior-room.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "45m",
+          "Private Bathroom",
+          "Air Conditioning",
+          "Coffee Maker"
+        ]
+      },
+      {
+        "room_id": 3,
+        "room_name": "City View Twin Room",
+        "room_price": 400,
+        "sleeps": 2,
+        "beds": "2 Twin beds",
+        "guestRoom": "Guest Room",
+        "room_img": [
+          "https://i.ibb.co/hFw9Gkq/download-3.jpg",
+          "https://i.ibb.co/4d21K5b/download-2.jpg",
+          "https://i.ibb.co/WFRysnS/download-1.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "40m",
+          "Private Bathroom",
+          "Balcony",
+          "Free Wi-Fi"
+        ]
+      }
+    ],
+    "guest_review": {
+      "ratings": 4.8,
+      "description": "Absolutely amazing stay with impeccable service."
+    },
+    "Service": [
+      "Indoor Pool",
+      "Spa and Wellness Center",
+      "Fine Dining Restaurant",
+      "Business Center",
+      "Concierge Service",
+      "Valet Parking",
+      "Fitness Center",
+      "24-Hour Room Service",
+      "Conference Facilities",
+      "Childcare Services"
+    ]
+  },
+  {
+    "hotel_name": "Grand Palace Hotel",
+    "hotel_location": "Downtown, London, UK",
+    "hotel_country": "United Kingdom",
+    "description": "Grand Palace Hotel in Downtown, London, UK, offers a blend of elegance and modern comfort, providing an unforgettable experience for guests seeking sophistication and convenience.",
+    "from": "2023-12-10T14:00:00.000Z",
+    "to": "2023-12-12T12:00:00.000Z",
+    "category": "Elegant",
+    "hotel_img": "https://i.ibb.co/Wksq35L/The-Grand-Palace.jpg",
+    "hotel_room": [
+      {
+        "room_id": 1,
+        "room_name": "Royal Suite",
+        "room_price": 550,
+        "sleeps": 2,
+        "beds": "1 King bed",
+        "bedrooms": "3",
+        "bathrooms": "3",
+        "guests": "6",
+        "room_img": [
+          "https://i.ibb.co/hFw9Gkq/download-3.jpg",
+          "https://i.ibb.co/4d21K5b/download-2.jpg",
+          "https://i.ibb.co/WFRysnS/download-1.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "60m",
+          "Private Bathroom",
+          "Jacuzzi",
+          "Mini Bar"
+        ]
+      },
+      {
+        "room_id": 2,
+        "room_name": "Executive King Room",
+        "room_price": 400,
+        "sleeps": 2,
+        "beds": "1 King bed",
+        "guestRoom": "Guest Room",
+        "room_img": [
+          "https://i.ibb.co/fvqZZqS/rosewood-carlyle-presidential-suite-LUXESUITE0122-0046808a88924e57922d78c7f1d9ca60.jpg",
+          "https://i.ibb.co/kHQSPn8/download.jpg",
+          "https://i.ibb.co/QMzXWkH/superior-room.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "50m",
+          "Private Bathroom",
+          "Air Conditioning",
+          "Coffee Maker"
+        ]
+      },
+      {
+        "room_id": 3,
+        "room_name": "City View Queen Room",
+        "room_price": 450,
+        "sleeps": 2,
+        "beds": "1 Queen bed",
+        "guestRoom": "Guest Room",
+        "room_img": [
+          "https://i.ibb.co/q04Qnxd/li-yang-a8i-CZvtr-Hp-Q-unsplash.jpg",
+          "https://i.ibb.co/9ZB3hyk/markus-spiske-g5-ZIXjz-RGds-unsplash.jpg",
+          "https://i.ibb.co/BfZHq3B/christopher-jolly-Gqb-U78bd-JFM-unsplash.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "45m",
+          "Private Bathroom",
+          "Balcony",
+          "Free Wi-Fi"
+        ]
+      }
+    ],
+    "guest_review": {
+      "ratings": 4.9,
+      "description": "Exquisite hotel with impeccable service and attention to detail."
+    },
+    "Service": [
+      "Indoor Pool",
+      "Spa and Wellness Center",
+      "Gourmet Restaurant",
+      "Business Center",
+      "Concierge Service",
+      "Valet Parking",
+      "Fitness Center",
+      "24-Hour Room Service",
+      "Conference Facilities",
+      "Children's Playroom"
+    ]
+  },
+  {
+    "hotel_name": "Azure Shores Resort",
+    "hotel_location": "Waikiki Beach, Honolulu, USA",
+    "hotel_country": "United States",
+    "description": "Azure Shores Resort in Waikiki Beach, Honolulu, USA, offers a tropical paradise with luxurious accommodations, making it an ideal destination for a relaxing and rejuvenating getaway.",
+    "from": "2023-12-15T16:00:00.000Z",
+    "to": "2023-12-18T12:00:00.000Z",
+    "category": "Beachfront",
+    "hotel_img": "https://i.ibb.co/Wksq35L/The-Grand-Palace.jpg",
+    "hotel_room": [
+      {
+        "room_id": 1,
+        "room_name": "Oceanfront Villa",
+        "room_price": 650,
+        "sleeps": 4,
+        "beds": "2 King beds",
+        "bedrooms": "4",
+        "bathrooms": "3",
+        "guests": "8",
+        "room_img": [
+          "https://i.ibb.co/q04Qnxd/li-yang-a8i-CZvtr-Hp-Q-unsplash.jpg",
+          "https://i.ibb.co/9ZB3hyk/markus-spiske-g5-ZIXjz-RGds-unsplash.jpg",
+          "https://i.ibb.co/BfZHq3B/christopher-jolly-Gqb-U78bd-JFM-unsplash.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "80m",
+          "Private Beach Access",
+          "Kitchenette",
+          "Outdoor Terrace"
+        ]
+      },
+      {
+        "room_id": 2,
+        "room_name": "Deluxe Ocean View Suite",
+        "room_price": 500,
+        "sleeps": 2,
+        "beds": "1 King bed",
+        "guestRoom": "Guest Room",
+        "room_img": [
+          "https://i.ibb.co/q04Qnxd/li-yang-a8i-CZvtr-Hp-Q-unsplash.jpg",
+          "https://i.ibb.co/9ZB3hyk/markus-spiske-g5-ZIXjz-RGds-unsplash.jpg",
+          "https://i.ibb.co/BfZHq3B/christopher-jolly-Gqb-U78bd-JFM-unsplash.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "60m",
+          "Private Balcony",
+          "Mini Fridge",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "room_id": 3,
+        "room_name": "Beachfront Bungalow",
+        "room_price": 600,
+        "sleeps": 3,
+        "beds": "1 King bed, 1 Twin bed",
+        "guestRoom": "Guest Room",
+        "room_img": [
+          "https://i.ibb.co/q04Qnxd/li-yang-a8i-CZvtr-Hp-Q-unsplash.jpg",
+          "https://i.ibb.co/9ZB3hyk/markus-spiske-g5-ZIXjz-RGds-unsplash.jpg",
+          "https://i.ibb.co/BfZHq3B/christopher-jolly-Gqb-U78bd-JFM-unsplash.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "70m",
+          "Outdoor Shower",
+          "Hammock",
+          "Air Conditioning"
+        ]
+      }
+    ],
+    "guest_review": {
+      "ratings": 4.7,
+      "description": "A slice of paradise with excellent service and breathtaking views."
+    },
+    "Service": [
+      "Private Beach",
+      "Infinity Pool",
+      "Beachside Bar and Grill",
+      "Spa Retreat",
+      "Water Sports",
+      "Yoga Classes",
+      "24-Hour Concierge",
+      "Wedding Services",
+      "Gift Shop",
+      "Valet Parking"
     ]
   }
 ]

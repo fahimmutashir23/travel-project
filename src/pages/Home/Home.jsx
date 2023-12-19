@@ -1,4 +1,5 @@
 
+import Hotels from '../../components/Hotels/Hotels';
 import News from '../../components/News/News';
 import PopularDestination from '../../components/PopularDestination/PopularDestination';
 import Banner from '../../components/Shared/Banner';
@@ -10,6 +11,7 @@ const Home = () => {
     return (
         <div>
             <Banner/>
+            <Hotels/>
             <About/>
             <PopularDestination/>
             <WhyChoose/>
