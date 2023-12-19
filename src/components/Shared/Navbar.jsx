@@ -11,6 +11,7 @@ const Navbar = () => {
   );
   const { user, logOutUser } = useAuth();
 
+
   const handleToggle = (e) => {
     if (e.target.checked) {
       setTheme("dark");
@@ -72,7 +73,7 @@ const Navbar = () => {
             <div>
               <Link className="bg-transparent">
                 <img
-                  src="https://i.ibb.co/LpR33BN/male-avatar-profile-picture-vector-10210618.jpg"
+                  src={user? user.photoURL : "https://i.ibb.co/LpR33BN/male-avatar-profile-picture-vector-10210618.jpg"}
                   alt=""
                   className=" w-8 lg:w-10 md:w-10 rounded-xl ml-7 mt-3"
                 />
@@ -95,7 +96,7 @@ const Navbar = () => {
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <img
-                    src="https://i.ibb.co/LpR33BN/male-avatar-profile-picture-vector-10210618.jpg"
+                    src= {user? user.photoURL : "https://i.ibb.co/LpR33BN/male-avatar-profile-picture-vector-10210618.jpg"}
                     alt=""
                   />
                 </div>

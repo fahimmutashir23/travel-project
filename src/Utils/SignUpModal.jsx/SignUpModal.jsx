@@ -1,23 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import useCountry from "../../Hooks/useCountry";
+import Loader from "../Loader/Loader";
+
+const imgUploadUrl = `https://api.imgbb.com/1/upload?key=${
+  import.meta.env.VITE_IMG_API_KEY
+}`;
 
 // eslint-disable-next-line react/prop-types
 const SignUpModal = ({ id }) => {
   const [errorMsg, setErrMsg] = useState("");
-  const [countries, setCountry] = useState(null);
-  const { signUpUser, updateUser } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const { signUpUser, updateUser, logOutUser } = useAuth();
   const axiosPublic = useAxiosPublic();
+  const countries = useCountry()
 
-  useEffect(() => {
-    fetch("/country.json")
-      .then((res) => res.json())
-      .then((data) => setCountry(data));
-  }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
     const name = e.target.name.value;
     const email = e.target.email.value;
     const country = e.target.country.value;
@@ -31,32 +34,38 @@ const SignUpModal = ({ id }) => {
       return setErrMsg("Re-Type-Password was not match");
     }
 
-    signUpUser(email, password)
+    const imgFile = {image: photo}
+    const res = await axiosPublic.post(imgUploadUrl, imgFile, {
+      headers : {
+        "content-type": "multipart/form-data"
+      }
+    })
+  
+    if(res.data.data.display_url){
+      setLoading(false)
+      signUpUser(email, password)
       .then((res) => {
         if (res.user) {
           toast("successfully Sign Up");
           updateUser({
             displayName: name,
-            photoURL: "oihf",
+            photoURL: res.data?.data.display_url
           })
-          const userInfo = {
-            name : name,
-            email: email,
-            country: country,
-            profileImage : '',
-            active_status : "active"
-          };
-          axiosPublic.post('/users', userInfo)
-          .then(res => console.log(res.data))
-
-          e.target.reset();
         }
       })
-      .catch((err) => {
-        if (err) {
-          setErrMsg("Your email and password was wrong");
-        }
-      });
+      const userInfo = {
+        name : name,
+        email: email,
+        country: country,
+        profileImage : res.data.data.display_url,
+        active_status : "active"
+      };
+      const response = await axiosPublic.post('/users', userInfo)
+      if(response.data){
+        logOutUser()
+        e.target.reset();
+      }
+    }
   };
   return (
     <div>
@@ -155,9 +164,11 @@ const SignUpModal = ({ id }) => {
                   </p>
                   <button
                     type="submit"
-                    className="btn bg-orange-500 text-base-100 w-full hover:bg-orange-900"
+                    className="btn bg-blue-500 text-base-100 w-full hover:bg-orange-900"
                   >
-                    Submit
+                    {
+                      loading? <Loader width='12'></Loader> : "Submit"
+                    }
                   </button>
                 </form>
               </div>
