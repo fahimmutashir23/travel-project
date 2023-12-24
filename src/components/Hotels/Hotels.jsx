@@ -1,22 +1,22 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Loader from "../../Utils/Loader/Loader";
+import HotelCard from "../../Utils/Card/HotelCard";
 
 const Hotels = () => {
+  const axiosPublic = useAxiosPublic();
 
-const axiosPublic = useAxiosPublic()
+  const { data: hotels = [], isPending } = useQuery({
+    queryKey: ["hotels"],
+    queryFn: async () => {
+      const res = await axiosPublic("/hotels");
+      return res.data;
+    },
+  });
 
-    const {data: hotels = [], isPending} = useQuery({
-        queryKey: ['hotels'],
-        queryFn: async () => {
-            const res = await axiosPublic('/hotels')
-            return res.data
-        }
-    })
-
-  if(isPending){
-    return <Loader width='20' center='center'></Loader>
- }
+  if (isPending) {
+    return <Loader width="20" center="center"></Loader>;
+  }
   return (
     <div>
       <div>
@@ -25,15 +25,9 @@ const axiosPublic = useAxiosPublic()
       </div>
       <div>
         <h2 className="text-xl font-medium">Total Hotels: {hotels.length}</h2>
-        <div className="md:grid grid-cols-2 gap-4">
+        <div className="flex flex-wrap gap-4">
           {hotels.map((hotel) => (
-            <div key={hotel._id} className="">
-              <img
-                src={hotel.hotel_img}
-                alt=""
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <HotelCard key={hotel._id} hotel={hotel}></HotelCard>
           ))}
         </div>
       </div>
