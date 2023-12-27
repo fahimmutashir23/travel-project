@@ -8,8 +8,8 @@ import destinationIcon from "../assets/icon/destination (1).png"
 import { useState } from "react";
 
 const sideBarItem = [
-  { path: "/", icon: <FaHotel />, name: "Hotels" },
-  { path: "/hotel", icon: <MdFlightTakeoff />, name: "Flights" },
+  { path: "/hotel", icon: <FaHotel />, name: "Hotels" },
+  { path: "/flight", icon: <MdFlightTakeoff />, name: "Flights" },
   { path: "/abc", icon: <FaTrain />, name: "Trains" },
   { path: "/s", icon: <FaCar />, name: "Cars" },
   { path: "/sf", icon: <MdAttractions />, name: "Attractions & Tours" },

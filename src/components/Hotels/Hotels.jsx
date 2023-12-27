@@ -1,23 +1,8 @@
 /* eslint-disable react/prop-types */
-// import { useQuery } from "@tanstack/react-query";
-// import useAxiosPublic from "../../Hooks/useAxiosPublic";
-// import Loader from "../../Utils/Loader/Loader";
 import HotelCard from "../../Utils/Card/HotelCard";
 
 const Hotels = ({hotels}) => {
-  // const axiosPublic = useAxiosPublic();
 
-  // const { data: hotels = [], isPending } = useQuery({
-  //   queryKey: ["hotels"],
-  //   queryFn: async () => {
-  //     const res = await axiosPublic("/hotels");
-  //     return res.data;
-  //   },
-  // });
-
-  // if (isPending) {
-  //   return <Loader width="20" center="center"></Loader>;
-  // }
   return (
     <div>
       <div>

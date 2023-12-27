@@ -1,25 +1,18 @@
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation, A11y, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/bundle";
-import BannerSearch from "../../Utils/BannerSearch/BannerSearch";
+/* eslint-disable react/prop-types */
 
-const Banner = () => {
-  // const bannerImg = [
-  //   "https://jufailitech.com/envatoitems/travilo/html/assets/images/resources/misc/boats.jpg",
-  //   "https://azim.hostlin.com/Travic/assets/images/banner/banner-3.jpg",
-  //   "https://demo.smartnfc.org/trekeel/assets/images/gallery/destination-img.jpg",
-  //   "https://azim.hostlin.com/Travic/assets/images/banner/banner-3.jpg",
-  //   "https://azim.hostlin.com/Travic/assets/images/banner/banner-3.jpg",
-  //   "https://i.postimg.cc/jdPVZmjv/woman-standing-rock-atuh-beach-nusa-penida-island-bali-indonesia.jpg",
-  // ];
+import { useState } from "react";
+import DatePicker, { DateObject } from "react-multi-date-picker";
+
+const Banner = ({ bannerImg }) => {
+  const [values, setValues] = useState([new DateObject(), new DateObject()]);
+  
+
   return (
-    <div className="overflow-hidden" data-aos="zoom-in">
+    <div className="" data-aos="zoom-in">
       <div
-        className="rounded-xl hero overflow-hidden h-[500px] text-white"
+        className="rounded-xl hero  h-[300px] text-white"
         style={{
-          backgroundImage:
-            "url(https://azim.hostlin.com/Travic/assets/images/banner/banner-3.jpg)",
+          backgroundImage: `url(${bannerImg})`,
           backgroundSize: "cover",
         }}
       >
@@ -29,58 +22,23 @@ const Banner = () => {
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
           data-aos-duration="1000"
-          className="flex justify-center items-center h-[500px] hero-content"
+          className="flex justify-center items-center"
         >
           <div className="text-center z-10">
-            <p className="font-bold text-xl lg:text-2xl mb-2 text-orange-600">
-              Discover the Planet
-            </p>
-            <BannerSearch></BannerSearch>
+            <DatePicker
+            style={{
+              backgroundColor: "#A076F9",
+              color: 'white',
+              height: "24px",
+              borderRadius: "8px",
+              border: 'none',
+              fontSize: "16px",
+              padding: "16px 20px"
+            }}
+            value={values} onChange={setValues} range />
           </div>
         </div>
       </div>
-      {/* <Swiper
-        slidesPerView={1}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-        navigation={true}
-        modules={[Autoplay, Navigation, A11y]}
-        className="mySwiper"
-      >
-        {bannerImg.map((image,idx) => (
-          <SwiperSlide key={idx}>
-            <div data-aos="zoom-in">
-              <div
-                className="rounded-xl hero overflow-hidden h-[500px] text-white"
-                style={{
-                  backgroundImage: `url(${image})`,
-                  backgroundSize: "cover",
-                }}
-              >
-                <div className="hero-overlay bg-black bg-opacity-40"></div>
-                <div
-                  data-aos="zoom-in"
-                  data-aos-offset="300"
-                  data-aos-easing="ease-in-sine"
-                  data-aos-duration="1000"
-                  className="flex justify-center items-center h-[500px] hero-content"
-                >
-                  <div className="text-center z-10">
-                    <p className="font-bold text-xl lg:text-2xl mb-2 text-orange-600">
-                      Discover the Planet
-                    </p>
-                    <p className="font-semibold text-white text-xs lg:text-5xl">
-                      Create your memories with us.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper> */}
     </div>
   );
 };

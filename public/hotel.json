@@ -375,5 +375,98 @@
       "Gift Shop",
       "Valet Parking"
     ]
+  },
+  {
+    "hotel_name": "Tropical Oasis Resort",
+    "hotel_location": "Maui, Hawaii, USA",
+    "hotel_country": "United States",
+    "description": "Experience a tropical paradise at the heart of Maui with luxurious accommodations and stunning views.",
+    "from": "2023-10-10T16:00:00.000Z",
+    "to": "2023-10-15T12:00:00.000Z",
+    "category": "Seaside",
+    "hotel_img": "https://i.ibb.co/Wksq35L/The-Grand-Palace.jpg",
+    "hotel_room": [
+      {
+        "room_id": 1,
+        "room_name": "Oceanfront Villa",
+        "room_price": 700,
+        "sleeps": 4,
+        "beds": "2 Queen beds",
+        "bedrooms": "3",
+        "bathrooms": "2",
+        "guests": "6",
+        "room_img": [
+          "https://i.ibb.co/q04Qnxd/li-yang-a8i-CZvtr-Hp-Q-unsplash.jpg",
+          "https://i.ibb.co/9ZB3hyk/markus-spiske-g5-ZIXjz-RGds-unsplash.jpg",
+          "https://i.ibb.co/BfZHq3B/christopher-jolly-Gqb-U78bd-JFM-unsplash.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "100m",
+          "Private Beach Access",
+          "Kitchenette",
+          "Outdoor Terrace"
+        ]
+      },
+      {
+        "room_id": 2,
+        "room_name": "Deluxe Ocean View Suite",
+        "room_price": 500,
+        "sleeps": 2,
+        "beds": "1 King bed",
+        "guestRoom": "Guest Room",
+        "room_img": [
+          "https://i.ibb.co/q04Qnxd/li-yang-a8i-CZvtr-Hp-Q-unsplash.jpg",
+          "https://i.ibb.co/9ZB3hyk/markus-spiske-g5-ZIXjz-RGds-unsplash.jpg",
+          "https://i.ibb.co/BfZHq3B/christopher-jolly-Gqb-U78bd-JFM-unsplash.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "60m",
+          "Private Balcony",
+          "Mini Fridge",
+          "Free Wi-Fi"
+        ]
+      },
+      {
+        "room_id": 3,
+        "room_name": "Beachfront Bungalow",
+        "room_price": 600,
+        "sleeps": 3,
+        "beds": "1 King bed, 1 Twin bed",
+        "guestRoom": "Guest Room",
+        "room_img": [
+          "https://i.ibb.co/q04Qnxd/li-yang-a8i-CZvtr-Hp-Q-unsplash.jpg",
+          "https://i.ibb.co/9ZB3hyk/markus-spiske-g5-ZIXjz-RGds-unsplash.jpg",
+          "https://i.ibb.co/BfZHq3B/christopher-jolly-Gqb-U78bd-JFM-unsplash.jpg"
+        ],
+        "available": "true",
+        "room_details": [
+          "Non-Smoking",
+          "70m",
+          "Outdoor Shower",
+          "Hammock",
+          "Air Conditioning"
+        ]
+      }      
+    ],
+    "guest_review": {
+      "ratings": 4.8,
+      "description": "A true oasis! Wonderful service and breathtaking surroundings."
+    },
+    "Service": [
+      "Private Beach",
+      "Poolside Cabanas",
+      "Fine Dining Restaurant",
+      "Full-Service Spa",
+      "Snorkeling Tours",
+      "Fitness Center",
+      "24-Hour Room Service",
+      "Event Planning",
+      "Souvenir Shop",
+      "Complimentary Parking"
+    ]
   }
 ]
