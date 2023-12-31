@@ -12,7 +12,7 @@ const Hotels = ({hotels}) => {
       <div>
         <h2 className="text-xl font-medium">Total Hotels: {hotels.length}</h2>
         <div className="flex flex-wrap gap-4">
-          {hotels.map((hotel) => (
+          {hotels?.map((hotel) => (
             <HotelCard key={hotel._id} hotel={hotel}></HotelCard>
           ))}
         </div>

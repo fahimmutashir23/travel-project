@@ -47,7 +47,6 @@ const Home = () => {
       return res.data;
     },
   });
-console.log(hotels);
   const handleSearch = (e) => {
     e.preventDefault();
     const searchValue = e.target.search.value;
@@ -127,7 +126,6 @@ console.log(hotels);
         </div>
       </div>
       <Hotels hotels={hotels} />
-      
       <About />
       <PopularDestination />
       <WhyChoose />

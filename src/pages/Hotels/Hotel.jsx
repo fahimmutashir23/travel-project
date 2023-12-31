@@ -15,12 +15,11 @@ const Hotel = () => {
   const time = moment().format("MM/DD/YYYY, h:mm a");
 
   const checkInDay = values[0].day;
-  const checkInMonth = values[0].monthIndex;
+  const checkInMonth = values[0].monthIndex + 1;
   const checkInYear = values[0].year;
   const checkOutDay = values[1]?.day;
-  const checkOutMonth = values[1]?.monthIndex;
+  const checkOutMonth = values[1]?.monthIndex + 1;
   const checkOutYear = values[1]?.year;
-
 
 
   const handleSearch = (e) => {
@@ -29,8 +28,8 @@ const Hotel = () => {
     const room = e.target.room.value;
     const adult = e.target.adult.value;
     const children = e.target.children.value;
-    const checkInDate = `${checkInDay}/${checkInMonth}/${checkInYear}`;
-    const checkOutDate = `${checkOutDay}/${checkOutMonth}/${checkOutYear}`;
+    const checkInDate = `${checkInYear}-${checkInMonth}-${checkInDay}`;
+    const checkOutDate = `${checkOutYear}-${checkOutMonth}-${checkOutDay}`;
     setSearchValue({ location, room, adult, children, checkInDate, checkOutDate });
 
     axiosPublic(`/hotels?search=${searchValue.location}`)
