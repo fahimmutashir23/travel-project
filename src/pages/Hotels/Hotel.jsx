@@ -1,65 +1,58 @@
 import { useState } from "react";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import addNotification from "react-push-notification";
 const img = "https://i.postimg.cc/x8dvVkZ6/pexels-julius-silver-753626.jpg";
-const cityOptions = [
-  "The Westin",
-  "Gulshan-2, Dhaka, Bangladesh",
-  "Bangladesh",
-  "Grand Palace Hotel",
-  "Downtown, London, UK",
-  "United Kingdom",
-  "Azure Shores Resort",
-  "Waikiki Beach, Honolulu, USA",
-  "Tropical Oasis Resort",
-  "Maui, Hawaii, USA",
-  "Sunny Beach Resort",
-  "Cancun, Mexico",
-  "Phuket, Thailand",
-  "Serene Cove Retreat",
-   "Coastal Vista Resort",
-  "Gold Coast, Australia",
-   "Mountain Vista Lodge",
-   "Aspen, Colorado, USA",
-  "Island Paradise Retreat",
-  "Bora Bora, French Polynesia",
-  "French Polynesia",
-  "Dubai Marina, Dubai, UAE",
-  "United Arab Emirates",
-  "Downtown Dubai, Dubai, UAE",
-  "United Arab Emirates",
-]
-                     
+import google from "../../assets/icon/google.png";
+import moment from "moment";
+import { ArrowDownward } from "@mui/icons-material";
 
 const Hotel = () => {
   const [values, setValues] = useState([new DateObject(), new DateObject()]);
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
   const [data, setData] = useState([]);
   const axiosPublic = useAxiosPublic();
+  const time = moment().format("MM/DD/YYYY, h:mm a");
+
   const checkInDay = values[0].day;
   const checkInMonth = values[0].monthIndex;
   const checkInYear = values[0].year;
   const checkOutDay = values[1]?.day;
   const checkOutMonth = values[1]?.monthIndex;
   const checkOutYear = values[1]?.year;
-  
-  
+
+
+
   const handleSearch = (e) => {
     e.preventDefault();
     const location = e.target.location.value;
-    const room = e.target.rooms.value;
+    const room = e.target.room.value;
+    const adult = e.target.adult.value;
+    const children = e.target.children.value;
     const checkInDate = `${checkInDay}/${checkInMonth}/${checkInYear}`;
     const checkOutDate = `${checkOutDay}/${checkOutMonth}/${checkOutYear}`;
-    setSearchValue({location, room, checkInDate, checkOutDate})
+    setSearchValue({ location, room, adult, children, checkInDate, checkOutDate });
+
     axiosPublic(`/hotels?search=${searchValue.location}`)
-    .then(res => {
-      setData(res.data)
-    })
-    e.target.reset()
+    .then((res) => {
+      setData(res.data);
+    });
+    e.target.reset();
+  };
+
+  const handleNotify = () => {
+    addNotification({
+      title: "Your Notification",
+      subtitle: "This is a subtitle",
+      message: "This is a very long message",
+      icon: google,
+      theme: "darkblue",
+      duration: 4000,
+    });
   };
 
   return (
-    <div className="relative">
+    <div>
       <div className="" data-aos="zoom-in">
         <div
           className="rounded-xl hero  h-[500px] text-white"
@@ -76,29 +69,22 @@ const Hotel = () => {
             data-aos-duration="1000"
             className="w-full md:px-14 sticky top-[84px]"
           >
-            <h1 className="text text-4xl font-semibold mb-3 border-l-[4px] border-l-white pl-2">Hotels</h1>
+            <h1 className="text text-4xl font-semibold mb-3 border-l-[4px] border-l-white pl-2">
+              Hotels
+            </h1>
             <form onSubmit={handleSearch}>
               <div className="text-center z-10 px-4 py-6 backdrop-blur-md backdrop-invert max-w-full rounded-lg flex items-center justify-evenly gap-4">
                 <div className="flex gap-4 flex-1">
                   <label className="form-control border-[1px] border-blue-600 rounded-md flex-1">
-                    <div className="label">
-                      <span className="label-text">
-                        Pick Country, City or Hotels
-                      </span>
-                    </div>
-                    <select
+                    <label className="block mb-2 text-sm font-medium text-gray-600 mt-2">
+                      Search Your Hotel, City or Country
+                    </label>
+                    <input
+                      type="text"
+                      id="default-input"
                       name="location"
-                      className="select bg-transparent text-black"
-                    >
-                      <option disabled selected>
-                        Pick one
-                      </option>
-                      {
-                        cityOptions.map((option, idx) => (
-                          <option key={idx}>{option}</option>
-                        ))
-                      }
-                    </select>
+                      className="bg-transparent text-gray-900 rounded-sm block w-full p-2.5"
+                    />
                   </label>
                   <div className="border-[1px] border-blue-600 rounded-md p-2 flex-1">
                     <p className="text-black text-sm">
@@ -120,29 +106,42 @@ const Hotel = () => {
                     />
                   </div>
                   <div className="flex-1">
-                    <label className="form-control border-[1px] rounded-md border-blue-600">
+                    <div className="form-control border-[1px] rounded-md border-blue-600">
                       <div className="label">
-                        <span className="label-text">
-                          Pick Country, City or Hotels
-                        </span>
+                        <span className="label-text">Rooms and Guests</span>
                       </div>
-                      <select
-                        name="rooms"
-                        className="select bg-transparent text-black"
-                      >
-                        <option disabled selected>
-                          Pick one
-                        </option>
-                        <option>Star Wars</option>
-                        <option>Harry Potter</option>
-                        <option>Lord of the Rings</option>
-                        <option>Planet of the Apes</option>
-                        <option>Star Trek</option>
-                      </select>
-                    </label>
+                      <div className="dropdown dropdown-bottom dropdown-end">
+                        <div
+                          tabIndex={0}
+                          className="m-1 border-none text-black hover:cursor-pointer flex"
+                        >
+                          <p className="flex-1 text-left mx-1 text-black text-sm font-semibold">
+                           Select Rooms, Adults, Children
+                          </p>
+                          <ArrowDownward />
+                        </div>
+                        <ul
+                          tabIndex={0}
+                          className="dropdown-content z-[1] p-2 shadow bg-white rounded-md w-60 text-black"
+                        >
+                          <li className="flex">
+                            <p className="flex-1 text-left"> Rooms</p>
+                            <input type="number" className="bg-transparent w-12 pl-2 font-medium text-xl" min={0} name="room" defaultValue={0}/>
+                          </li>
+                          <li className="flex justify-between">
+                           Adult
+                            <input type="number" className="bg-transparent w-12 pl-2 font-medium text-xl" min={0} name="adult" defaultValue={0} />
+                          </li>
+                          <li className="flex justify-between">
+                            Children
+                            <input type="number" className="bg-transparent w-12 pl-2 font-medium text-xl" min={0} name="children" defaultValue={0} />
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="">
+                <div>
                   <button className="btn btn-primary text-white text-xl">
                     Search
                   </button>
@@ -152,7 +151,15 @@ const Hotel = () => {
           </div>
         </div>
       </div>
-      <p className="text-center mt-5 text-3xl font-bold">Property Found : {data?.length}</p>
+      <p className="text-center mt-5 text-3xl font-bold">
+        Property Found : {data?.length}
+      </p>
+      <div>
+        <button onClick={handleNotify} className="btn">
+          push
+        </button>
+        <p>{time}</p>
+      </div>
     </div>
   );
 };
