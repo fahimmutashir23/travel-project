@@ -1,13 +1,12 @@
-import "./footer.css";
 const Footer = () => {
   return (
     <div className="mt-16 p-5">
 
 			<div>
-				<div className="e-card playing">
+				<div>
 					<div className="image"></div>
 
-					<div className="wave"></div>
+					<div></div>
 
 					<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 						<div className="lg:w-1/3">

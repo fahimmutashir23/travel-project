@@ -1,12 +1,13 @@
 import { Rating } from "@mui/material";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const HotelCard = ({ hotel }) => {
   const fromRoomRate = hotel.hotel_room.map((room) => room.room_price);
   const fromRate = fromRoomRate.reduce((acc, slip) => Math.min(acc, slip));
 
   return (
-    <div>
+    <Link to={`/hotel/${hotel._id}`}>
       <div className="w-72 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <div className="w-full h-52 rounded-t-lg relative">
           <img
@@ -28,7 +29,7 @@ const HotelCard = ({ hotel }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -47,7 +47,7 @@ const Home = () => {
       return res.data;
     },
   });
-
+console.log(hotels);
   const handleSearch = (e) => {
     e.preventDefault();
     const searchValue = e.target.search.value;
@@ -56,7 +56,7 @@ const Home = () => {
 
   useEffect(() => {
     refetch();
-  }, [search]);
+  }, [search, refetch]);
 
   if (isLoading) {
     return <Loader width="20" center="center"></Loader>;
@@ -127,6 +127,7 @@ const Home = () => {
         </div>
       </div>
       <Hotels hotels={hotels} />
+      
       <About />
       <PopularDestination />
       <WhyChoose />
