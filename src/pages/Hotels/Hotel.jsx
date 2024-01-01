@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import addNotification from "react-push-notification";
 const img = "https://i.postimg.cc/x8dvVkZ6/pexels-julius-silver-753626.jpg";
 import google from "../../assets/icon/google.png";
-import moment from "moment";
 import { ArrowDownward } from "@mui/icons-material";
 
 const Hotel = () => {
@@ -12,8 +11,7 @@ const Hotel = () => {
   const [searchValue, setSearchValue] = useState("");
   const [data, setData] = useState([]);
   const axiosPublic = useAxiosPublic();
-  const time = moment().format("MM/DD/YYYY, h:mm a");
-
+  
   const checkInDay = values[0].day;
   const checkInMonth = values[0].monthIndex + 1;
   const checkInYear = values[0].year;
@@ -46,9 +44,29 @@ const Hotel = () => {
       message: "This is a very long message",
       icon: google,
       theme: "darkblue",
-      duration: 4000,
     });
   };
+
+  useEffect(() => {
+    const now = new Date();
+
+    const desire = new Date('2024-01-01T18:49:00.000Z')
+    const desiredTime = new Date(desire);
+
+    if (now > desiredTime) {
+      desiredTime.setDate(desiredTime.getDate() + 1);
+    }
+
+    const timeDifference = desiredTime - now;
+    
+    const timeoutId = setTimeout(() => {
+      handleNotify() 
+    }, timeDifference);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
   return (
     <div>
@@ -153,12 +171,6 @@ const Hotel = () => {
       <p className="text-center mt-5 text-3xl font-bold">
         Property Found : {data?.length}
       </p>
-      <div>
-        <button onClick={handleNotify} className="btn">
-          push
-        </button>
-        <p>{time}</p>
-      </div>
     </div>
   );
 };
