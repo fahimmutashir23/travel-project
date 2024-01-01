@@ -50,7 +50,7 @@ const Hotel = () => {
   useEffect(() => {
     const now = new Date();
 
-    const desire = new Date('2024-01-01T18:49:00.000Z')
+    const desire = new Date('2024-01-01T18:49:00.000Z') // it is dynamic
     const desiredTime = new Date(desire);
 
     if (now > desiredTime) {
