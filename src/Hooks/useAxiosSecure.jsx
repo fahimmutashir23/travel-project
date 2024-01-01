@@ -4,7 +4,7 @@ import axios from "axios";
 const axiosSecure = axios.create({
     
     // baseURL: "https://travel-server-lemon.vercel.app"
-    baseURL: "http://localhost:5000"
+    baseURL: "http://localhost:5001"
 })
 
 

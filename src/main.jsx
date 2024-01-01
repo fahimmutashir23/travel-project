@@ -9,6 +9,8 @@ import Provider from "./Provider/Provider";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Notifications } from "react-push-notification";
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 const queryClient = new QueryClient();
 AOS.init();
 
