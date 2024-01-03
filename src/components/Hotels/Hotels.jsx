@@ -10,7 +10,6 @@ const Hotels = ({hotels}) => {
         <h1 className="text-center text-4xl mb-5 font-bold">Discover Hotels</h1>
       </div>
       <div>
-        <h2 className="text-xl font-medium">Total Hotels: {hotels.length}</h2>
         <div className="flex flex-wrap gap-4">
           {hotels?.map((hotel) => (
             <HotelCard key={hotel._id} hotel={hotel}></HotelCard>

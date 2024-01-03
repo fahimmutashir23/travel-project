@@ -30,57 +30,57 @@ const PopularDestination = () => {
             <img
               src="https://gaviaspreview.com/wp/gowilds/wp-content/uploads/2023/01/tour-4.jpg"
               alt="Image Description"
-              className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
+              className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72 rounded-md"
             />
           </a>
           <img
-            className="w-full h-[500px] object-cover"
+            className="w-full h-[500px] object-cover rounded-md"
             src="http://themecrazy.net/html/manali/img/destination/1.jpg"
             alt="Image Description"
           />
           <img
-            className="w-full h-[400px] object-cover"
+            className="w-full h-[400px] object-cover rounded-md"
             src="https://gaviaspreview.com/wp/gowilds/wp-content/uploads/2023/01/tour-11.jpg"
             alt="Image Description"
           />
         </div>
         <div className="space-y-2">
           <img
-            className="w-full h-[400px] object-cover"
+            className="w-full h-[400px] object-cover rounded-md"
             src="https://gaviaspreview.com/wp/gowilds/wp-content/uploads/2023/01/tour-6-600x540.jpg"
             alt="Image Description"
           />
           <img
-            className="w-full h-[600px] object-cover"
+            className="w-full h-[600px] object-cover rounded-md"
             src="http://themecrazy.net/html/manali/img/gallery/6.jpg"
             alt="Image Description"
           />
         </div>
         <div className="space-y-2">
           <img
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover rounded-md"
             src="https://jufailitech.com/envatoitems/travilo/html/assets/images/resources/instagram/insta-6.jpg"
             alt="Image Description"
           />
           <img
-            className="w-full h-[600px] object-cover"
+            className="w-full h-[600px] object-cover rounded-md"
             src="http://themecrazy.net/html/manali/img/tour/1.jpg"
             alt="Image Description"
           />
           <img
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover rounded-md"
             src="https://jufailitech.com/envatoitems/travilo/html/assets/images/resources/instagram/insta-14-thumb.jpg"
             alt="Image Description"
           />
         </div>
         <div className="space-y-2">
           <img
-            className="w-full h-[600px] object-cover"
+            className="w-full h-[600px] object-cover rounded-md"
             src="http://themecrazy.net/html/manali/img/gallery/3.jpg"
             alt="Image Description"
           />
           <img
-            className="w-full h-[600px] object-cover"
+            className="w-full h-[600px] object-cover rounded-md"
             src="http://themecrazy.net/html/manali/img/destination/6.jpg"
             alt="Image Description"
           />

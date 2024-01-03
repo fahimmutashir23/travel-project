@@ -110,11 +110,9 @@ const HotelDetails = () => {
                   <h2 className="text-base font-semibold text-black text-left">Bed: {room.sleeps}</h2>
                   <h2 className="text-base font-semibold text-black text-left">Bed size: {room.beds}</h2>
                   <p className="text-xs sm:text-base text-black dark:text-gray-400 text-left">Price: {room.room_price}</p>
-
-                  
                 </div>
                 <form onSubmit={handleReserve}>
-                <div className="flex justify-between text-sm mt-4 items-start ">
+                <div className="flex flex-col lg:flex-row lg:justify-between text-sm mt-4 items-start ">
                   <div>
                     <label className="text-left mr-20">check-in</label>
                     <br />
@@ -125,7 +123,7 @@ const HotelDetails = () => {
                     />
                   </div>
                   <div>
-                    <label className="mr-12">check-out</label>
+                    <label className="lg:mr-12">check-out</label>
                     <br />
                     <input
                       type="date"
@@ -134,7 +132,7 @@ const HotelDetails = () => {
                     />
                   </div>
                 </div>
-                <button type="submit" className="w-full bg-red-400 mt-5 text-white rounded-md py-1">
+                <button type="submit" className="w-full bg-pink-700 mt-5 text-white rounded-md py-1">
                   Reserve
                 </button>
                 <p className="mt-5 text-center text-base ">You won&apos;t be change yet</p>

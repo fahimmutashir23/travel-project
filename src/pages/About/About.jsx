@@ -2,6 +2,10 @@
 const About = () => {
     return (
         <div>
+			<div>
+        <p className="text-center text-lg mb-2 mt-14 font-bold">Discover</p>
+        <h1 className="text-center text-4xl mb-5 font-bold">About us</h1>
+      </div>
             <section className="dark:bg-gray-800 dark:text-gray-100">
 	<div className="container px-6 py-12 mx-auto">
 		<div className="grid items-center gap-4 xl:grid-cols-5">
