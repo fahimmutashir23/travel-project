@@ -4,17 +4,17 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
-import useAuth from "../../Hooks/useAuth";
-import useAxiosSecure from "../../Hooks/useAxiosSecure";
-import toast from "react-hot-toast";
 import { useState } from "react";
+import Payment from "../../pages/Payment/Payment";
 
 const HotelDetails = () => {
-  const [roomInfo, setRoomInfo] = useState({});
+  const [checkInDate, setCheckInDate] = useState("");
+  const [checkOutDate, setCheckOutDate] = useState("");
+  const reserveDate = { checkIn: checkInDate, checkOut: checkOutDate };
   const axiosPublic = useAxiosPublic();
-  const axiosSecure = useAxiosSecure();
   const { id } = useParams();
-  const { user } = useAuth();
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
 
   const { data: hotel = [], isLoading } = useQuery({
     queryKey: ["hotels"],
@@ -23,28 +23,6 @@ const HotelDetails = () => {
       return res.data;
     },
   });
-
-  const handleReserve = (e) => {
-    e.preventDefault();
-    const checkIn = e.target.checkIn.value;
-    const checkOut = e.target.checkOut.value;
-    const reserveInfo = {
-      id: id,
-      email: user?.email,
-      userName: user?.displayName,
-      hotelName: hotel.hotel_name,
-      roomId: roomInfo.room_id,
-      roomName: roomInfo.room_name,
-      roomPrice: roomInfo.room_price,
-      checkIn,
-      checkOut,
-    };
-    // axiosSecure.post("/bookings", reserveInfo).then((res) => {
-    //   if (res.data.insertedId) {
-    //     toast("Booking Success");
-    //   }
-    // });
-  };
 
   if (isLoading) {
     return <Loader width={20} center="center"></Loader>;
@@ -144,12 +122,13 @@ const HotelDetails = () => {
                         Price: {room.room_price}
                       </p>
                     </div>
-                    <form onClick={()=> setRoomInfo(room)} onSubmit={handleReserve}>
+                    <div>
                       <div className="flex flex-col lg:flex-row lg:justify-between text-sm mt-4 items-start ">
                         <div>
                           <label className="text-left mr-20">check-in</label>
                           <br />
                           <input
+                            onChange={(e) => setCheckInDate(e.target.value)}
                             type="date"
                             name="checkIn"
                             className="p-2 border rounded-md mt-2 mr-3"
@@ -159,6 +138,7 @@ const HotelDetails = () => {
                           <label className="lg:mr-12">check-out</label>
                           <br />
                           <input
+                            onChange={(e) => setCheckOutDate(e.target.value)}
                             type="date"
                             name="checkOut"
                             className="p-2 border rounded-md mt-2"
@@ -166,15 +146,27 @@ const HotelDetails = () => {
                         </div>
                       </div>
                       <button
+                        onClick={handleOpen}
                         type="submit"
-                        className="w-full bg-pink-700 mt-5 text-white rounded-md py-1"
+                        className={`w-full bg-pink-700 mt-5 text-white rounded-md py-1 ${
+                          (!checkInDate && "btn-disabled") ||
+                          (!checkOutDate && "btn-disabled")
+                        }`}
                       >
                         Reserve
                       </button>
                       <p className="mt-5 text-center text-base ">
                         You won&apos;t be change yet
                       </p>
-                    </form>
+                    </div>
+                    <Payment
+                      open={open}
+                      setOpen={setOpen}
+                      room={room}
+                      hotel_name={hotel.hotel_name}
+                      reserveDate={reserveDate}
+                      id={hotel._id}
+                    ></Payment>
                   </div>
                 </div>
               ))}
