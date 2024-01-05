@@ -2,25 +2,27 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Loader from "../../Utils/Loader/Loader";
 import useAuth from "../../Hooks/useAuth";
+import ProfileUpdateModal from "../../Utils/ProfileUpdateModal/ProfileUpdateModal";
 
 const Profile = () => {
     const axiosPublic = useAxiosPublic();
     const {user} = useAuth();
 
-   const {data: users = [], isLoading} = useQuery({
+   const {data: users = [], isPending, refetch} = useQuery({
     queryKey: ["users"],
     queryFn: async () => {
         const res = await axiosPublic(`/users?email=${user?.email}`)
         return res.data
     }
    })
+   const userName = users[0]?.name.split(' ')[1].toLowerCase()
+   const userID = users[0]?._id.slice(-10)
 
-    const userName = users[0]?.name.split(' ')[1].toLowerCase()
-    const userID = users[0]?._id.slice(-10)
-
-   if (isLoading) {
+   if (isPending) {
     return <Loader width={20} center="center"></Loader>;
   }
+
+refetch()
 
     return (
         <div className='flex justify-center items-center'>
@@ -28,16 +30,16 @@ const Profile = () => {
                 <img
                     alt='profile'
                     src='https://i.ibb.co/wc4vRdT/905777d0e9a1dbf3f0307a1e7c48e641.jpg'
-                    className='w-full mb-4 rounded-t-lg h-36'
+                    className='w-full mb-4 rounded-t-lg h-40'
                 />
-                <div className='flex flex-col items-center justify-center p-4 -mt-16'>
-                    <a href='#' className='relative block'>
+                <div className='flex flex-col items-center justify-center p-4 -mt-20'>
+                    <div className='relative block'>
                         <img
                             alt='profile'
                             src={users[0]?.profileImage}
                             className='mx-auto object-cover rounded-full h-24 w-24  border-2 border-white '
                         />
-                    </a>
+                    </div>
 
                     <p className='p-2 px-4 text-xs text-white bg-pink-700 rounded-full'>
                        User
@@ -48,18 +50,20 @@ const Profile = () => {
                     <div className='w-full p-2 mt-4 rounded-lg'>
                         <div className='flex flex-wrap items-center justify-between text-sm text-gray-600 '>
                             <p className='flex flex-col'>
-                                Name : {users[0]?.name}
+                                Name : 
                                 <span className='font-bold text-black '>
-                                  
+                                {users[0]?.name}
                                 </span>
                             </p>
                             <p className='flex flex-col'>
-                                Email : {users[0]?.email}
-                                <span className='font-bold text-black '></span>
+                                Email : 
+                                <span className='font-bold text-black '>{users[0]?.email}</span>
                             </p>
 
                             <div>
-                                <button className='bg-[#b62e44] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
+                                <button
+                                onClick={() => document.getElementById("profile_update_modal").showModal()}
+                                className='bg-[#b62e44] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
                                     Update Profile
                                 </button>
                                 <button className='bg-[#b62e44] px-7 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053]'>
@@ -69,6 +73,7 @@ const Profile = () => {
                         </div>
                     </div>
                 </div>
+                <ProfileUpdateModal id='profile_update_modal' userInfo={users[0]} refetch={refetch}></ProfileUpdateModal>
             </div>
         </div>
     )
