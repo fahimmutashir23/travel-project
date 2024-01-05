@@ -38,7 +38,10 @@ const BookingsCard = () => {
                 <div className="flex-1">
                   <div className="flex justify-between">
                     <h1>Pay : <span className="font-bold text-xl">{booking.roomPrice}$</span></h1>
+                    <div className="text-right">
                     <h1>Transaction ID : <span className="font-semibold text-lg">{booking.transactionID}</span></h1>
+                    <h1>Booking ID : <span className="font-semibold text-lg">our_travel{booking._id.slice(-6)}</span></h1>
+                    </div>
                   </div>
                   <h1>Payment Date : {booking.date}</h1>
                   <h1>Check In Date : {booking.checkIn}</h1>

@@ -1,6 +1,26 @@
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import Loader from "../../Utils/Loader/Loader";
+import useAuth from "../../Hooks/useAuth";
 
 const Profile = () => {
-   
+    const axiosPublic = useAxiosPublic();
+    const {user} = useAuth();
+
+   const {data: users = [], isLoading} = useQuery({
+    queryKey: ["users"],
+    queryFn: async () => {
+        const res = await axiosPublic(`/users?email=${user?.email}`)
+        return res.data
+    }
+   })
+
+    const userName = users[0]?.name.split(' ')[1].toLowerCase()
+    const userID = users[0]?._id.slice(-10)
+
+   if (isLoading) {
+    return <Loader width={20} center="center"></Loader>;
+  }
 
     return (
         <div className='flex justify-center items-center'>
@@ -14,7 +34,7 @@ const Profile = () => {
                     <a href='#' className='relative block'>
                         <img
                             alt='profile'
-                            src="https://i.ibb.co/vVyCfmV/girl-cartoon-characters-3.jpg"
+                            src={users[0]?.profileImage}
                             className='mx-auto object-cover rounded-full h-24 w-24  border-2 border-white '
                         />
                     </a>
@@ -23,18 +43,18 @@ const Profile = () => {
                        User
                     </p>
                     <p className='mt-2 text-xl font-medium text-gray-800 '>
-                        User Id: 
+                        User Id: {userName+userID}
                     </p>
                     <div className='w-full p-2 mt-4 rounded-lg'>
                         <div className='flex flex-wrap items-center justify-between text-sm text-gray-600 '>
                             <p className='flex flex-col'>
-                                Name :
+                                Name : {users[0]?.name}
                                 <span className='font-bold text-black '>
                                   
                                 </span>
                             </p>
                             <p className='flex flex-col'>
-                                Email :
+                                Email : {users[0]?.email}
                                 <span className='font-bold text-black '></span>
                             </p>
 
