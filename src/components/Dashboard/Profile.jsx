@@ -3,6 +3,8 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Loader from "../../Utils/Loader/Loader";
 import useAuth from "../../Hooks/useAuth";
 import ProfileUpdateModal from "../../Utils/ProfileUpdateModal/ProfileUpdateModal";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const Profile = () => {
     const axiosPublic = useAxiosPublic();
@@ -19,10 +21,22 @@ const Profile = () => {
    const userID = users[0]?._id.slice(-10)
 
    const handleResetPass = () => {
-        resetPassword(user?.email)
-        .then(() => {
-            console.log('send reset email');
-        })
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You will get a reset email",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Reset"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            resetPassword(user?.email)
+            .then(() => {
+                toast('Send Password Reset email');
+            })
+        }
+      })
    }
 
    if (isPending) {
