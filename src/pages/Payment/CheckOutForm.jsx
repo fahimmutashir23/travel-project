@@ -55,13 +55,14 @@ const CheckOutForm = ({ reserveInfo }) => {
       clientSecret,
       {
           payment_method: {
-              card: card,
-              billing_details: {
-                  name: name || "anonymous",
-                  email: user.email || "anonymous",
-                  address: {
-                      postal_code: postalCode,
-                  },
+            card: card,
+            billing_details: {
+              email: user?.email,
+              name: user?.displayName,
+              address: {
+                postal_code: postalCode,
+            },
+                 
               },
           },
       }
@@ -75,6 +76,7 @@ const CheckOutForm = ({ reserveInfo }) => {
   }
   if (paymentIntent.status === "succeeded") {
       setTransactionId(paymentIntent.id);
+      setLoading()
   }
   e.target.reset();
 

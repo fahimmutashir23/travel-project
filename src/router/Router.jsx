@@ -6,6 +6,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import ErrorPage from "../Utils/Loader/ErrorPage";
 import Hotel from "../pages/Hotels/Hotel";
 import HotelDetails from "../Utils/Card/HotelDetails";
+import Profile from "../components/Dashboard/Profile";
 
 const Router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const Router = createBrowserRouter([
                 path:"hotel/:id",
                 element:<HotelDetails/>
             },
+            {
+                path:"profile",
+                element:<Profile/>
+            }
         ]
     }
 ])
