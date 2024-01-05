@@ -6,7 +6,7 @@ import ProfileUpdateModal from "../../Utils/ProfileUpdateModal/ProfileUpdateModa
 
 const Profile = () => {
     const axiosPublic = useAxiosPublic();
-    const {user} = useAuth();
+    const {user, resetPassword} = useAuth();
 
    const {data: users = [], isPending, refetch} = useQuery({
     queryKey: ["users"],
@@ -17,6 +17,13 @@ const Profile = () => {
    })
    const userName = users[0]?.name.split(' ')[1].toLowerCase()
    const userID = users[0]?._id.slice(-10)
+
+   const handleResetPass = () => {
+        resetPassword(user?.email)
+        .then(() => {
+            console.log('send reset email');
+        })
+   }
 
    if (isPending) {
     return <Loader width={20} center="center"></Loader>;
@@ -48,13 +55,21 @@ refetch()
                         User Id: {userName+userID}
                     </p>
                     <div className='w-full p-2 mt-4 rounded-lg'>
-                        <div className='flex flex-wrap items-center justify-between text-sm text-gray-600 '>
-                            <p className='flex flex-col'>
+                        <div className='flex flex-wrap justify-between text-sm text-gray-600 '>
+                          <div>
+                          <p className='flex flex-col'>
                                 Name : 
                                 <span className='font-bold text-black '>
                                 {users[0]?.name}
                                 </span>
                             </p>
+                            <p className='flex flex-col mt-3'>
+                                Country : 
+                                <span className='font-bold text-black '>
+                                {users[0]?.country}
+                                </span>
+                            </p>
+                          </div>
                             <p className='flex flex-col'>
                                 Email : 
                                 <span className='font-bold text-black '>{users[0]?.email}</span>
@@ -66,7 +81,9 @@ refetch()
                                 className='bg-[#b62e44] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
                                     Update Profile
                                 </button>
-                                <button className='bg-[#b62e44] px-7 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053]'>
+                                <button
+                                onClick={handleResetPass}
+                                className='bg-[#b62e44] px-7 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053]'>
                                     Change Password
                                 </button>
                             </div>
