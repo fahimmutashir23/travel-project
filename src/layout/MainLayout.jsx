@@ -22,9 +22,9 @@ const MainLayout = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="max-w-8xl mx-auto">
+    <div className="">
       <Navbar />
-      <div className="flex gap-2 relative mt-24">
+      <div className="flex gap-2 relative mt-24 px-4">
         <div
           className={`rounded-lg relative ${
             open
