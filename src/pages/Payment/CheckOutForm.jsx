@@ -54,21 +54,21 @@ const CheckOutForm = ({ reserveInfo }) => {
     } else {
       console.log("payment method: ", paymentMethod);
       setErrorMassage(null);
-    }
-
-    const { paymentIntent, error: confirmError } =
-      await stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: card,
-          billing_details: {
-            email: user?.email,
-            name: user?.displayName,
-            address: {
-              postal_code: postalCode,
+  }
+  const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
+      clientSecret,
+      {
+          payment_method: {card: card, billing_details: {
+              email: user?.email,
+              name: user?.displayName,
+              address: {
+                postal_code: postalCode,
             },
+                 
+              },
           },
         },
-      });
+      );
 
     if (confirmError) {
       setErrorMassage(confirmError);

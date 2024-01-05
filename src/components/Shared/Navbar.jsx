@@ -105,9 +105,10 @@ const Navbar = () => {
                 tabIndex={0}
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-40"
               >
-                <li>
+                <Link to="profile"><li>
                   <button className="hover:underline">Profile</button>
-                </li>
+                </li></Link>
+
                 <li>
                   <Link to="/bookings" className="hover:underline">My Bookings</Link>
                 </li>
