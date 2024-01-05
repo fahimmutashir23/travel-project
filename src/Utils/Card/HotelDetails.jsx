@@ -148,7 +148,7 @@ const HotelDetails = () => {
                       <button
                         onClick={handleOpen}
                         type="submit"
-                        className={`w-full bg-pink-700 mt-5 text-white rounded-md py-1 ${
+                        className={`btn w-full bg-pink-700 mt-5 text-white rounded-md py-1 ${
                           (!checkInDate && "btn-disabled") ||
                           (!checkOutDate && "btn-disabled")
                         }`}

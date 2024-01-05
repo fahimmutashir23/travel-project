@@ -6,7 +6,6 @@ import SignUp from "../pages/SignUp/SignUp";
 import ErrorPage from "../Utils/Loader/ErrorPage";
 import Hotel from "../pages/Hotels/Hotel";
 import HotelDetails from "../Utils/Card/HotelDetails";
-import Payment from "../pages/Payment/Payment";
 
 const Router = createBrowserRouter([
     {

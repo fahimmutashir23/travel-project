@@ -45,20 +45,20 @@ const Payment = ({ open, setOpen, id, room, reserveDate, hotel_name }) => {
       >
         <Fade in={open}>
           <div
-            className="absolute top-[50%] left-[50%] bg-red-50 border-2 rounded-tl-3xl rounded-br-3xl shadow-lg py-4 px-10 text-center text-black backdrop-blur-none w-2/3 min-h-[70%]"
+            className="absolute top-[50%] left-[50%] bg-red-50 border-2 rounded-tl-3xl rounded-br-3xl shadow-lg py-4 px-10 text-center text-black backdrop-blur-none w-1/2 min-h-[40%]"
             style={{ transform: "translate(-50%, -50%)" }}
           >
-            <h1 className="md:text-4xl font-bold text-green-800">
+            <h1 className="md:text-2xl font-bold text-green-800">
               Payment and Booking your Room
             </h1>
             <div className="flex gap-4 h-full items-center justify-center mt-5">
               {cards.map((card) => (
-                <img key={card} src={card} alt="" className="w-16" />
+                <img key={card} src={card} alt="" className="w-12" />
               ))}
             </div>
             <div className="divider divider-success"></div>
             <div>
-              <h1 className="text-2xl font-bold">{room.room_name} <span className="font-normal">of</span> {hotel_name} </h1>
+              <h1 className="text-xl font-bold">{room.room_name} <span className="font-normal">of</span> {hotel_name} </h1>
               <h3 className="text-xl mt-2">
                 Payable Amount:{" "}
                 <span className="font-bold">{room.room_price}$</span>
