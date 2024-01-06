@@ -24,6 +24,15 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
   const [errorMassage, setErrorMassage] = useState(null);
   const date = moment().format("DD-MM-YYYY, h:mm a");
 
+  const emailInfo = {
+    subject: "Our Travels Payment Confirmation",
+    message: `
+      Thank you for Booking Our Room.
+      Your Amount ${reserveInfo.roomPrice * reserveDays}$ is successfully pay.
+      Enjoy Your Travel session
+    `
+  }
+
   useEffect(() => {
     const price = reserveInfo.roomPrice * reserveDays
     axiosSecure
@@ -51,7 +60,7 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
     if (error) {
       setErrorMassage(error);
     } else {
-      console.log("payment method: ", paymentMethod);
+      
       setErrorMassage(null);
   }
   const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
@@ -93,7 +102,7 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
         date: date,
       };
 
-      axiosSecure.post("/bookings", reserveInfoExtend).then((res) => {
+      axiosSecure.post("/bookings", {reserveInfoExtend, emailInfo}).then((res) => {
         if (res.data.insertedId) {
           toast("Booking Success");
         }
@@ -156,7 +165,7 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
             </label>
             <CardCvcElement
               id="cvc"
-              className="px-3 py-2 mb-1 border-2 border-gray-200 rounded-md"
+              className="w-24 px-3 py-2 mb-1 border-2 border-gray-200 rounded-md"
             />
           </div>
           <div className="px-2">
@@ -171,7 +180,8 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
               id="postal-code"
               required
               maxLength={5}
-              className="w-auto px-3 py-1 mb-1 border-2 bg-transparent border-gray-200 rounded-md focus:outline-none"
+              placeholder="POST"
+              className="w-24 px-3 py-1 mb-1 border-2 bg-transparent border-gray-200 rounded-md focus:outline-none"
             />
           </div>
         </div>
