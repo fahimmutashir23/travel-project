@@ -113,6 +113,9 @@ const Navbar = () => {
                   <Link to="/bookings" className="hover:underline">My Bookings</Link>
                 </li>
                 <li>
+                  <Link to="/dashboard" className="hover:underline">Admin</Link>
+                </li>
+                <li>
                   <button className="hover:underline">Favorite</button>
                 </li>
                 <hr />

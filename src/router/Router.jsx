@@ -9,6 +9,8 @@ import HotelDetails from "../Utils/Card/HotelDetails";
 import Profile from "../components/Dashboard/Profile";
 import BookingLayout from "../layout/BookingLayout";
 import AllBookings from "../pages/MyBookings/AllBookings/AllBookings";
+import Dashboard from "../pages/Admin/Dashboard/Dashboard";
+import DashboardLayout from "../layout/DashboardLayout";
 
 const Router = createBrowserRouter([
     {
@@ -51,6 +53,17 @@ const Router = createBrowserRouter([
                 element: <AllBookings />
             }
         ]
+    },
+    {
+        path: '/dashboard',
+        element: <DashboardLayout/>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <Dashboard/>
+            }
+        ]
+
     }
 ])
 

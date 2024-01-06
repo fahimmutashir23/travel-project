@@ -1,22 +1,9 @@
-import { Link } from "react-router-dom";
+import useMenu from "./useMenu";
 
 const BookingsNav = () => {
-  const subMenu = (
-    <>
-      <li>
-        <Link>All Bookings</Link>
-      </li>
-      <li>
-        <Link>Hotels</Link>
-      </li>
-      <li>
-        <Link>Flight</Link>
-      </li>
-      <li>
-        <Link>Cars</Link>
-      </li>
-    </>
-  );
+  const isAdmin = true
+  const {userNavMenu, adminNavMenu} = useMenu()
+ 
   return (
     <div className="navbar bg-base-200 px-4 shadow-sm shadow-blue-900">
       <div className="navbar-start">
@@ -41,49 +28,17 @@ const BookingsNav = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {userNavMenu}
           </ul>
         </div>
         <h1 className="text-2xl font-bold uppercase bg-violet-500 text-white px-4 py-2 rounded-md">
-          Member
+          {isAdmin ? "admin" : "Member"}
         </h1>
       </div>
       <div className="navbar-center"></div>
 
       <div className="navbar-end  hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <Link>Account</Link>
-          </li>
-          <li>
-            <details>
-              <summary>Bookings</summary>
-              <ul className="w-44">{subMenu}</ul>
-            </details>
-          </li>
-          <li>
-            <Link>My Cart</Link>
-          </li>
-          <li>
-            <Link>All Receipt</Link>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1 text-xl">{isAdmin ? adminNavMenu: userNavMenu}</ul>
       </div>
     </div>
   );
