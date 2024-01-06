@@ -13,7 +13,7 @@ import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import moment from "moment";
 
-const CheckOutForm = ({ reserveInfo }) => {
+const CheckOutForm = ({ reserveInfo, reserveDays }) => {
   const [loading, setLoading] = useState(false);
   const [clientSecret, setClientSecret] = useState("");
   const [postalCode, setPostalCode] = useState(null);
@@ -25,12 +25,13 @@ const CheckOutForm = ({ reserveInfo }) => {
   const date = moment().format("DD-MM-YYYY, h:mm a");
 
   useEffect(() => {
+    const price = reserveInfo.roomPrice * reserveDays
     axiosSecure
-      .post("/payment-intent", { price: reserveInfo.roomPrice })
+      .post("/payment-intent", { price: price })
       .then((res) => {
         setClientSecret(res.data.clientSecret);
       });
-  }, [axiosSecure, reserveInfo.roomPrice]);
+  }, [axiosSecure, reserveDays, reserveInfo.roomPrice]);
 
   const handlePayment = async (e) => {
     e.preventDefault();

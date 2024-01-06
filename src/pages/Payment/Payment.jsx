@@ -13,7 +13,7 @@ const cards = [cardIcon1, cardIcon2, cardIcon3];
 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_KEY);
 
-const Payment = ({ open, setOpen, id, room, reserveDate, hotel_name }) => {
+const Payment = ({ open, setOpen, id, room, reserveDate, hotel_name, reserveDays }) => {
   const handleClose = () => setOpen(false);
   const { user } = useAuth();
 
@@ -61,12 +61,12 @@ const Payment = ({ open, setOpen, id, room, reserveDate, hotel_name }) => {
               <h1 className="text-xl font-bold">{room.room_name} <span className="font-normal">of</span> {hotel_name} </h1>
               <h3 className="text-xl mt-2">
                 Payable Amount:{" "}
-                <span className="font-bold">{room.room_price}$</span>
+                <span className="font-bold">{room.room_price * reserveDays}$</span>
               </h3>
             </div>
             <div>
               <Elements stripe={stripePromise}>
-                <CheckOutForm reserveInfo={reserveInfo}></CheckOutForm>
+                <CheckOutForm reserveInfo={reserveInfo} reserveDays = {reserveDays}></CheckOutForm>
               </Elements>
             </div>
           </div>
