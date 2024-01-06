@@ -61,6 +61,9 @@ const useMenu = () => {
   const adminNavMenu = (
     <>
       <li>
+        <Link to='/'>Home</Link>
+      </li>
+      <li>
         <Link>Revenue</Link>
       </li>
       <li>

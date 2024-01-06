@@ -5,8 +5,8 @@ const BookingsNav = () => {
   const {userNavMenu, adminNavMenu} = useMenu()
  
   return (
-    <div className="navbar bg-base-200 px-4 shadow-sm shadow-blue-900">
-      <div className="navbar-start">
+    <div className="navbar justify-between bg-base-200 px-4 py-5 shadow-sm shadow-blue-900">
+      <div className="">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -35,9 +35,8 @@ const BookingsNav = () => {
           {isAdmin ? "admin" : "Member"}
         </h1>
       </div>
-      <div className="navbar-center"></div>
 
-      <div className="navbar-end  hidden lg:flex">
+      <div className="">
         <ul className="menu menu-horizontal px-1 text-xl">{isAdmin ? adminNavMenu: userNavMenu}</ul>
       </div>
     </div>
