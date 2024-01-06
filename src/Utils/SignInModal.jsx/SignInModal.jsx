@@ -3,11 +3,13 @@ import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { Button } from "@mui/material";
 import { Google } from "@mui/icons-material";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 // eslint-disable-next-line react/prop-types
 const SignInModal = ({ id }) => {
   const [errorMsg, setErrMsg] = useState("");
   const { signInUser, googleSignIn } = useAuth();
+  const axiosPublic = useAxiosPublic();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +32,19 @@ const SignInModal = ({ id }) => {
 
   const handleGoogleSignIn = () => {
       googleSignIn()
-      .then(console.log('success'))
+      .then(res => {
+        if(res){
+          console.log(res.user);
+          const userInfo = {
+            name : res.user.displayName,
+            email: res.user.email,
+            country: "",
+            profileImage : res.user.photoURL,
+            active_status : "active"
+          };
+          axiosPublic.post('/users', userInfo)
+        }
+      })
   }
 
   return (

@@ -22,7 +22,6 @@ const CheckOutForm = ({ reserveInfo }) => {
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
   const [errorMassage, setErrorMassage] = useState(null);
-  const [transactionId, setTransactionId] = useState("");
   const date = moment().format("DD-MM-YYYY, h:mm a");
 
   useEffect(() => {
@@ -50,35 +49,31 @@ const CheckOutForm = ({ reserveInfo }) => {
     });
     if (error) {
       setErrorMassage(error);
-      console.log("payment error: ", error);
     } else {
       console.log("payment method: ", paymentMethod);
       setErrorMassage(null);
-    }
-
-    const { paymentIntent, error: confirmError } =
-      await stripe.confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: card,
-          billing_details: {
-            email: user?.email,
-            name: user?.displayName,
-            address: {
-              postal_code: postalCode,
+  }
+  const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
+      clientSecret,
+      {
+          payment_method: {card: card, billing_details: {
+              email: user?.email,
+              name: user?.displayName,
+              address: {
+                postal_code: postalCode,
             },
+                 
+              },
           },
         },
-      });
+      );
 
     if (confirmError) {
       setErrorMassage(confirmError);
-      console.log("payment error: ", confirmError);
     } else {
-      console.log("payment intent: ", paymentIntent);
       setErrorMassage(null);
     }
     if (paymentIntent.status === "succeeded") {
-      setTransactionId(paymentIntent.id);
       setErrorMassage('Successfully pay! Please got to your booking section or check your email and collect your payment receipt.')
       setLoading(false);
       e.target.reset()
@@ -189,9 +184,6 @@ const CheckOutForm = ({ reserveInfo }) => {
             "Make Payment"
           )}
         </button>
-        <p className="mt-5 text-xl font-medium text-pink-700 text-left">
-          Transaction ID : {transactionId}
-        </p>
         <p className="mt-5 text-xl font-medium text-pink-700">{errorMassage}</p>
       </form>
     </div>

@@ -57,7 +57,7 @@ const Navbar = () => {
   return (
     <div className="">
       <div className="flex">
-        <div className="navbar bg-base-100 fixed z-20">
+        <div className="navbar bg-base-100 fixed z-20 shadow-lg px-4">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn px-1 lg:hidden">
@@ -105,12 +105,12 @@ const Navbar = () => {
                 tabIndex={0}
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-40"
               >
-                <Link to="profile"><li>
+                <Link to="/profile"><li>
                   <button className="hover:underline">Profile</button>
                 </li></Link>
 
                 <li>
-                  <button className="hover:underline">My Bookings</button>
+                  <Link to="/bookings" className="hover:underline">My Bookings</Link>
                 </li>
                 <li>
                   <button className="hover:underline">Favorite</button>

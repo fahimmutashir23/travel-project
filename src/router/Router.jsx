@@ -7,6 +7,8 @@ import ErrorPage from "../Utils/Loader/ErrorPage";
 import Hotel from "../pages/Hotels/Hotel";
 import HotelDetails from "../Utils/Card/HotelDetails";
 import Profile from "../components/Dashboard/Profile";
+import BookingLayout from "../layout/BookingLayout";
+import AllBookings from "../pages/MyBookings/AllBookings/AllBookings";
 
 const Router = createBrowserRouter([
     {
@@ -37,6 +39,16 @@ const Router = createBrowserRouter([
             {
                 path:"profile",
                 element:<Profile/>
+            }
+        ]
+    },
+    {
+        path: '/bookings',
+        element: <BookingLayout />,
+        children: [
+            {
+                path: '/bookings',
+                element: <AllBookings />
             }
         ]
     }
