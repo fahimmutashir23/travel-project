@@ -10,6 +10,8 @@ import Payment from "../../pages/Payment/Payment";
 const HotelDetails = () => {
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
+  const reserveDaysMillisecond = new Date(checkOutDate) - new Date(checkInDate)
+  const reserveDays = (reserveDaysMillisecond)/(1000*60*60*24)
   const reserveDate = { checkIn: checkInDate, checkOut: checkOutDate };
   const axiosPublic = useAxiosPublic();
   const { id } = useParams();
@@ -84,12 +86,12 @@ const HotelDetails = () => {
               {hotel.hotel_room?.map((room) => (
                 <div
                   key={room.room_id}
-                  className="flex flex-col justify-center p-2 shadow-md rounded-xl sm:px-12 max-w-lg dark:bg-gray-900"
+                  className="flex flex-col justify-center p-2 shadow-md rounded-xl sm:px-12 max-w-lg bg-base-300 text-black"
                 >
-                  <div className="space-y-4 text-center divide-y dark:divide-gray-700">
+                  <div className="space-y-4 text-center divide-y divide-gray-400">
                     <div className="my-1 space-y-1">
                       <svg
-                        fill="#ffff"
+                        fill="#00000"
                         height="34px"
                         width="34px"
                         version="1.1"
@@ -118,8 +120,8 @@ const HotelDetails = () => {
                       <h2 className="text-base font-semibold text-left">
                         Bed size: {room.beds}
                       </h2>
-                      <p className="text-xs sm:text-base dark:text-gray-400 text-left">
-                        Price: {room.room_price}
+                      <p className="text-sm md:text-xl font-semibold text-green-800 text-left">
+                        Price: {room.room_price}$
                       </p>
                     </div>
                     <div>
@@ -166,6 +168,7 @@ const HotelDetails = () => {
                       hotel_name={hotel.hotel_name}
                       reserveDate={reserveDate}
                       id={hotel._id}
+                      reserveDays = {reserveDays}
                     ></Payment>
                   </div>
                 </div>
