@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { useState } from "react";
 import Payment from "../../pages/Payment/Payment";
+import { Rating } from "@mui/material";
 
 const HotelDetails = () => {
   const [checkInDate, setCheckInDate] = useState("");
@@ -25,7 +26,7 @@ const HotelDetails = () => {
       return res.data;
     },
   });
-
+console.log(hotel)
   if (isLoading) {
     return <Loader width={20} center="center"></Loader>;
   }
@@ -180,13 +181,32 @@ const HotelDetails = () => {
               </h1>
               <div className="">
                 <ul className="grid grid-cols-2 gap-3">
-                  {hotel.Service?.map((item, idx) => (
-                    <li key={idx}>
-                      {idx + 1}. {item}
-                    </li>
-                  ))}
+                <div className="flex items-center"><img src="https://i.postimg.cc/4yszwd3s/POOL-7.jpg" alt="" className="w-12" /> <li>{hotel?.Service[0]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/tJKFvZxM/attachment-127305076.jpg" alt="" className="w-12" /> <li>{hotel.Service[1]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/JtCB5www/casino-vector-text-sign-freehand-typography-design-casino-vector-text-sign-125148175.webp" alt="" className="w-12" /> <li>{hotel?.Service[2]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/k4rRWVk1/modern.jpg" alt="" className="w-12" /> <li>{hotel.Service[3]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/Px2hT9zW/OIP.jpg" alt="" className="w-10 mr-1" /> <li>{hotel?.Service[4]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/gjSt5J0F/OIP-2.jpg" alt="" className="w-12" /> <li>{hotel?.Service[6]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/Px7cSyrz/R.jpg" alt="" className="w-10" /> <li>{hotel?.Service[7]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/vmWgGYNp/59499f328b852-thumb900.webp" alt="" className="w-12" /> <li>{hotel?.Service[8]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/13Y3ycfb/restaurant-logo-design-636083.webp" alt="" className="w-10" /> <li>{hotel?.Service[9]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/TwFp988d/R.png" alt="" className="w-12" /> <li>{hotel?.Service[10]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/5NbSQGJc/cropped-roomswithgreatviews.png" alt="" className="w-12" /> <li>{hotel?.Service[11]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/8cKc5jDz/currency-exchange-glyph-black-icon-vector.jpg" alt="" className="w-12" /> <li>{hotel?.Service[12]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/gjcNvBh2/OIP-1.jpg" alt="" className="w-12" /> <li>{hotel?.Service[13]} </li></div>
+                <div className="flex items-center"><img src="https://i.postimg.cc/tgfq0hBD/reception-desk-line-icon-24-hour-help-sign-hotel-vector-28139555.jpg" alt="" className="w-12" /> <li>{hotel?.Service[14]} </li></div>
+                
                 </ul>
               </div>
+            </div>
+            <div className="mt-20">
+            <h1 className="font-semibold mb-5 text-black dark:text-white">
+               Reviews
+              </h1>
+              <h1>{hotel?.guest_review?.description}</h1>
+              <div>
+               <Rating sx={{fontSize: '20px'}} name="read-only" value={5} readOnly />
+          </div>
             </div>
           </div>
         </div>
