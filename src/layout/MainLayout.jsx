@@ -50,7 +50,7 @@ const MainLayout = () => {
             </div>
           </div>
         </div>
-        <div className="ml-[60px]">
+        <div className="ml-[60px] flex-1">
           <Outlet />
         </div>
       </div>
