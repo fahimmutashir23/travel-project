@@ -37,10 +37,6 @@ const Router = createBrowserRouter([
             {
                 path:"hotel/:id",
                 element:<HotelDetails/>
-            },
-            {
-                path:"profile",
-                element:<Profile/>
             }
         ]
     },
@@ -61,6 +57,10 @@ const Router = createBrowserRouter([
             {
                 path: '/dashboard',
                 element: <Dashboard/>
+            },
+            {
+                path:"profile",
+                element:<Profile/>
             }
         ]
 

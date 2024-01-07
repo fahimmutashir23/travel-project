@@ -1,0 +1,47 @@
+const DashboardNav = () => {
+  return (
+    <div className="flex justify-between items-center py-5 px-4 bg-base-200 shadow-md fixed w-full z-30">
+      <div className="w-1/4">
+        <h1 className="text-3xl font-bold">logo</h1>
+      </div>
+      <div className="flex-1">
+        <form>
+          <div className="flex">
+            <div className="relative w-full">
+              <input
+                type="search"
+                className="block p-2.5 w-full text-gray-900 bg-white border-[1px] border-black rounded-full"
+                placeholder="Search for city or address"
+                required
+              />
+              <button
+                type="submit"
+                className="absolute top-0 end-0 h-full p-2.5 font-medium text-white rounded-full"
+              >
+                <svg
+                  className="w-4 h-4 text-black"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="currentColor"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+                <span className="sr-only">Search</span>
+              </button>
+            </div>
+          </div>
+        </form>
+
+      </div>
+      <div className="w-1/4 flex justify-end">
+        <button>Account</button>
+      </div>
+    </div>
+  );
+};
+
+export default DashboardNav;
