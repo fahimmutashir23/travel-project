@@ -11,6 +11,8 @@ import BookingLayout from "../layout/BookingLayout";
 import AllBookings from "../pages/MyBookings/AllBookings/AllBookings";
 import Dashboard from "../pages/Admin/Dashboard/Dashboard";
 import DashboardLayout from "../layout/DashboardLayout";
+import AddRooms from "../pages/Admin/AddRooms/AddRooms";
+import AllRooms from "../pages/Admin/AllRooms/AllRooms";
 
 const Router = createBrowserRouter([
     {
@@ -55,13 +57,21 @@ const Router = createBrowserRouter([
         element: <DashboardLayout/>,
         children: [
             {
-                path: '/dashboard',
+                path: '/dashboard/dashboard',
                 element: <Dashboard/>
             },
             {
-                path:"profile",
+                path:"/dashboard/profile",
                 element:<Profile/>
-            }
+            },
+            {
+                path:"/dashboard/addRooms",
+                element:<AddRooms/>
+            },
+            {
+                path:"/dashboard/allRooms",
+                element:<AllRooms/>
+            },
         ]
 
     }

@@ -136,7 +136,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-3"
               : ""
           }
-          to="/profile"
+          to="/dashboard/profile"
         >
        <div className="hover:translate-x-3 transition-transform duration-300">Profile</div>
         </NavLink>
@@ -176,7 +176,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-3"
               : ""
           }
-          to="/dashboard"
+          to="/dashboard/dashboard"
         >
        <div className="hover:translate-x-3 transition-transform duration-300">Dashboard</div>
         </NavLink>
@@ -218,7 +218,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-3"
               : ""
           }
-          to="/AllUser"
+          to="/dashboard/addRooms"
         >
        <div className="hover:translate-x-3 transition-transform duration-300">Add Rooms</div>
         </NavLink>
@@ -230,7 +230,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-3"
               : ""
           }
-          to="/AllUser"
+          to="/dashboard/allRooms"
         >
        <div className="hover:translate-x-3 transition-transform duration-300">All Rooms</div>
         </NavLink>
