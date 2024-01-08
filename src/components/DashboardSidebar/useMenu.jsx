@@ -159,16 +159,6 @@ const useMenu = () => {
   // Admin Menu
   const adminNavMenu = (
     <>
-      <li>
-        <NavLink
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "bg-blue-500" : ""
-          }
-          to="/"
-        >
-          Home
-        </NavLink>
-      </li>
       <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
         <NavLink
           className={({ isActive }) =>
@@ -210,6 +200,18 @@ const useMenu = () => {
           <summary>Current Bookings</summary>
           <ul className="w-full">{adminBookingsSubMenu}</ul>
         </details>
+      </li>
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "bg-blue-500 min-w-full text-white py-3"
+              : ""
+          }
+          to="/dashboard/addHotels"
+        >
+       <div className="hover:translate-x-3 transition-transform duration-300">Add Hotels</div>
+        </NavLink>
       </li>
       <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
         <NavLink
