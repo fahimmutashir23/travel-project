@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const HotelCard = ({ hotel }) => {
-  const fromRoomRate = hotel.hotel_room.map((room) => room.room_price);
-  const fromRate = fromRoomRate.reduce((acc, slip) => Math.min(acc, slip));
+  const fromRoomRate = hotel.hotel_room?.map((room) => room.room_price);
+  const fromRate = fromRoomRate?.reduce((acc, slip) => Math.min(acc, slip));
 
   return (
    <div className="flex justify-center mx-auto">
      <Link to={`/hotel/${hotel._id}`}>
-      <div className="w-80 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-80 bg-base-200 border border-gray-200 rounded-lg shadow dark:border-gray-700">
         <div className="w-full h-80 rounded-t-lg relative">
           <img
             className="p-2 w-full h-full object-cover rounded-t-xl"
@@ -24,7 +24,7 @@ const HotelCard = ({ hotel }) => {
           <h5 className="text-xl font-semibold mt-5">{hotel.hotel_name}</h5>
           <p className="mt-2">{hotel.hotel_location}</p>
           <div className="flex justify-end">
-            <h4 className="text-xl font-bold  dark:text-gray-300">
+            <h4 className="text-xl font-bold">
               <span className="text-base font-normal">From</span> ${fromRate}
             </h4>
           </div>

@@ -80,9 +80,9 @@ const AddRooms = () => {
         hotel_country: country,
       };
 
-      const response = await axiosSecure.post(`/`, hotelInfo);
+      const response = await axiosSecure.post(`/hotels`, hotelInfo);
       if (response.data) {
-        toast("Update Success");
+        toast("Hotel Added Successfully");
         e.target.reset();
         setLoading(false);
       }
@@ -154,7 +154,7 @@ const AddRooms = () => {
           </div>
         </div>
         <div className="md:flex gap-5">
-          <div className="relative z-0 w-full mb-5 group">
+          <div className="relative w-full mb-5 group z-30">
             <Select
               name="service"
               closeMenuOnSelect={false}
