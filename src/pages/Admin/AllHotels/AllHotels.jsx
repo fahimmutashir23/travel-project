@@ -4,24 +4,30 @@ import PageTitle from "../../../components/Shared/PageTitle/PageTitle";
 import Loader from "../../../Utils/Loader/Loader";
 import Table from "./Table";
 
-const AllRooms = () => {
-    const axiosSecure = useAxiosSecure()
+const AllHotels = () => {
+  const axiosSecure = useAxiosSecure();
 
-    const {data, isLoading} = useQuery({
-        queryKey: ['allHotelsForAdmin'],
-        queryFn: async () => {
-            const res = await axiosSecure('/hotels')
-            return res.data
-        }
-    })
+  const { data, isLoading, refetch } = useQuery({
+    queryKey: ["allHotelsForAdmin"],
+    queryFn: async () => {
+      const res = await axiosSecure("/hotels");
+      return res.data;
+    },
+  });
 
-    if(isLoading) {
-        return <Loader width='20' center='center'></Loader>
-    }
-    
+  if (isLoading) {
+    return <Loader width="20" center="center"></Loader>;
+  }
+
   return (
     <div>
+      <div className="flex justify-between items-center">
+        <div className="flex-1">
+          <h1 className="text-2xl font-semibold bg-blue-400 max-w-fit px-5 py-2 rounded-md text-white">Total Hotels : <span>{data.length}</span></h1>
+        </div>
       <PageTitle title="All Hotels" />
+      <div className="flex-1"></div>
+      </div>
       <div>
         <div className="relative overflow-x-auto shadow-md rounded-md">
           <table className="w-full text-left rtl:text-right ">
@@ -54,9 +60,9 @@ const AllRooms = () => {
               </tr>
             </thead>
             <tbody>
-                {
-                    data.map(hotel => <Table key={hotel._id} hotel={hotel} />)
-                }
+              {data.map((hotel) => (
+                <Table key={hotel._id} hotel={hotel} refetch={refetch} />
+              ))}
             </tbody>
           </table>
         </div>
@@ -65,4 +71,4 @@ const AllRooms = () => {
   );
 };
 
-export default AllRooms;
+export default AllHotels;

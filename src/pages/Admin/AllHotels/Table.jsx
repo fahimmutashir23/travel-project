@@ -1,11 +1,38 @@
 import { Delete, VisibilityOutlined } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import PropTypes from 'prop-types';
+import toast from 'react-hot-toast';
 import { FaEdit, FaPlusSquare } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 
-const Table = ({hotel}) => {
-    const {hotel_name, hotel_country, hotel_room, category} = hotel
+const Table = ({hotel, refetch}) => {
+  const axiosSecure = useAxiosSecure();
+    const {_id, hotel_name, hotel_country, hotel_room, category} = hotel;
+  
+
+    const handleDelete = (id) => {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Delete"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          axiosSecure.delete(`/hotels/${id}`)
+          .then(res => {
+            if(res.data.deletedCount > 0){
+              toast('Successfully Delete');
+              refetch()
+            }
+          })
+        }
+      })
+    }
 
     return (
         <tr className="bg-white border-b  dark:border-gray-700 hover:bg-slate-100">
@@ -20,14 +47,14 @@ const Table = ({hotel}) => {
         <td className="px-6 py-4 text-center">{category}</td>
         <td className="px-6 py-4 text-center">
             <IconButton color="primary" aria-label="add to shopping cart">
-                <Link to={`/hotelDetails/${hotel._id}`}>
+                <Link to={`/hotelDetails/${_id}`}>
                 <VisibilityOutlined />
                 </Link>
             </IconButton>
         </td>
         <td className="px-6 py-4 text-center">
             <IconButton color="primary" aria-label="add to shopping cart">
-                <Link to={`/dashboard/addRooms/${hotel._id}`}>
+                <Link to={`/dashboard/addRooms/${_id}`}>
                    <FaPlusSquare />
                 </Link>
             </IconButton>
@@ -41,7 +68,7 @@ const Table = ({hotel}) => {
           <a
             className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
           >
-            <IconButton color="primary" aria-label="add to shopping cart">
+            <IconButton onClick={() => handleDelete(_id)} color="primary" aria-label="add to shopping cart">
                 <Delete />
             </IconButton>
           </a>
@@ -51,7 +78,8 @@ const Table = ({hotel}) => {
 };
 
 Table.propTypes = {
-    hotel: PropTypes.object
+    hotel: PropTypes.object,
+    refetch: PropTypes.func
 };
 
 export default Table;

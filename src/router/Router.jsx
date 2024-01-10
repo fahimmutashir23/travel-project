@@ -12,7 +12,7 @@ import AllBookings from "../pages/MyBookings/AllBookings/AllBookings";
 import Dashboard from "../pages/Admin/Dashboard/Dashboard";
 import DashboardLayout from "../layout/DashboardLayout";
 import AddHotels from "../pages/Admin/AddHotels/AddHotels";
-import AllRooms from "../pages/Admin/AllRooms/AllRooms";
+import AllHotels from "../pages/Admin/AllHotels/AllHotels";
 import AddRooms from "../pages/Admin/AddRooms/AddRooms";
 
 const Router = createBrowserRouter([
@@ -75,7 +75,7 @@ const Router = createBrowserRouter([
       },
       {
         path: "/dashboard/allRooms",
-        element: <AllRooms />,
+        element: <AllHotels />,
       },
     ],
   },
