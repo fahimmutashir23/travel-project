@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PageTitle from "../../../components/Shared/PageTitle/PageTitle";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import Loader from "../../../Utils/Loader/Loader";
+import { useParams } from "react-router-dom";
 const animatedComponents = makeAnimated();
 
 // const hotelCategory = [
@@ -33,6 +34,7 @@ const imgUploadUrl = `https://api.imgbb.com/1/upload?key=${
 }`;
 
 const AddRooms = () => {
+  const {id} = useParams();
   const [services, setServices] = useState(null);
   const [loading, setLoading] = useState(false);
   const axiosSecure = useAxiosSecure();
@@ -42,11 +44,16 @@ const AddRooms = () => {
   const [sleepsCount, setSleepsCount] = useState(0);
   const [bathroom, setBathroom] = useState(0);
   const [guest, setGuest] = useState(0);
+  const [hotelName, setHotelName] = useState('');
+
+  useEffect(() => {
+    axiosSecure.get(`/hotels/${id}`)
+    .then(res => setHotelName(res.data.hotel_name))
+  }, [axiosSecure, id])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const hotel_name = e.target.hotel_name.value;
     const room_name = e.target.room_name.value;
     const room_price = roomPrice;
     const sleeps = sleepsCount;
@@ -78,7 +85,7 @@ const AddRooms = () => {
         room_details: [room_details]
       };
 
-      const response = await axiosSecure.patch(`/rooms/${hotel_name}`, roomInfo);
+      const response = await axiosSecure.patch(`/rooms/${id}`, roomInfo);
       if (response.data) {
         toast("Room Added Successfully");
         e.target.reset();
@@ -96,8 +103,10 @@ const AddRooms = () => {
             <input
               type="text"
               name="hotel_name"
+              disabled
+              defaultValue={hotelName}
               id="floating_email"
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
+              className="block py-2.5 px-0 w-full font-medium text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
               placeholder=" "
               required
             />
@@ -110,7 +119,7 @@ const AddRooms = () => {
               type="text"
               name="room_name"
               id="floating_email"
-              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
               placeholder=" "
               required
             />

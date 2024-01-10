@@ -1,7 +1,7 @@
 import { Delete, VisibilityOutlined } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import PropTypes from 'prop-types';
-import { FaEdit } from 'react-icons/fa';
+import { FaEdit, FaPlusSquare } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Table = ({hotel}) => {
@@ -22,6 +22,13 @@ const Table = ({hotel}) => {
             <IconButton color="primary" aria-label="add to shopping cart">
                 <Link to={`/hotelDetails/${hotel._id}`}>
                 <VisibilityOutlined />
+                </Link>
+            </IconButton>
+        </td>
+        <td className="px-6 py-4 text-center">
+            <IconButton color="primary" aria-label="add to shopping cart">
+                <Link to={`/dashboard/addRooms/${hotel._id}`}>
+                   <FaPlusSquare />
                 </Link>
             </IconButton>
         </td>

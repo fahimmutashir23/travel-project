@@ -21,7 +21,7 @@ const AllRooms = () => {
     
   return (
     <div>
-      <PageTitle title="All rooms" />
+      <PageTitle title="All Hotels" />
       <div>
         <div className="relative overflow-x-auto shadow-md rounded-md">
           <table className="w-full text-left rtl:text-right ">
@@ -41,6 +41,9 @@ const AllRooms = () => {
                 </th>
                 <th scope="col" className="px-6 py-3 text-center">
                   View
+                </th>
+                <th scope="col" className="px-6 py-3 text-center">
+                  Add Room
                 </th>
                 <th scope="col" className="px-6 py-3 text-center">
                   Edit

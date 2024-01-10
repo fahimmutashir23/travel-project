@@ -70,7 +70,7 @@ const Router = createBrowserRouter([
         element: <AddHotels />,
       },
       {
-        path: "/dashboard/addRooms",
+        path: "/dashboard/addRooms/:id",
         element: <AddRooms />,
       },
       {
