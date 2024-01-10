@@ -234,7 +234,7 @@ const useMenu = () => {
           }
           to="/dashboard/allRooms"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">All Rooms</div>
+       <div className="hover:translate-x-3 transition-transform duration-300">All Hotels</div>
         </NavLink>
       </li>
       <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">

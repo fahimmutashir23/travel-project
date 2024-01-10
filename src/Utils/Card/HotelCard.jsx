@@ -8,7 +8,7 @@ const HotelCard = ({ hotel }) => {
 
   return (
    <div className="flex justify-center mx-auto">
-     <Link to={`/hotel/${hotel._id}`}>
+     <Link to={`/hotelDetails/${hotel._id}`}>
       <div className="w-80 bg-base-200 border border-gray-200 rounded-lg shadow dark:border-gray-700">
         <div className="w-full h-80 rounded-t-lg relative">
           <img

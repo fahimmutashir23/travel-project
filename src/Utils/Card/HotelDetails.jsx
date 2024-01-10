@@ -26,7 +26,7 @@ const HotelDetails = () => {
       return res.data;
     },
   });
-console.log(hotel)
+
   if (isLoading) {
     return <Loader width={20} center="center"></Loader>;
   }

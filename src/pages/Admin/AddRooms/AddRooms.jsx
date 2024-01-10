@@ -47,7 +47,7 @@ const AddRooms = () => {
     e.preventDefault();
     setLoading(true);
     const hotel_name = e.target.hotel_name.value;
-    const room_name= e.target.room_name.value;
+    const room_name = e.target.room_name.value;
     const room_price = roomPrice;
     const sleeps = sleepsCount;
     const beds = e.target.bed_name.value;
@@ -56,34 +56,35 @@ const AddRooms = () => {
     const bathrooms = bathroom;
     const bedrooms = bedRoomNumber;
     const room_details = services.map((service) => service.value);
-    const roomInfo = {hotel_name, room_name, room_price, sleeps, beds, room_img, guests, bathrooms, room_details, bedrooms }
 
-    // const imgFile = { image: room_img };
-    // const res = await axiosPublic.post(imgUploadUrl, imgFile, {
-    //   headers: {
-    //     "content-type": "multipart/form-data",
-    //   },
-    // });
+    const imgFile = { image: room_img };
+    const res = await axiosPublic.post(imgUploadUrl, imgFile, {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    });
 
-    // if (res.data.data.display_url) {
-    //   setLoading(false);
-    //   const hotelInfo = {
-    //     hotel_name,
-    //     hotel_img: res.data.data.display_url,
-    //     hotel_location,
-    //     Service: hotel_service,
-    //     category,
-    //     description,
-    //     hotel_country: country,
-    //   };
+    if (res.data.data.display_url) {
+      setLoading(false);
+      const roomInfo = {
+        room_name: room_name,
+        room_price: room_price,
+        sleeps: sleeps,
+        beds: beds,
+        bedrooms: bedrooms,
+        bathrooms: bathrooms,
+        guests: guests,
+        room_img: [res.data.data.display_url],
+        room_details: [room_details]
+      };
 
-    //   const response = await axiosSecure.put(`/hotels`, hotelInfo);
-    //   if (response.data) {
-    //     toast("Hotel Added Successfully");
-    //     e.target.reset();
-    //     setLoading(false);
-    //   }
-    // }
+      const response = await axiosSecure.patch(`/rooms/${hotel_name}`, roomInfo);
+      if (response.data) {
+        toast("Room Added Successfully");
+        e.target.reset();
+        setLoading(false);
+      }
+    }
   };
 
   return (

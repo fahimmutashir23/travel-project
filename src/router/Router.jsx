@@ -38,7 +38,7 @@ const Router = createBrowserRouter([
         element: <Hotel />,
       },
       {
-        path: "hotel/:id",
+        path: "hotelDetails/:id",
         element: <HotelDetails />,
       },
     ],
