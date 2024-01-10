@@ -232,6 +232,18 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-3"
               : ""
           }
+          to="/dashboard/allPackages"
+        >
+       <div className="hover:translate-x-3 transition-transform duration-300">All Packages</div>
+        </NavLink>
+      </li>
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "bg-blue-500 min-w-full text-white py-3"
+              : ""
+          }
           to="/AllUser"
         >
        <div className="hover:translate-x-3 transition-transform duration-300">All Payments</div>

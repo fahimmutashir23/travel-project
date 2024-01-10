@@ -11,6 +11,7 @@ const Table = ({hotel, refetch}) => {
   const axiosSecure = useAxiosSecure();
     const {_id, hotel_name, hotel_country, hotel_room, category} = hotel;
   
+  
 
     const handleDelete = (id) => {
       Swal.fire({

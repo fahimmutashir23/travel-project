@@ -9,11 +9,11 @@ const DashboardSidebar = () => {
   const {logOutUser} = useAuth()
 
   return (
-    <div className="bg-base-300 min-h-screen overflow-y-auto">
+    <div className="bg-base-300 h-full overflow-y-auto">
       <div className="py-4 flex items-center justify-center">
-        <div>
+        <div className="flex flex-col items-center">
           <img src={profileIcon} alt="" className="w-32" />
-          <h2 className="text-center mt-5">Name</h2>
+          <h2 className="text-center mt-2 mb-5">Name</h2>
           <div className="text-center">
             {isAdmin ? (
               <div>
