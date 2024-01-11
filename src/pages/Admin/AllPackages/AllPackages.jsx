@@ -1,19 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
-import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import PageTitleWithTotal from "../../../Utils/PageTitleWithTotal/PageTitleWithTotal";
 import Loader from "../../../Utils/Loader/Loader";
 import AllPackagesTable from "./AllPackagesTable";
+import useTourPackages from "../../../Hooks/useTourPackages";
 
 const AllPackages = () => {
-  const axiosSecure = useAxiosSecure();
-
-  const {data: tourPackages = [], isLoading, refetch} = useQuery({
-    queryKey: ['allPackages'],
-    queryFn: async () => {
-      const res = await axiosSecure('/packages')
-      return res.data
-    }
-  })
+const [tourPackages, isLoading, refetch] = useTourPackages()
   if(isLoading) {
     return <Loader width='20' center='center' />
   }

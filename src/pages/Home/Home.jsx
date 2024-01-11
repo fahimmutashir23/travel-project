@@ -10,6 +10,7 @@ import Loader from "../../Utils/Loader/Loader";
 import { useEffect, useState } from "react";
 import { FaCar, FaHome, FaHotel } from "react-icons/fa";
 import { MdFlightTakeoff } from "react-icons/md";
+import TourPackages from "../../components/TourPackages/TourPackages";
 const searchCategory = [
   { icon: <FaHome></FaHome>, name: "Search All", title: "Where to Go" },
   {
@@ -126,6 +127,7 @@ const Home = () => {
         </div>
       </div>
       <Hotels hotels={hotels} />
+      <TourPackages></TourPackages>
       <About />
       <PopularDestination />
       <WhyChoose />

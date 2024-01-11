@@ -2,7 +2,7 @@ import { Delete, VisibilityOutlined } from '@mui/icons-material';
 import { IconButton } from '@mui/material';
 import PropTypes from 'prop-types';
 import toast from 'react-hot-toast';
-import { FaEdit, FaPlusSquare } from 'react-icons/fa';
+import { FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
