@@ -7,31 +7,31 @@ const useMenu = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-3"
+              ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
           to="/allBookings"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">All Bookings</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">All Bookings</div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-3"
+              ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
           to="/hotel"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">Hotel</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">Hotel</div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-3"
+              ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
           to="/flight"
@@ -43,12 +43,12 @@ const useMenu = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-3"
+              ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
           to="/car"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">Car</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">Car</div>
         </NavLink>
       </li>
     </>
@@ -57,52 +57,52 @@ const useMenu = () => {
   // Admin Bookings Submenu
   const adminBookingsSubMenu = (
     <>
-         <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+         <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-3"
+              ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
           to="/allBookings"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">All Bookings</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">All Bookings</div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-3"
+              ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
           to="/hotel"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">Hotel</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">Hotel</div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-3"
+              ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
           to="/flight"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">Flight</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">Flight</div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-3"
+              ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
           to="/car"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">Car</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">Car</div>
         </NavLink>
       </li>
     </>
@@ -111,34 +111,34 @@ const useMenu = () => {
   // User Menu
   const userNavMenu = (
     <>
-        <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+        <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-3"
+              ? "bg-blue-500 min-w-full text-white py-2"
               : ""
           }
           to="/account"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">Account</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">Account</div>
         </NavLink>
       </li>
-      <li>
+      <li className="text-base">
         <details>
           <summary>Bookings</summary>
           <ul className="w-full">{subMenu}</ul>
         </details>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-3"
+              ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
           to="/dashboard/profile"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">Profile</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">Profile</div>
         </NavLink>
       </li>
       <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
@@ -150,7 +150,7 @@ const useMenu = () => {
           }
           to="/All Receipt"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">All Receipt</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">All Receipt</div>
         </NavLink>
       </li>
     </>
@@ -159,11 +159,11 @@ const useMenu = () => {
   // Admin Menu
   const adminNavMenu = (
     <>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-3"
+              ? "bg-blue-500 min-w-full text-white py-2"
               : ""
           }
           to="/dashboard/dashboard"
@@ -171,7 +171,7 @@ const useMenu = () => {
        <div className="hover:translate-x-3 transition-transform duration-300">Dashboard</div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
@@ -180,7 +180,7 @@ const useMenu = () => {
           }
           to="/revenue"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">Revenue</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">Revenue</div>
         </NavLink>
       </li>
       <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
@@ -192,16 +192,16 @@ const useMenu = () => {
           }
           to="/AllUser"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">All User</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">All User</div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <details>
           <summary>Current Bookings</summary>
           <ul className="w-full">{adminBookingsSubMenu}</ul>
         </details>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
@@ -210,10 +210,10 @@ const useMenu = () => {
           }
           to="/dashboard/addHotels"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">Add Hotels</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">Add Hotels</div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
@@ -222,10 +222,10 @@ const useMenu = () => {
           }
           to="/dashboard/allRooms"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">All Hotels</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">All Hotels</div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
@@ -234,7 +234,7 @@ const useMenu = () => {
           }
           to="/dashboard/allPackages"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">All Packages</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">All Packages</div>
         </NavLink>
       </li>
       <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
@@ -246,7 +246,7 @@ const useMenu = () => {
           }
           to="/AllUser"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">All Payments</div>
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">All Payments</div>
         </NavLink>
       </li>
     </>

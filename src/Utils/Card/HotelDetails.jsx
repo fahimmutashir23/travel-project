@@ -39,7 +39,7 @@ const HotelDetails = () => {
         </h5>
         <p>{hotel.hotel_location}</p>
       </div>
-      <div className="flex gap-2 flex-col 2xl:flex-row">
+      <div className="flex gap-2 flex-col md:flex-row  2xl:flex-row">
         <div className="w-1/2">
           <img
             src="https://i.postimg.cc/N0bYyZRj/westine2.jpg"

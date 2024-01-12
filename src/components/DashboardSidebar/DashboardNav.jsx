@@ -1,8 +1,8 @@
 const DashboardNav = () => {
   return (
-    <div className="flex justify-between items-center py-5 px-4 bg-base-200 shadow-md fixed w-full z-30">
-      <div className="w-1/4">
-        <h1 className="text-3xl font-bold">logo</h1>
+    <div className="flex justify-between items-center py-3 px-4 bg-base-200 shadow-md fixed w-full z-30">
+      <div className="w-1/3">
+        <h1 className="text-2xl font-bold">logo</h1>
       </div>
       <div className="flex-1">
         <form>
@@ -37,7 +37,7 @@ const DashboardNav = () => {
         </form>
 
       </div>
-      <div className="w-1/4 flex justify-end">
+      <div className="w-1/4 flex justify-end font-semibold">
         <button>Account</button>
       </div>
     </div>

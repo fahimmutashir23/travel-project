@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 const DashboardSidebar = () => {
-  const isAdmin = true;
+  const isAdmin = false;
   const { userNavMenu, adminNavMenu } = useMenu();
   const {logOutUser} = useAuth()
 
@@ -19,13 +19,13 @@ const DashboardSidebar = () => {
               <div>
                 <Link
                   to="/dashboard"
-                  className="bg-blue-500 text-white px-3 py-1 rounded-[4px] uppercase"
+                  className="bg-blue-500 text-white px-3 py-1 rounded-[4px] uppercase text-xs"
                 >
                   Admin
                 </Link>
                 <Link
                   to="/"
-                  className="bg-blue-500 text-white px-3 py-1 rounded-[4px] uppercase ml-2"
+                  className="bg-blue-500 text-white px-3 py-1 rounded-[4px] uppercase ml-2 text-xs"
                 >
                   User
                 </Link>
@@ -37,7 +37,7 @@ const DashboardSidebar = () => {
         </div>
       </div>
       <div className="">
-        <ul className="text-xl font-medium">
+      <ul className="text-xl font-medium">
           {isAdmin ? adminNavMenu : userNavMenu}
         </ul>
         <div className="bg-black w-full h-[1px] mt-4"></div>
@@ -50,7 +50,7 @@ const DashboardSidebar = () => {
               }
               to="/flight"
             >
-              <div className="hover:translate-x-3 transition-transform duration-300">
+              <div className="hover:translate-x-3 transition-transform duration-300 text-base font-semibold">
                 Log Out
               </div>
             </button>
