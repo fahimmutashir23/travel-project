@@ -47,7 +47,7 @@ refetch()
 
     return (
         <div className='flex justify-center items-center mt-5'>
-            <div className='bg-white shadow-lg rounded-2xl w-2/5'>
+            <div className='bg-white shadow-lg rounded-2xl w-2/3'>
                 <img
                     alt='profile'
                     src='https://i.ibb.co/wc4vRdT/905777d0e9a1dbf3f0307a1e7c48e641.jpg'
