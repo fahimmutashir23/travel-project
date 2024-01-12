@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 const DashboardSidebar = () => {
-  const isAdmin = false;
+  const isAdmin = true;
   const { userNavMenu, adminNavMenu } = useMenu();
   const {logOutUser} = useAuth()
 
