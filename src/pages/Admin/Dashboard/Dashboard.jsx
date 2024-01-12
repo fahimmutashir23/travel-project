@@ -9,23 +9,23 @@ const Dashboard = () => {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="border flex justify-between items-center h-20 rounded-lg">
-          <div className="h-full text-center bg-violet-700 w-1/2 p-6"><FaUsers className="text-white text-center w-16 h-9" /></div>
+        <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
+          <div className="h-full text-center bg-violet-700 p-6"><FaUsers className="text-white text-center w-16 h-9" /></div>
           <div className="p-5"><small>Total users</small><br />Total users</div>
         </div>
-        <div className="border flex justify-between items-center h-20 rounded-lg">
-          <div className="h-full text-center bg-green-500 w-1/2 p-6"><FaHandHoldingUsd className="text-white text-center w-16 h-9" /></div>
+        <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
+          <div className="h-full text-center bg-green-500 p-6"><FaHandHoldingUsd className="text-white text-center w-16 h-9" /></div>
           <div className="p-5"><small>Revenue</small><br />Revenue
 
           </div>
         </div>
-        <div className="border flex justify-between items-center h-20 rounded-lg">
-          <div className="h-full text-center bg-blue-700 w-1/2 p-6"><FaCartPlus className="text-white text-center w-16 h-9" /></div>
+        <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
+          <div className="h-full text-center bg-blue-700 p-6"><FaCartPlus className="text-white text-center w-16 h-9" /></div>
           <div className="p-4"><small>Total Bookings</small><br />Bookings</div>
         </div>
 
-        <div className="border flex justify-between items-center h-20 rounded-lg">
-          <div className="h-full text-center bg-pink-700 w-1/2 p-6"><MdMarkEmailUnread className="text-white text-center w-16 h-9" /></div>
+        <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
+          <div className="h-full text-center bg-pink-700 p-6"><MdMarkEmailUnread className="text-white text-center w-16 h-9" /></div>
           <div className="p-5"><small>Email</small><br />Email</div>
         </div>
       </div>
