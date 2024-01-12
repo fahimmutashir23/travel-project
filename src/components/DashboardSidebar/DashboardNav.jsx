@@ -1,6 +1,6 @@
 const DashboardNav = () => {
   return (
-    <div className="flex justify-between items-center py-3 px-4 bg-base-200 shadow-md fixed w-full z-30">
+    <div className="flex justify-between items-center py-3 px-4 bg-red-200 shadow-md fixed w-full z-30">
       <div className="w-1/3">
         <h1 className="text-2xl font-bold">logo</h1>
       </div>
