@@ -21,6 +21,12 @@ const DiscountModal = ({ open, setOpen, id }) => {
 
   const handleDiscountDelete = () => {
     setOpen(false);
+    axiosSecure.patch(`/packages/${id}`, {discountRate: 0})
+    .then(res => {
+        if(res.data.modifiedCount > 0){
+            toast("Discount deleted successfully")
+        }
+    })
   };
 
   return (

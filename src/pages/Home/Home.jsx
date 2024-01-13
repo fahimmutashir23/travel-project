@@ -42,7 +42,7 @@ const Home = () => {
     isLoading,
     refetch,
   } = useQuery({
-    queryKey: ["hotels"],
+    queryKey: ["hotelsHome"],
     queryFn: async () => {
       const res = await axiosPublic(`/hotels?search=${search}`);
       return res.data;

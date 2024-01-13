@@ -11,7 +11,7 @@ const Hotels = ({hotels}) => {
       </div>
       <div>
         <div className="flex flex-wrap gap-4">
-          {hotels?.map((hotel) => (
+          {hotels.slice(0, 4)?.map((hotel) => (
             <HotelCard key={hotel._id} hotel={hotel}></HotelCard>
           ))}
         </div>

@@ -16,7 +16,7 @@ const AllHotels = () => {
   });
 
   if (isLoading) {
-    return <Loader width="20" center="center"></Loader>;
+   return <Loader width="20" center="center"></Loader>;
   }
 
   return (
