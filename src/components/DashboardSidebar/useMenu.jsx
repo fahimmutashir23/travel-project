@@ -69,6 +69,18 @@ const useMenu = () => {
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">All Bookings</div>
         </NavLink>
       </li>
+         <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "bg-blue-500 min-w-full text-white py-1"
+              : ""
+          }
+          to="/packagesBooking"
+        >
+       <div className="hover:translate-x-3 transition-transform duration-300 text-base">Packages</div>
+        </NavLink>
+      </li>
       <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
@@ -76,7 +88,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
-          to="/hotel"
+          to="/hotelBooking"
         >
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">Hotel</div>
         </NavLink>
@@ -88,7 +100,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
-          to="/flight"
+          to="/flightBookings"
         >
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">Flight</div>
         </NavLink>
@@ -100,7 +112,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
-          to="/car"
+          to="/carBookings"
         >
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">Car</div>
         </NavLink>
@@ -190,7 +202,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-3"
               : ""
           }
-          to="/AllUser"
+          to="/dashboard/allUsers"
         >
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">All User</div>
         </NavLink>

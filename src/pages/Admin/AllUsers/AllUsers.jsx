@@ -1,29 +1,29 @@
-import Loader from "../../../Utils/Loader/Loader";
-import AllPackagesTable from "./AllPackagesTable";
-import useTourPackages from "../../../Hooks/useTourPackages";
-import { Divider, IconButton, InputBase, Paper } from "@mui/material";
 import { MenuOutlined, Search } from "@mui/icons-material";
+import useUsers from "../../../Hooks/useUsers";
+import Loader from "../../../Utils/Loader/Loader";
+import { Divider, IconButton, InputBase, Paper } from "@mui/material";
 import PageTitle from "../../../components/Shared/PageTitle/PageTitle";
+import AllUsersTable from "./AllUsersTable";
 
-const AllPackages = () => {
-  const [tourPackages, isLoading, refetch] = useTourPackages(10);
-
-  const handleSearch = (e) => {
-      e.preventDefault();
-  };
-
+const AllUsers = () => {
+  const [users, isLoading, refetch] = useUsers();
   if (isLoading) {
     return <Loader width="20" center="center" />;
   }
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div>
-      <div className="flex justify-between items-center">
+      <div className="flex items-center">
         <div className="flex-1">
           <h1 className="text-2xl font-semibold bg-blue-400 max-w-fit px-5 py-2 rounded-md text-white">
-            Total Packages : <span>{tourPackages.length}</span>
+            Total Users : <span>{users.length}</span>
           </h1>
         </div>
-        <PageTitle title="All Packages" />
+          <PageTitle title="All Users" />
         <div className="flex-1 flex justify-end">
           <Paper
             component="form"
@@ -32,7 +32,7 @@ const AllPackages = () => {
               p: "2px 4px",
               display: "flex",
               alignItems: "center",
-              maxWidth: 400,
+              maxWidth: 500,
             }}
           >
             <IconButton sx={{ p: "10px" }} aria-label="menu">
@@ -62,19 +62,13 @@ const AllPackages = () => {
           <thead className="text-lg uppercase bg-blue-400 text-white ">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Package name
+                User name
               </th>
               <th scope="col" className="px-6 py-3">
-                Destination
+                Email
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                Price
-              </th>
-              <th scope="col" className="px-6 py-3 text-center">
-                Duration
-              </th>
-              <th scope="col" className="px-6 py-3 text-center">
-                View
+                country
               </th>
               <th scope="col" className="px-6 py-3 text-center">
                 Edit
@@ -85,12 +79,8 @@ const AllPackages = () => {
             </tr>
           </thead>
           <tbody>
-            {tourPackages.map((tourPackage) => (
-              <AllPackagesTable
-                key={tourPackage._id}
-                tourPackage={tourPackage}
-                refetch={refetch}
-              />
+            {users.map((user) => (
+              <AllUsersTable key={user._id} user={user} refetch={refetch} />
             ))}
           </tbody>
         </table>
@@ -99,4 +89,4 @@ const AllPackages = () => {
   );
 };
 
-export default AllPackages;
+export default AllUsers;
