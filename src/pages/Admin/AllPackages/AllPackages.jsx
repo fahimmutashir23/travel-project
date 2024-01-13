@@ -4,7 +4,7 @@ import AllPackagesTable from "./AllPackagesTable";
 import useTourPackages from "../../../Hooks/useTourPackages";
 
 const AllPackages = () => {
-const [tourPackages, isLoading, refetch] = useTourPackages()
+const [tourPackages, isLoading, refetch] = useTourPackages(10)
   if(isLoading) {
     return <Loader width='20' center='center' />
   }

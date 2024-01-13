@@ -15,6 +15,7 @@ import AddHotels from "../pages/Admin/AddHotels/AddHotels";
 import AllHotels from "../pages/Admin/AllHotels/AllHotels";
 import AddRooms from "../pages/Admin/AddRooms/AddRooms";
 import AllPackages from "../pages/Admin/AllPackages/AllPackages";
+import AddTourPackages from "../pages/Admin/AddTourPackages/AddTourPackages";
 
 const Router = createBrowserRouter([
   {
@@ -81,6 +82,10 @@ const Router = createBrowserRouter([
       {
         path: "/dashboard/allPackages",
         element: <AllPackages />,
+      },
+      {
+        path: "/dashboard/addTourPackages",
+        element: <AddTourPackages />,
       },
     ],
   },
