@@ -23,7 +23,6 @@ const imgUploadUrl = `https://api.imgbb.com/1/upload?key=${
 const AddTourPackages = () => {
   const [activities, setActivities] = useState(null);
   const [includes, setIncludes] = useState(null);
-  const [types, setTypes] = useState(null);
   const [loading, setLoading] = useState(false);
   const axiosSecure = useAxiosSecure();
   const axiosPublic = useAxiosPublic();
@@ -36,6 +35,8 @@ const AddTourPackages = () => {
     setLoading(true);
     const name = e.target.name.value;
     const destination = e.target.destination.value;
+    const type = e.target.type.value;
+    const departure = e.target.departure.value;
     const img1 = e.target.image1.files[0];
     const img2 = e.target.image2.files[0];
     const img3 = e.target.image3.files[0];
@@ -47,9 +48,8 @@ const AddTourPackages = () => {
     const tourActivities = activities.map((service) => service.value);
     const tourIncludes = includes.map((service) => service.value);
     // const info = {name, destination, img1, img2, img3, durations, night, maxParticipants,price, description, tourActivities, tourIncludes}
-   
 
-    const imgFile = { image: img1};
+    const imgFile = { image: img1 };
     const res = await axiosPublic.post(imgUploadUrl, imgFile, {
       headers: {
         "content-type": "multipart/form-data",
@@ -59,27 +59,28 @@ const AddTourPackages = () => {
     if (res.data.data.display_url) {
       setLoading(false);
       const packageInfo = {
-            name,
-            description,
-            destination,
-            image: res.data.data.display_url,
-            duration: durations,
-            price,
-            activities: tourActivities,
-            accommodation: { nights: night, type: types },
-            included: tourIncludes,
-            maxParticipants: maxParticipants,
-            total_sale: 0,
-            ratings: 0,
-            reviews: [
-                {
-                    name: "",
-                    review: ""
-                }
-            ]
+        name,
+        description,
+        destination,
+        image: res.data.data.display_url,
+        duration: durations,
+        price,
+        departureDate: departure,
+        activities: tourActivities,
+        accommodation: { nights: night, type: type },
+        included: tourIncludes,
+        maxParticipants: maxParticipants,
+        total_sale: 0,
+        ratings: 0,
+        reviews: [
+          {
+            name: "",
+            review: "",
+          },
+        ],
       };
 
-      const response = await axiosSecure.patch(`/packages`, packageInfo);
+      const response = await axiosSecure.post(`/packages`, packageInfo);
       if (response.data) {
         toast("Package Added Successfully");
         e.target.reset();
@@ -180,31 +181,25 @@ const AddTourPackages = () => {
             </div>
           </div>
           <div className="">
-            <div className=" py-1 rounded-md flex items-center gap-5 max-w-fit mt-2 relative z-0 w-full mb-5 group">
-              <input
-                type="number"
-                name="price"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
-                placeholder=" "
-                required
-              />
-              <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                Price
-              </label>
+            <span>Departure Date</span>
+            <div className="px-4 py-1 rounded-md flex items-center gap-5 border-[2px] max-w-fit mt-2">
+             <input type="date" name="departure" id="" />
             </div>
           </div>
         </div>
         <div className="md:flex justify-between gap-5">
-        <div className="relative w-full mb-5 group z-30 flex-1">
-        <span>Types</span>
-            <Select
-              closeMenuOnSelect={false}
-              onChange={setTypes}
-              components={animatedComponents}
-              isMulti
-              options={options}
+          <div className="relative w-full mb-5 mt-3 group z-30 flex-1">
+            <input
+              type="text"
+              name="type"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
+              placeholder=" "
+              required
             />
-        </div>
+            <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+              Types
+            </label>
+          </div>
           <div className="flex-1">
             <div className=" py-1 rounded-md flex items-center gap-5 mt-2 relative z-0 w-full mb-5 group">
               <input

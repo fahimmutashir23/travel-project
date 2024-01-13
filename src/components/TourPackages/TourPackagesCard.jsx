@@ -2,7 +2,7 @@ import { Rating } from "@mui/material";
 import PropTypes from "prop-types";
 
 const TourPackagesCard = ({ tourPackage }) => {
-  const { name, destination, image, price, departureDate, ratings, duration } =
+  const { name, destination, image, price, departureDate, ratings, duration, discount } =
     tourPackage;
   return (
     <div>
@@ -10,9 +10,9 @@ const TourPackagesCard = ({ tourPackage }) => {
         <div className="relative">
           <img className="overflow-hidden w-72 h-52" src={image} />
 
-          <span className="absolute top-5 rounded-md text-white px-5 py-.5 bg-yellow-500">
-            25% OFF
-          </span>
+          {discount && <span className="absolute top-3 rounded-r-md text-white text-xl px-5 py-1 bg-yellow-500">
+            {discount}% OFF
+          </span>}
         </div>
         <div className="flex justify-between flex-1 mb-2 p-4">
           <div className="flex flex-col justify-between">
