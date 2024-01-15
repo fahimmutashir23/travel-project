@@ -4,17 +4,26 @@ import useTourPackages from "../../../Hooks/useTourPackages";
 import { Divider, IconButton, InputBase, Paper } from "@mui/material";
 import { MenuOutlined, Search } from "@mui/icons-material";
 import PageTitle from "../../../components/Shared/PageTitle/PageTitle";
+import { useEffect, useState } from "react";
 
 const AllPackages = () => {
-  const [tourPackages, isLoading, refetch] = useTourPackages(10);
+  const [searchValue, setSearchValue] = useState('');
+  const [tourPackages, isLoading, refetch] = useTourPackages(10, searchValue);
 
   const handleSearch = (e) => {
       e.preventDefault();
+      const searchValue = e.target.search.value;
+      setSearchValue(searchValue)
   };
+
+  useEffect(() => {
+    refetch()
+  }, [searchValue])
 
   if (isLoading) {
     return <Loader width="20" center="center" />;
-  }
+  } 
+
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -84,6 +93,7 @@ const AllPackages = () => {
               </th>
             </tr>
           </thead>
+            
           <tbody>
             {tourPackages.map((tourPackage) => (
               <AllPackagesTable
@@ -95,6 +105,7 @@ const AllPackages = () => {
           </tbody>
         </table>
       </div>
+      <p className="text-center mt-5 text-xl font-medium">{tourPackages.length === 0 && 'Packages not found.'}</p>
     </div>
   );
 };
