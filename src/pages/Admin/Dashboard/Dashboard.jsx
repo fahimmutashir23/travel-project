@@ -3,14 +3,17 @@ import { FaUsers } from "react-icons/fa6";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { MdMarkEmailUnread } from "react-icons/md";
+import useUsers from "../../../Hooks/useUsers";
 
 const Dashboard = () => {
+
+  const [users]= useUsers()
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
           <div className="h-full text-center bg-violet-700 p-6"><FaUsers className="text-white text-center w-16 h-9" /></div>
-          <div className="p-5"><small>Total users</small><br />Total users</div>
+          <div className="p-5"><small>Total users</small><br />{users.length}</div>
         </div>
         <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
           <div className="h-full text-center bg-green-500 p-6"><FaHandHoldingUsd className="text-white text-center w-16 h-9" /></div>

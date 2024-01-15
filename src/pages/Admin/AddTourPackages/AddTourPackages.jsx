@@ -134,8 +134,7 @@ const AddTourPackages = () => {
                 onClick={() => setDuration(duration - 1)}
                 className={`text-2xl border-l-[2px] pl-4 ${
                   duration <= 0 && "btn-disabled"
-                }`}
-              >
+                }`}>
                 -
               </button>
             </div>

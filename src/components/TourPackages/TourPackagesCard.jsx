@@ -1,8 +1,9 @@
 import { Rating } from "@mui/material";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const TourPackagesCard = ({ tourPackage }) => {
-  const { name, destination, image, price, departureDate, ratings, duration, discount } =
+  const { name, destination, image, price, departureDate, ratings, duration, discount, _id } =
     tourPackage;
   return (
     <div>
@@ -34,9 +35,10 @@ const TourPackagesCard = ({ tourPackage }) => {
               <button className="btn bg-[#BBCD77] text-white rounded-none h-9 text-base py-1 min-h-fit hover:bg-green-700">
                 Show Reviews
               </button>
+              <Link to={`/packagesDetails/${_id}`}>
               <button className="btn bg-[#DC8051] text-white rounded-none h-9 text-base py-1 min-h-fit hover:bg-red-700">
                 Read more
-              </button>
+              </button></Link>
             </div>
           </div>
           <div className="flex flex-col justify-between">
