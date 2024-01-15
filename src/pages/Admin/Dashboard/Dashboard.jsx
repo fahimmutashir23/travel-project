@@ -1,32 +1,52 @@
 import { FaUsers } from "react-icons/fa6";
-
+import { LuPackagePlus } from "react-icons/lu";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { MdMarkEmailUnread } from "react-icons/md";
-import useUsers from "../../../Hooks/useUsers";
-
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+  // eslint-disable-next-line no-unused-vars
 const Dashboard = () => {
 
-  const [users]= useUsers()
+
+ const axiosPublic= useAxiosPublic()
+
+  const { data: statistics = [], isLoading } = useQuery({
+		queryKey: ['stats'],
+		queryFn: async () => {
+			const res = await axiosPublic.get("/stats")
+			return res.data;
+		}
+
+	})
+	console.log(statistics);
+  
+if(isLoading){
+  return <p>Loading.....</p>
+}
   return (
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
+      <div className="flex flex-wrap gap-4">
+        <div className="border flex justify-between items-center w-56 h-20 rounded-lg">
           <div className="h-full text-center bg-violet-700 p-6"><FaUsers className="text-white text-center w-16 h-9" /></div>
-          <div className="p-5"><small>Total users</small><br />{users.length}</div>
+          <div className="p-5"><small>Total users</small><br />{statistics.users}</div>
         </div>
-        <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
+        <div className="border flex justify-between items-center w-56 h-20 rounded-lg">
           <div className="h-full text-center bg-green-500 p-6"><FaHandHoldingUsd className="text-white text-center w-16 h-9" /></div>
-          <div className="p-5"><small>Revenue</small><br />Revenue
+          <div className="p-5"><small>Revenue</small><br />{statistics.revenue}
 
           </div>
         </div>
         <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
           <div className="h-full text-center bg-blue-700 p-6"><FaCartPlus className="text-white text-center w-16 h-9" /></div>
-          <div className="p-4"><small>Total Bookings</small><br />Bookings</div>
+          <div className="p-4"><small>Total Bookings</small><br />{statistics.totalBookings}</div>
         </div>
 
         <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
+          <div className="h-full text-center bg-pink-700 p-6"><LuPackagePlus className="text-white text-center w-16 h-9"/></div>
+          <div className="p-5"><small>Hotel Package</small><br />{statistics.totalPackages}</div>
+        </div>
+        <div className="border flex justify-between items-center w-56 h-20 rounded-lg">
           <div className="h-full text-center bg-pink-700 p-6"><MdMarkEmailUnread className="text-white text-center w-16 h-9" /></div>
           <div className="p-5"><small>Email</small><br />Email</div>
         </div>
