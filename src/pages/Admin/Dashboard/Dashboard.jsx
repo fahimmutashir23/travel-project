@@ -5,6 +5,7 @@ import { FaCartPlus } from "react-icons/fa";
 import { MdMarkEmailUnread } from "react-icons/md";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import Loader from "../../../Utils/Loader/Loader";
   // eslint-disable-next-line no-unused-vars
 const Dashboard = () => {
 
@@ -19,11 +20,11 @@ const Dashboard = () => {
 		}
 
 	})
-	console.log(statistics);
   
 if(isLoading){
-  return <p>Loading.....</p>
+  return <Loader width='20' center='center' />
 }
+
   return (
     <div>
       <div className="flex flex-wrap gap-4">
