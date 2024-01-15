@@ -64,7 +64,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
-          to="/allBookings"
+          to="/dashboard/allBookings"
         >
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">All Bookings</div>
         </NavLink>
