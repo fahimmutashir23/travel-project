@@ -5,10 +5,12 @@ import { Divider, IconButton, InputBase, Paper } from "@mui/material";
 import { MenuOutlined, Search } from "@mui/icons-material";
 import PageTitle from "../../../components/Shared/PageTitle/PageTitle";
 import { useEffect, useState } from "react";
+import useStat from "../../../Hooks/useStat";
 
 const AllPackages = () => {
   const [searchValue, setSearchValue] = useState('');
   const [tourPackages, isLoading, refetch] = useTourPackages(10, searchValue);
+  const [statistics] = useStat()
 
   const handleSearch = (e) => {
       e.preventDefault();
@@ -29,7 +31,7 @@ const AllPackages = () => {
       <div className="flex justify-between items-center">
         <div className="flex-1">
           <h1 className="text-2xl font-semibold bg-blue-400 max-w-fit px-5 py-2 rounded-md text-white">
-            Total Packages : <span>{tourPackages.length}</span>
+            Total Packages : <span>{statistics.totalPackages}</span>
           </h1>
         </div>
         <PageTitle title="All Packages" />

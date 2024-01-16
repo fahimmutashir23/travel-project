@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { IoMdArrowDropright } from "react-icons/io";
 
+
 const TourDescription = ({ details }) => {
   const {
     name,
@@ -16,6 +17,7 @@ const TourDescription = ({ details }) => {
     ratings,
     reviews,
   } = details;
+
   return (
     <div>
       <p>

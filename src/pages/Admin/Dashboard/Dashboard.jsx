@@ -4,22 +4,16 @@ import { LuPackagePlus } from "react-icons/lu";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { MdMarkEmailUnread } from "react-icons/md";
-import { useQuery } from "@tanstack/react-query";
-import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 import Loader from "../../../Utils/Loader/Loader";
 import { PieChart, Pie, Cell, Legend } from "recharts";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
-// eslint-disable-next-line no-unused-vars
-const Dashboard = () => {
-  const axiosPublic = useAxiosPublic();
+import useStat from "../../../Hooks/useStat";
 
-  const { data: statistics = [], isLoading } = useQuery({
-    queryKey: ["stats"],
-    queryFn: async () => {
-      const res = await axiosPublic.get("/stats");
-      return res.data;
-    },
-  });
+
+
+const Dashboard = () => {
+  const [statistics, isLoading] = useStat()
+
   const data = [
     { name: "users", value: parseInt(statistics?.users) },
     { name: "TotalBookings", value: parseInt(statistics?.totalBookings) },
@@ -140,7 +134,7 @@ const Dashboard = () => {
             <LuPackagePlus className="text-white text-center w-16 h-9" />
           </div>
           <div className="p-5">
-            <small>Hotel Package</small>
+            <small>Total Package</small>
             <br />
             {statistics.totalPackages}
           </div>

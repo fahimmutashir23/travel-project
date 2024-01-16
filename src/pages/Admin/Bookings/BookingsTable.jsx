@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { FaEdit } from "react-icons/fa";
 
 const BookingsTable = ({ bookingsItem }) => {
-    const {userName, email, hotelName} = bookingsItem;
+    const {userName, email, category, status} = bookingsItem;
   return (
     <>
       <tr className="bg-white border-b  dark:border-gray-700 hover:bg-slate-100">
@@ -15,7 +15,8 @@ const BookingsTable = ({ bookingsItem }) => {
           {userName}
         </th>
         <td className="px-6 py-4">{email}</td>
-        <td className="px-6 py-4 text-center">{hotelName && 'Hotel'}</td>
+        <td className="px-6 py-4 text-center">{status}</td>
+        <td className="px-6 py-4 text-center">{category}</td>
         <td className="px-6 py-4 text-center">
           <IconButton color="primary" aria-label="add to shopping cart">
             <div>

@@ -100,6 +100,8 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
         checkOut: reserveInfo.checkOut,
         transactionID: paymentIntent.id,
         date: date,
+        status: "Pending",
+        category: "Hotels"
       };
 
       axiosSecure.post("/bookings", {reserveInfoExtend, emailInfo}).then((res) => {

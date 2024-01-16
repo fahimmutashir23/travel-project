@@ -3,17 +3,29 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const TourPackagesCard = ({ tourPackage }) => {
-  const { name, destination, image, price, departureDate, ratings, duration, discount, _id } =
-    tourPackage;
+  const {
+    name,
+    destination,
+    image,
+    price,
+    departureDate,
+    ratings,
+    duration,
+    discount,
+    _id,
+  } = tourPackage;
+
   return (
     <div>
       <div className="flex max-w-4xl mx-auto bg-base-200 border-dotted border-slate-800 mb-5">
         <div className="relative">
           <img className="overflow-hidden w-72 h-52" src={image} />
 
-          {discount && <span className="absolute top-3 rounded-r-md text-white text-xl px-5 py-1 bg-yellow-500">
-            {discount}% OFF
-          </span>}
+          {discount && (
+            <span className="absolute top-3 rounded-r-md text-white text-xl px-5 py-1 bg-yellow-500">
+              {discount}% OFF
+            </span>
+          )}
         </div>
         <div className="flex justify-between flex-1 mb-2 p-4">
           <div className="flex flex-col justify-between">
@@ -36,9 +48,10 @@ const TourPackagesCard = ({ tourPackage }) => {
                 Show Reviews
               </button>
               <Link to={`/packagesDetails/${_id}`}>
-              <button className="btn bg-[#DC8051] text-white rounded-none h-9 text-base py-1 min-h-fit hover:bg-red-700">
-                Read more
-              </button></Link>
+                <button className="btn bg-[#DC8051] text-white rounded-none h-9 text-base py-1 min-h-fit hover:bg-red-700">
+                  Read more
+                </button>
+              </Link>
             </div>
           </div>
           <div className="flex flex-col justify-between">

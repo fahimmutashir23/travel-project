@@ -7,7 +7,7 @@ import TourPackagesCard from "./TourPackagesCard";
 
 
 const TourPackages = () => {
-  const [tourPackages, isLoading] = useTourPackages(5);
+  const [tourPackages, isLoading] = useTourPackages(5, {});
 
   if (isLoading) {
     return <Loader width="20" center="center" />;
@@ -34,15 +34,4 @@ const TourPackages = () => {
 };
 
 export default TourPackages;
-{
-  /* <div className="relative">
-<img
-  className="overflow-hidden w-2/3 h-56"
-  src="https://aventura.templaza.net/wp-content/uploads/2017/06/shifaaz-shamoon-465339-unsplash-600x400.jpg"
-/>
 
-<span className="absolute top-5 rounded-md text-white px-5 py-.5 bg-yellow-500">
-  25% OFF
-</span>
-</div> */
-}
