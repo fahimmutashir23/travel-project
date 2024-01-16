@@ -7,8 +7,8 @@ import { MenuOutlined, Search } from "@mui/icons-material";
 import BookingsTable from "./BookingsTable";
 
 const Bookings = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const [booking, isLoading, refetch] = useBooking(searchValue);
+  const [searchValue, setSearchValue] = useState({});
+  const [booking, isLoading, refetch] = useBooking({}, searchValue);
 
   const handleSearch = (e) => {
     e.preventDefault();

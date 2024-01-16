@@ -64,7 +64,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
-          to="/dashboard/allBookings"
+          to="/dashboard/allBookings" 
         >
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">All Bookings</div>
         </NavLink>
@@ -76,7 +76,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
-          to="/packagesBooking"
+          to="/dashboard/packagesBookings"
         >
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">Packages</div>
         </NavLink>
@@ -88,7 +88,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
-          to="/hotelBooking"
+          to="/dashboard/hotelBookings"
         >
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">Hotel</div>
         </NavLink>
@@ -100,7 +100,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
-          to="/flightBookings"
+          to="/dashboard/flightBookings"
         >
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">Flight</div>
         </NavLink>
@@ -112,7 +112,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-1"
               : ""
           }
-          to="/carBookings"
+          to="/dashboard/carBookings"
         >
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">Car</div>
         </NavLink>
@@ -268,7 +268,7 @@ const useMenu = () => {
               ? "bg-blue-500 min-w-full text-white py-3"
               : ""
           }
-          to="/AllUser"
+          to="/dashboard/allPayments"
         >
        <div className="hover:translate-x-3 transition-transform duration-300 text-base">All Payments</div>
         </NavLink>

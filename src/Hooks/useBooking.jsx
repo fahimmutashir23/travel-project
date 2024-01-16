@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "./useAxiosSecure";
 
-const useBooking = (searchValue, email) => {
+const useBooking = (email, searchValue) => {
         const axiosSecure = useAxiosSecure();
       
         const {data: booking = [], isLoading, refetch} = useQuery({
