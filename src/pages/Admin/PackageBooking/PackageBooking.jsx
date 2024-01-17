@@ -81,13 +81,10 @@ const PackageBooking = () => {
                 Category
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                View
+                Confirm
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                Edit
-              </th>
-              <th scope="col" className="px-6 py-3 text-center">
-                Delete
+                Cancel
               </th>
             </tr>
           </thead>
