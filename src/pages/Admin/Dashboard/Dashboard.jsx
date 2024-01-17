@@ -12,7 +12,7 @@ import useStat from "../../../Hooks/useStat";
 
 
 const Dashboard = () => {
-  const [statistics, isLoading] = useStat()
+  const [statistics, statLoading] = useStat()
 
   const data = [
     { name: "users", value: parseInt(statistics?.users) },
@@ -91,7 +91,7 @@ const Dashboard = () => {
     return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
   };
 
-  if (isLoading) {
+  if (statLoading) {
     return <Loader width="20" center="center" />;
   }
 

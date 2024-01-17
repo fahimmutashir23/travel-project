@@ -10,7 +10,8 @@ import useStat from "../../../Hooks/useStat";
 const Bookings = () => {
   const [searchValue, setSearchValue] = useState({});
   const [booking, isLoading, refetch] = useBooking({}, searchValue, "");
-  const [statistics] = useStat(); 
+  const [statistics, statLoading, statFetch] = useStat(); 
+
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -23,10 +24,10 @@ useEffect(() => {
     refetch()
 }, [searchValue])
 
-  if (isLoading) {
+  if (isLoading && statLoading) {
     return <Loader width="20" center="center" />;
   }
-console.log(booking);
+
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -86,13 +87,10 @@ console.log(booking);
                 Category
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                View
+                Confirm
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                Edit
-              </th>
-              <th scope="col" className="px-6 py-3 text-center">
-                Delete
+                Cancel
               </th>
             </tr>
           </thead>
@@ -103,6 +101,7 @@ console.log(booking);
                 key={bookingsItem._id}
                 bookingsItem={bookingsItem}
                 refetch={refetch}
+                statFetch={statFetch}
               />
             ))}
           </tbody>

@@ -30,7 +30,7 @@ const PackageBooking = () => {
     <div>
       <div className="flex justify-between items-center">
         <div className="flex-1"></div>
-        <PageTitle title="Hotels Booking" />
+        <PageTitle title="Packages Booking" />
         <div className="flex-1 flex justify-end">
           <Paper
             component="form"
