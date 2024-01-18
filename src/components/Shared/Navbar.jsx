@@ -4,12 +4,14 @@ import { TiThMenu } from "react-icons/ti";
 import SignUpModal from "../../Utils/SignUpModal.jsx/SignUpModal";
 import SignInModal from "../../Utils/SignInModal.jsx/SignInModal";
 import useAuth from "../../Hooks/useAuth";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(
     localStorage?.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
   const { user, logOutUser } = useAuth();
+  const [isAdmin] = useAdmin()
 
 
   const handleToggle = (e) => {
@@ -112,9 +114,9 @@ const Navbar = () => {
                 <li>
                   <Link to="/bookings" className="hover:underline">My Bookings</Link>
                 </li>
-                <li>
+                {user && isAdmin && <li>
                   <Link to="/dashboard/dashboard" className="hover:underline">Admin</Link>
-                </li>
+                </li>}
                 <li>
                   <button className="hover:underline">Favorite</button>
                 </li>

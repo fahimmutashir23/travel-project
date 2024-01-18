@@ -24,6 +24,9 @@ import AllPayments from "../pages/Admin/AllPayments/AllPayments";
 import HotelBookings from "../pages/Admin/HotelBookings/HotelBookings";
 import CarBookings from "../pages/Admin/CarBookings/CarBookings";
 import AirBookings from "../pages/Admin/AirBookings/AirBookings";
+import TourPackagesPage from "../pages/TourPackagesPage/TourPackagesPage";
+import PrivetRoute from "../Security/PrivetRoute";
+import AdminRoute from "../Security/AdminRoute";
 
 const Router = createBrowserRouter([
   {
@@ -48,12 +51,16 @@ const Router = createBrowserRouter([
         element: <Hotel />,
       },
       {
+        path: "tourPackagesPage",
+        element: <TourPackagesPage />,
+      },
+      {
         path: "hotelDetails/:id",
-        element: <HotelDetails />,
+        element: <HotelDetails />
       },
       {
         path:"/packagesDetails/:id",
-        element:<TourPackagesDetails/>
+        element: <TourPackagesDetails/>
        },
     ],
   },
@@ -69,7 +76,7 @@ const Router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout />,
+    element: <PrivetRoute><AdminRoute><DashboardLayout /></AdminRoute></PrivetRoute>,
     children: [
       {
         path: "/dashboard/dashboard",

@@ -9,7 +9,13 @@ import Payment from "../../pages/Payment/Payment";
 import { Rating } from "@mui/material";
 import { IoBed } from "react-icons/io5";
 import { FaUser } from "react-icons/fa6";
+import useAuth from "../../Hooks/useAuth";
+
+
+
+
 const HotelDetails = () => {
+  const {user} = useAuth()
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
   const reserveDaysMillisecond = new Date(checkOutDate) - new Date(checkInDate);
@@ -155,6 +161,7 @@ const HotelDetails = () => {
                             onClick={handleOpen}
                             type="submit"
                             className={`btn w-full bg-[#E36252] mt-5 text-white rounded-md py-1 ${
+                              (!user && "btn-disabled")||
                               (!checkInDate && "btn-disabled") ||
                               (!checkOutDate && "btn-disabled")
                             }`}

@@ -3,12 +3,13 @@ import Navbar from "../components/Shared/Navbar";
 import Footer from "../components/Shared/Footer/Footer";
 import { FaCar, FaHotel, FaPhone, FaTrain } from "react-icons/fa";
 import { MdAttractions, MdFlightTakeoff } from "react-icons/md";
+import { TbPackages } from "react-icons/tb";
 import { FcPlanner } from "react-icons/fc";
 import destinationIcon from "../assets/icon/destination (1).png";
-import { useState } from "react";
 
 const sideBarItem = [
   { path: "/hotel", icon: <FaHotel />, name: "Hotels" },
+  { path: "/tourPackagesPage", icon: <TbPackages />, name: "Travel Packages" },
   { path: "/flight", icon: <MdFlightTakeoff />, name: "Flights" },
   { path: "/abc", icon: <FaTrain />, name: "Trains" },
   { path: "/s", icon: <FaCar />, name: "Cars" },
@@ -23,7 +24,6 @@ const sideBarItem = [
 ];
 
 const MainLayout = () => {
-  const [open, setOpen] = useState(true);
 
   return (
     <div className="">
