@@ -68,7 +68,7 @@ const Home = () => {
           className="rounded-xl hero overflow-hidden h-[500px] text-white"
           style={{
             backgroundImage:
-              "url(https://azim.hostlin.com/Travic/assets/images/banner/banner-3.jpg)",
+              "url(https://www.cssigniter.com/demos/milos/wp-content/uploads/sites/17/2021/04/Fotolia_62721680_Subscription_Monthly_XL.jpg)",
             backgroundSize: "cover",
           }}
         >
@@ -114,7 +114,7 @@ const Home = () => {
                     />
                     <button
                       type="submit"
-                      className="absolute top-0 end-0 p-2.5 text-xl w-1/6 flex justify-center items-center gap-2 h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      className="absolute top-0 end-0 p-2.5 text-xl w-1/6 flex justify-center items-center gap-2 h-full text-white bg-pink-700 rounded-e-lg border border-white hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                     >
                       Search
                       <span className="sr-only">Search</span>
