@@ -3,7 +3,6 @@ import { FaUsers } from "react-icons/fa6";
 import { LuPackagePlus } from "react-icons/lu";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
-import { MdMarkEmailUnread } from "react-icons/md";
 import Loader from "../../../Utils/Loader/Loader";
 import { PieChart, Pie, Cell, Legend } from "recharts";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
@@ -152,7 +151,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center mt-6">
+      <div className="flex items-center justify-center md:mt-24">
         <div className="">
           <PieChart width={400} height={300}>
             <Pie

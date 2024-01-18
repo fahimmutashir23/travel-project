@@ -73,13 +73,6 @@ const Navbar = () => {
               </ul>
             </div>
             <div>
-              <Link className="bg-transparent">
-                <img
-                  src={user? user.photoURL : "https://i.ibb.co/LpR33BN/male-avatar-profile-picture-vector-10210618.jpg"}
-                  alt=""
-                  className=" w-8 lg:w-10 md:w-10 rounded-xl ml-7 mt-3"
-                />
-              </Link>
               <p className="text-pink-600 font-bold text-xs md:text-xs lg:text-base">
                 Tour & Travel
               </p>

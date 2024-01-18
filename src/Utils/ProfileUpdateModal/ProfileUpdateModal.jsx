@@ -9,14 +9,11 @@ import toast from 'react-hot-toast';
 const imgUploadUrl = `https://api.imgbb.com/1/upload?key=${
   import.meta.env.VITE_IMG_API_KEY
 }`;
-
-
 const ProfileUpdateModal = ({id, userInfo, refetch}) => {
     const [loading, setLoading] = useState(false);
     const axiosSecure = useAxiosSecure();
     const axiosPublic = useAxiosPublic();
     const countries = useCountry();
-
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -25,8 +22,6 @@ const ProfileUpdateModal = ({id, userInfo, refetch}) => {
         const email = e.target.email.value;
         const country = e.target.country.value;
         const photo = e.target.photo.files[0];
-        
-    
         const imgFile = {image: photo}
         const res = await axiosPublic.post(imgUploadUrl, imgFile, {
           headers : {

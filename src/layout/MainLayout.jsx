@@ -1,27 +1,7 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Navbar from "../components/Shared/Navbar";
 import Footer from "../components/Shared/Footer/Footer";
-import { FaCar, FaHotel, FaPhone, FaTrain } from "react-icons/fa";
-import { MdAttractions, MdFlightTakeoff } from "react-icons/md";
-import { TbPackages } from "react-icons/tb";
-import { FcPlanner } from "react-icons/fc";
-import destinationIcon from "../assets/icon/destination (1).png";
-
-const sideBarItem = [
-  { path: "/hotel", icon: <FaHotel />, name: "Hotels" },
-  { path: "/tourPackagesPage", icon: <TbPackages />, name: "Travel Packages" },
-  { path: "/flight", icon: <MdFlightTakeoff />, name: "Flights" },
-  { path: "/abc", icon: <FaTrain />, name: "Trains" },
-  { path: "/s", icon: <FaCar />, name: "Cars" },
-  { path: "/sf", icon: <MdAttractions />, name: "Attractions & Tours" },
-  { path: "/sfd", icon: <FcPlanner />, name: "Travel Planer" },
-  {
-    path: "/sdf",
-    icon: <img src={destinationIcon} className="w-5" />,
-    name: "Destination",
-  },
-  { path: "/sdf", icon: <FaPhone />, name: "Talk with us" },
-];
+import MobileNav from "./MobileNav";
 
 const MainLayout = () => {
 
@@ -29,27 +9,7 @@ const MainLayout = () => {
     <div className="">
       <Navbar />
       <div className="flex gap-2 relative mt-24 px-4">
-        <div
-          className={`rounded-lg w-[50px] bg-base-300 min-h-screen fixed`}
-        >
-          <div className="">
-            <div className="mt-2">
-              <ul className={`space-y-7`}>
-                {sideBarItem?.map((item, idx) => (
-                  <li key={idx}>
-                    <NavLink
-                      to={item.path}
-                      className="border-none text-black flex items-center gap-4 text-lg "
-                    >
-                      <span className="text-2xl ml-3">{item.icon}</span>{" "}
-                      {/* <span className="bg-base-300 z-50">{item.name}</span> */}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
+           <MobileNav/>
         <div className="ml-[60px] flex-1">
           <Outlet />
         </div>
