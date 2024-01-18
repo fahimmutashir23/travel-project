@@ -12,25 +12,24 @@ const HotelCard = ({ hotel }) => {
   return (
    <div className="">
      <Link to={`/hotelDetails/${hotel._id}`}>
-      <div className="w-80 bg-white border border-gray-200 rounded-lg shadow dark:border-gray-700">
-        <div className="w-full h-72 rounded-t-lg relative">
+      <div className="w-80 bg-white rounded-lg dark:border-gray-700 shadow-lg">
+        <div className="w-full h-56 rounded-t-lg relative">
           <img
-            className="p-2 w-full h-full object-cover rounded-t-xl"
+            className="p-2 w-full h-full object-cover rounded-2xl"
             src={hotel.hotel_img}
             alt="product image"
           />
-          <div className="absolute -bottom-[7px] ml-20 bg-white px-3 py-1 rounded-2xl">
-            <Rating sx={{fontSize: '20px'}} name="read-only" value={5} readOnly />
+          <div className="absolute right-1 top-[6px] bg-white px-2" style={{ borderRadius: "0 0 0 70px" }}>
+            <Rating sx={{fontSize: '14px'}} name="read-only" value={5} readOnly />
+          </div>
+          <div className="absolute right-32 bottom-[6px] bg-white px-2 rounded-t-2xl">
+          <span className="text-xs font-bold"><small>From</small>  ${fromRate}</span>
           </div>
         </div>
-        <div className="px-2 pb-2 sp">
-          <h5 className="text-lg font-semibold mt-2">{hotel.hotel_name}</h5>
-          <p className="mt-2 text-sm">{hotel.hotel_location}</p>
-          <div className="flex justify-end">
-            <h4 className="font-bold">
-              <span className="text-sm font-normal">From</span> ${fromRate}
-            </h4>
-          </div>
+        <div className="px-2 pb-2 sp text-center">
+          <h5 className="text-lg font-semibold">{hotel.hotel_name}</h5>
+          <p className="text-sm">{hotel.hotel_location}</p>
+         
         </div>
       </div>
     </Link>

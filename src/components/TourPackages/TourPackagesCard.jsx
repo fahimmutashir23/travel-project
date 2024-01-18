@@ -22,7 +22,7 @@ const TourPackagesCard = ({ tourPackage }) => {
           <img className="overflow-hidden w-72 h-52" src={image} />
 
           {discount && (
-            <span className="absolute top-3 rounded-r-md text-white text-xl px-5 py-1 bg-yellow-500">
+            <span className="absolute top-3 rounded-r-md text-white text-lg px-5  bg-yellow-600" style={{ borderRadius: "0 100px 0 100px" }}>
               {discount}% OFF
             </span>
           )}
