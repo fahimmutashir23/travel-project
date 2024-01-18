@@ -8,7 +8,7 @@ import Loader from "../../../Utils/Loader/Loader";
 import { PieChart, Pie, Cell, Legend } from "recharts";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
 import useStat from "../../../Hooks/useStat";
-
+import { FaHome } from "react-icons/fa";
 
 
 const Dashboard = () => {
@@ -103,9 +103,41 @@ const Dashboard = () => {
             <FaUsers className="text-white text-center w-16 h-9" />
           </div>
           <div className="p-5">
-            <small>Total users</small>
+            <small className="text-sm font-bold">Total users</small>
             <br />
             {statistics.users}
+          </div>
+        </div>
+        <div className="border flex justify-between items-center w-64 h-20 rounded-lg">
+          <div className="h-full text-center bg-pink-700 p-6">
+          <FaHome className="text-white text-center w-16 h-9" />
+          </div>
+          <div className="p-8">
+            <small className="text-sm font-bold">Total Hotel</small>
+            <br />
+            {statistics.totalHotels}
+          </div>
+        </div>
+        
+        <div className="border flex justify-between items-center w-64 h-20 rounded-lg">
+          <div className="h-full text-center bg-blue-700 p-6">
+            <FaCartPlus className="text-white text-center w-16 h-9" />
+          </div>
+          <div className="p-4">
+            <small className="text-sm font-bold">Total Bookings</small>
+            <br />
+            {statistics.totalBookings}
+          </div>
+        </div>
+
+        <div className="border flex justify-between items-center w-64 h-20 rounded-lg">
+          <div className="h-full text-center bg-pink-700 p-6">
+            <LuPackagePlus className="text-white text-center w-16 h-9" />
+          </div>
+          <div className="p-5">
+            <small className="text-sm font-bold">Total Package</small>
+            <br />
+            {statistics.totalPackages}
           </div>
         </div>
         <div className="border flex justify-between items-center w-56 h-20 rounded-lg">
@@ -113,47 +145,16 @@ const Dashboard = () => {
             <FaHandHoldingUsd className="text-white text-center w-16 h-9" />
           </div>
           <div className="p-5">
-            <small>Revenue</small>
+            <small className="text-sm font-bold">Revenue</small>
             <br />
             {statistics.revenue}
           </div>
         </div>
-        <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
-          <div className="h-full text-center bg-blue-700 p-6">
-            <FaCartPlus className="text-white text-center w-16 h-9" />
-          </div>
-          <div className="p-4">
-            <small>Total Bookings</small>
-            <br />
-            {statistics.totalBookings}
-          </div>
-        </div>
-
-        <div className="border flex justify-between items-center w-60 h-20 rounded-lg">
-          <div className="h-full text-center bg-pink-700 p-6">
-            <LuPackagePlus className="text-white text-center w-16 h-9" />
-          </div>
-          <div className="p-5">
-            <small>Total Package</small>
-            <br />
-            {statistics.totalPackages}
-          </div>
-        </div>
-        <div className="border flex justify-between items-center w-56 h-20 rounded-lg">
-          <div className="h-full text-center bg-pink-700 p-6">
-            <MdMarkEmailUnread className="text-white text-center w-16 h-9" />
-          </div>
-          <div className="p-5">
-            <small>Email</small>
-            <br />
-            Email
-          </div>
-        </div>
       </div>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mt-6">
         <div className="">
-          <PieChart width={400} height={400}>
+          <PieChart width={400} height={300}>
             <Pie
               data={data}
               cx="50%"
