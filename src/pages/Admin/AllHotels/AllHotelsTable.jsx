@@ -47,7 +47,7 @@ const Table = ({hotel, refetch}) => {
         <td className="px-6 py-4 text-center">{hotel_room?.length}</td>
         <td className="px-6 py-4 text-center">{category}</td>
         <td className="px-6 py-4 text-center">
-            <IconButton color="primary" aria-label="add to shopping cart">
+            <IconButton color="secondary" aria-label="add to shopping cart">
                 <Link to={`/hotelDetails/${_id}`}>
                 <VisibilityOutlined />
                 </Link>
@@ -61,7 +61,7 @@ const Table = ({hotel, refetch}) => {
             </IconButton>
         </td>
         <td className="px-6 py-4 text-center">
-            <IconButton color="primary" aria-label="add to shopping cart">
+            <IconButton color="warning" aria-label="add to shopping cart">
                 <FaEdit />
             </IconButton>
         </td>
@@ -69,7 +69,7 @@ const Table = ({hotel, refetch}) => {
           <a
             className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
           >
-            <IconButton onClick={() => handleDelete(_id)} color="primary" aria-label="add to shopping cart">
+            <IconButton onClick={() => handleDelete(_id)} color="error" aria-label="add to shopping cart">
                 <Delete />
             </IconButton>
           </a>

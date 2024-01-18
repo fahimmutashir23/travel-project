@@ -3,7 +3,7 @@ import Dialog from "@mui/material/Dialog";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import toast from "react-hot-toast";
 
-const DiscountModal = ({ open, setOpen, id }) => {
+const DiscountModal = ({ open, setOpen, id, discount, refetch }) => {
     const axiosSecure = useAxiosSecure();
 
   const handleDiscount = (e) => {
@@ -14,6 +14,7 @@ const DiscountModal = ({ open, setOpen, id }) => {
     axiosSecure.patch(`/packages/${id}`, {discountRate})
     .then(res => {
         if(res.data.modifiedCount > 0){
+          refetch()
             toast("Discount Added successfully")
         }
     })
@@ -25,6 +26,7 @@ const DiscountModal = ({ open, setOpen, id }) => {
     .then(res => {
         if(res.data.modifiedCount > 0){
             toast("Discount deleted successfully")
+            refetch()
         }
     })
   };
@@ -43,6 +45,7 @@ const DiscountModal = ({ open, setOpen, id }) => {
         >
           {"Add or Delete Discount"}
         </div>
+          <p className="text-center font-medium max-w-fit mx-auto bg-green-600 text-white px-5 py-1 rounded-full my-2">Current Discount : {discount ? discount : '00'}% </p>
         <div className="px-10">
           <div id="alert-dialog-description">
             <form onSubmit={handleDiscount}>
@@ -55,7 +58,7 @@ const DiscountModal = ({ open, setOpen, id }) => {
                   required
                 />
                 <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                  Discount
+                 Add Discount
                 </label>
               </div>
               <div className="flex justify-center">
@@ -81,6 +84,8 @@ const DiscountModal = ({ open, setOpen, id }) => {
 DiscountModal.propTypes = {
     open: PropTypes.string,
     setOpen: PropTypes.func,
+    refetch: PropTypes.func,
+    discount: PropTypes.string,
     id: PropTypes.string,
 };
 

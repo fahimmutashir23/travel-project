@@ -19,6 +19,14 @@ import AddTourPackages from "../pages/Admin/AddTourPackages/AddTourPackages";
 import AllUsers from "../pages/Admin/AllUsers/AllUsers";
 import TourPackagesDetails from "../components/TourPackages/TourPackagesDetails";
 import Bookings from "../pages/Admin/Bookings/Bookings";
+import PackageBooking from "../pages/Admin/PackageBooking/PackageBooking";
+import AllPayments from "../pages/Admin/AllPayments/AllPayments";
+import HotelBookings from "../pages/Admin/HotelBookings/HotelBookings";
+import CarBookings from "../pages/Admin/CarBookings/CarBookings";
+import AirBookings from "../pages/Admin/AirBookings/AirBookings";
+import TourPackagesPage from "../pages/TourPackagesPage/TourPackagesPage";
+import PrivetRoute from "../Security/PrivetRoute";
+import AdminRoute from "../Security/AdminRoute";
 
 const Router = createBrowserRouter([
   {
@@ -43,12 +51,16 @@ const Router = createBrowserRouter([
         element: <Hotel />,
       },
       {
+        path: "tourPackagesPage",
+        element: <TourPackagesPage />,
+      },
+      {
         path: "hotelDetails/:id",
-        element: <HotelDetails />,
+        element: <HotelDetails />
       },
       {
         path:"/packagesDetails/:id",
-        element:<TourPackagesDetails/>
+        element: <TourPackagesDetails/>
        },
     ],
   },
@@ -64,7 +76,7 @@ const Router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout />,
+    element: <PrivetRoute><AdminRoute><DashboardLayout /></AdminRoute></PrivetRoute>,
     children: [
       {
         path: "/dashboard/dashboard",
@@ -101,6 +113,26 @@ const Router = createBrowserRouter([
       {
         path: "/dashboard/allBookings",
         element: <Bookings />,
+      },
+      {
+        path: "/dashboard/packagesBookings",
+        element: <PackageBooking />,
+      },
+      {
+        path: "/dashboard/allPayments",
+        element: <AllPayments />,
+      },
+      {
+        path: "/dashboard/hotelBookings",
+        element: <HotelBookings />,
+      },
+      {
+        path: "/dashboard/carBookings",
+        element: <CarBookings />,
+      },
+      {
+        path: "/dashboard/flightBookings",
+        element: <AirBookings />,
       },
     ],
   },

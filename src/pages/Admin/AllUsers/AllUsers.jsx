@@ -71,7 +71,10 @@ const AllUsers = () => {
                 country
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                Edit
+                Role
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
+                Action
               </th>
               <th scope="col" className="px-6 py-3 text-center">
                 Delete

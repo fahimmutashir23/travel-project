@@ -12,7 +12,7 @@ import DiscountModal from "./DiscountModal";
 const AllPackagesTable = ({ tourPackage, refetch }) => {
   const [open, setOpen] = useState(false);
   const axiosSecure = useAxiosSecure();
-  const { _id, name, destination, price } = tourPackage;
+  const { _id, name, destination, price, discount } = tourPackage;
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -25,20 +25,19 @@ const AllPackagesTable = ({ tourPackage, refetch }) => {
       confirmButtonText: "Yes, Delete",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure.delete(`/packages/${id}`)
-        .then(res => {
-          if(res.data.deletedCount > 0){
+        axiosSecure.delete(`/packages/${id}`).then((res) => {
+          if (res.data.deletedCount > 0) {
             toast("Successfully Delete");
             refetch();
           }
-        })
+        });
       }
     });
   };
 
   const handleDiscountModal = () => {
-    setOpen(true)
-  }
+    setOpen(true);
+  };
 
   return (
     <>
@@ -83,7 +82,13 @@ const AllPackagesTable = ({ tourPackage, refetch }) => {
           </a>
         </td>
       </tr>
-      <DiscountModal open = {open} setOpen={setOpen} id = {_id}/>
+      <DiscountModal
+        open={open}
+        setOpen={setOpen}
+        id={_id}
+        discount={discount}
+        refetch= {refetch}
+      />
     </>
   );
 };

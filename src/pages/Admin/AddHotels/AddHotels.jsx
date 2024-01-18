@@ -90,7 +90,7 @@ const AddHotels = () => {
   };
 
   return (
-    <div className="mt-5 min-h-screen">
+    <div className="mt-5 max-w-4xl mx-auto border-[6px] p-2 bg-white shadow-lg shadow-gray-300">
       <PageTitle title="Add Hotels"></PageTitle>
       <form className="space-y-5" onSubmit={handleSubmit}>
         <div className="md:flex gap-5">

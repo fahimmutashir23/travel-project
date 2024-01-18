@@ -90,7 +90,7 @@ const AddTourPackages = () => {
   };
 
   return (
-    <div>
+    <div className="max-w-6xl py-2 px-4 border-[6px] bg-white shadow-lg shadow-gray-300 mx-auto mb-20">
       <PageTitle title="Add Tour Packages" />
       <form className="space-y-5 mb-10" onSubmit={handleSubmit}>
         <div className="md:flex gap-5">

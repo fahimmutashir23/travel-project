@@ -1,40 +1,36 @@
-import Loader from "../../../Utils/Loader/Loader";
-import AllPackagesTable from "./AllPackagesTable";
-import useTourPackages from "../../../Hooks/useTourPackages";
-import { Divider, IconButton, InputBase, Paper } from "@mui/material";
 import { MenuOutlined, Search } from "@mui/icons-material";
+import { Divider, IconButton, InputBase, Paper } from "@mui/material";
 import PageTitle from "../../../components/Shared/PageTitle/PageTitle";
+import useBooking from "../../../Hooks/useBooking";
 import { useEffect, useState } from "react";
-import useStat from "../../../Hooks/useStat";
+import Loader from "../../../Utils/Loader/Loader";
+import BookingsTable from "../Bookings/BookingsTable";
 
-const AllPackages = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const [tourPackages, isLoading, refetch] = useTourPackages(10, searchValue);
-  const [statistics] = useStat()
+const HotelBookings = () => {
+    const category = "Hotels"
+    const [searchValue, setSearchValue] = useState({});
+    const [booking, isLoading, refetch] = useBooking({}, searchValue, category);
 
-  const handleSearch = (e) => {
-      e.preventDefault();
-      const searchValue = e.target.search.value;
-      setSearchValue(searchValue)
-  };
-
-  useEffect(() => {
-    refetch()
-  }, [searchValue])
-
-  if (isLoading) {
-    return <Loader width="20" center="center" />;
-  } 
-
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const searchValue = e.target.search.value;
+        setSearchValue(searchValue)
+        e.target.reset()
+    };
+    
+    useEffect(() => {
+        refetch()
+    }, [searchValue])
+    
+      if (isLoading) {
+        return <Loader width="20" center="center" />;
+      }
+     
   return (
     <div>
       <div className="flex justify-between items-center">
-        <div className="flex-1">
-          <h1 className="text-2xl font-semibold bg-blue-400 max-w-fit px-5 py-2 rounded-md text-white">
-            Total Packages : <span>{statistics.totalPackages}</span>
-          </h1>
-        </div>
-        <PageTitle title="All Packages" />
+        <div className="flex-1"></div>
+        <PageTitle title="Hotels Booking" />
         <div className="flex-1 flex justify-end">
           <Paper
             component="form"
@@ -67,49 +63,44 @@ const AllPackages = () => {
           </Paper>
         </div>
       </div>
-
       <div className="relative overflow-x-auto shadow-md rounded-md">
         <table className="w-full text-left rtl:text-right ">
           <thead className="text-lg uppercase bg-blue-400 text-white ">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Package name
+                User name
               </th>
               <th scope="col" className="px-6 py-3">
-                Destination
+                User Email
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                Price
+                Status
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                Duration
+                Category
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                View
+                Confirm
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                Edit
-              </th>
-              <th scope="col" className="px-6 py-3 text-center">
-                Delete
+                Cancel
               </th>
             </tr>
           </thead>
             
           <tbody>
-            {tourPackages.map((tourPackage) => (
-              <AllPackagesTable
-                key={tourPackage._id}
-                tourPackage={tourPackage}
+            {booking.map((bookingsItem) => (
+              <BookingsTable
+                key={bookingsItem._id}
+                bookingsItem={bookingsItem}
                 refetch={refetch}
               />
             ))}
           </tbody>
         </table>
       </div>
-      <p className="text-center mt-5 text-xl font-medium">{tourPackages.length === 0 && 'Packages not found.'}</p>
     </div>
   );
 };
 
-export default AllPackages;
+export default HotelBookings;

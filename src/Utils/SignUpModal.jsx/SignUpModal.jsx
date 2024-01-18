@@ -27,8 +27,7 @@ const SignUpModal = ({ id }) => {
     const password = e.target.password.value;
     const reTypePassword = e.target.reTypePassword.value;
     const photo = e.target.photo.files[0];
-    const info = { name, email, country, password, reTypePassword, photo };
-    console.log(info);
+    
 
     if (password !== reTypePassword) {
       return setErrMsg("Re-Type-Password was not match");
@@ -73,7 +72,7 @@ const SignUpModal = ({ id }) => {
         <div className="modal-box bg-transparent backdrop-blur-2xl">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            <button className="btn btn-sm btn-circle btn-ghost text-gray-200 absolute right-2 top-2">
               ✕
             </button>
             </form>
@@ -87,7 +86,7 @@ const SignUpModal = ({ id }) => {
                     <input
                       type="text"
                       name="name"
-                      className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      className="block py-2.5 px-0 text-gray-200 w-full text-sm bg-transparent border-0 border-b-2 border-gray-600 appearance-none dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       placeholder=" "
                       required
                     />
@@ -99,7 +98,7 @@ const SignUpModal = ({ id }) => {
                     <input
                       type="email"
                       name="email"
-                      className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      className="block py-2.5 text-gray-200 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       placeholder=" "
                       required
                     />
@@ -127,7 +126,7 @@ const SignUpModal = ({ id }) => {
                     <input
                       type="password"
                       name="password"
-                      className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      className="block py-2.5 text-gray-200 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       placeholder=""
                       required
                     />
@@ -139,7 +138,7 @@ const SignUpModal = ({ id }) => {
                     <input
                       type="password"
                       name="reTypePassword"
-                      className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      className="block py-2.5 text-gray-200 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       placeholder=""
                       required
                     />
@@ -151,7 +150,7 @@ const SignUpModal = ({ id }) => {
                     <input
                       type="file"
                       name="photo"
-                      className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                      className="block py-2.5 text-gray-200 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                       placeholder=" "
                       required
                     />

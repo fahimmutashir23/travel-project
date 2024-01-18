@@ -5,10 +5,13 @@ import { useEffect, useState } from "react";
 import PageTitle from "../../../components/Shared/PageTitle/PageTitle";
 import { MenuOutlined, Search } from "@mui/icons-material";
 import BookingsTable from "./BookingsTable";
+import useStat from "../../../Hooks/useStat";
 
 const Bookings = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const [booking, isLoading, refetch] = useBooking(searchValue);
+  const [searchValue, setSearchValue] = useState({});
+  const [booking, isLoading, refetch] = useBooking({}, searchValue, "");
+  const [statistics, statLoading, statFetch] = useStat(); 
+
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -21,7 +24,7 @@ useEffect(() => {
     refetch()
 }, [searchValue])
 
-  if (isLoading) {
+  if (isLoading && statLoading) {
     return <Loader width="20" center="center" />;
   }
 
@@ -30,7 +33,7 @@ useEffect(() => {
       <div className="flex justify-between items-center">
         <div className="flex-1">
           <h1 className="text-2xl font-semibold bg-blue-400 max-w-fit px-5 py-2 rounded-md text-white">
-            Total Bookings : <span>{booking.length}</span>
+            Total Bookings : <span>{statistics.totalBookings}</span>
           </h1>
         </div>
         <PageTitle title="All Booking" />
@@ -78,16 +81,16 @@ useEffect(() => {
                 User Email
               </th>
               <th scope="col" className="px-6 py-3 text-center">
+                Status
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
                 Category
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                View
+                Confirm
               </th>
               <th scope="col" className="px-6 py-3 text-center">
-                Edit
-              </th>
-              <th scope="col" className="px-6 py-3 text-center">
-                Delete
+                Cancel
               </th>
             </tr>
           </thead>
@@ -98,6 +101,7 @@ useEffect(() => {
                 key={bookingsItem._id}
                 bookingsItem={bookingsItem}
                 refetch={refetch}
+                statFetch={statFetch}
               />
             ))}
           </tbody>
