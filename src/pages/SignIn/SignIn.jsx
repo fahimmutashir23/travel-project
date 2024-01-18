@@ -8,28 +8,33 @@ import toast from "react-hot-toast";
 import { Button } from "@mui/material";
 import { Google } from "@mui/icons-material";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [errorMsg, setErrMsg] = useState("");
-  const { signInUser, googleSignIn } = useAuth();
+  const { signInUser, googleSignIn, logOutUser } = useAuth();
   const axiosPublic = useAxiosPublic();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
 
+    
+
     signInUser(email, password)
       .then((res) => {
         if (res.user) {
           toast("successfully Sign In");
+          navigate("/");
           e.target.reset();
         }
       })
       .catch((err) => {
         if (err) {
           setErrMsg("Your email and password was wrong");
+          logOutUser()
         }
       });
   };
@@ -37,7 +42,6 @@ const SignIn = () => {
   const handleGoogleSignIn = () => {
     googleSignIn().then((res) => {
       if (res) {
-        console.log(res.user);
         const userInfo = {
           name: res.user.displayName,
           email: res.user.email,
@@ -49,6 +53,7 @@ const SignIn = () => {
       }
     });
   };
+
   return (
     <div className="relative -mt-5">
       <div
@@ -61,10 +66,10 @@ const SignIn = () => {
         }}
       ></div>
 
-        <div className="absolute -top-4 inset-0 bg-white h-6"></div>
-        <div className="absolute -bottom-4 w-full bg-white h-6"></div>
-        <div className="absolute -right-4 -top-2 w-6 bg-white h-[calc(100%+50px)]"></div>
-        <div className="absolute -left-4 -top-1 w-6 bg-white h-[calc(100%+50px)]"></div>
+      <div className="absolute -top-4 inset-0 bg-white h-6"></div>
+      <div className="absolute -bottom-4 w-full bg-white h-6"></div>
+      <div className="absolute -right-4 -top-2 w-6 bg-white h-[calc(100%+50px)]"></div>
+      <div className="absolute -left-4 -top-1 w-6 bg-white h-[calc(100%+50px)]"></div>
 
       <div className="absolute inset-0 flex items-center justify-center mx-auto">
         <div className=" w-9/12 bg-blue-800 bg-opacity-80 flex shadow-xl shadow-black">

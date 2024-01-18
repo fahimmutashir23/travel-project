@@ -50,6 +50,7 @@ const SignUp = () => {
       signUpUser(email, password).then((res) => {
         if (res.user) {
           toast("successfully Sign Up");
+          logOutUser();
           updateUser({
             displayName: name,
             photoURL: res.data?.data.display_url,
@@ -65,7 +66,6 @@ const SignUp = () => {
       };
       const response = await axiosPublic.post("/users", userInfo);
       if (response.data) {
-        logOutUser();
         navigate('/signIn')
         e.target.reset();
       }
