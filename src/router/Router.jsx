@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home/Home";
-import Login from "../pages/Login/Login";
+import SignIn from "../pages/SignIn/SignIn";
 import SignUp from "../pages/SignUp/SignUp";
 import ErrorPage from "../Utils/Loader/ErrorPage";
 import Hotel from "../pages/Hotels/Hotel";
@@ -39,8 +39,8 @@ const Router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "login",
-        element: <Login />,
+        path: "signIn",
+        element: <SignIn />,
       },
       {
         path: "signUp",
@@ -56,12 +56,12 @@ const Router = createBrowserRouter([
       },
       {
         path: "hotelDetails/:id",
-        element: <HotelDetails />
+        element: <HotelDetails />,
       },
       {
-        path:"/packagesDetails/:id",
-        element: <TourPackagesDetails/>
-       },
+        path: "/packagesDetails/:id",
+        element: <TourPackagesDetails />,
+      },
     ],
   },
   {
@@ -76,7 +76,13 @@ const Router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <PrivetRoute><AdminRoute><DashboardLayout /></AdminRoute></PrivetRoute>,
+    element: (
+      <PrivetRoute>
+        <AdminRoute>
+          <DashboardLayout />
+        </AdminRoute>
+      </PrivetRoute>
+    ),
     children: [
       {
         path: "/dashboard/dashboard",

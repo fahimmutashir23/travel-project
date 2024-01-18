@@ -1,29 +1,24 @@
 
 import { Link, NavLink } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
-import SignUpModal from "../../Utils/SignUpModal.jsx/SignUpModal";
-import SignInModal from "../../Utils/SignInModal.jsx/SignInModal";
 import useAuth from "../../Hooks/useAuth";
 import useAdmin from "../../Hooks/useAdmin";
 
 const Navbar = () => {
- 
   const { user, logOutUser } = useAuth();
   const [isAdmin] = useAdmin();
 
 
   const navLinks = (
     <>
-      <SignUpModal id="my_modal_3"></SignUpModal>
-      <SignInModal id="my_modal_2"></SignInModal>
       <li>
         <NavLink to="/" className="hover:underline">
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to="/flight" className="hover:underline">
-          Flight
+        <NavLink to="/tourPackagesPage" className="hover:underline">
+          Tour Packages
         </NavLink>
       </li>
       <li>
@@ -33,14 +28,24 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          onClick={() => document.getElementById("my_modal_3").showModal()}
+        to='/signUp'
           className="hover:underline"
         >
-          SignUp
+          Sign Up
         </NavLink>
       </li>
+      { !user && <li>
+        <NavLink
+        to='/signIn'
+          className="hover:underline"
+        >
+          Sign In
+        </NavLink>
+      </li>}
     </>
   );
+
+  
   return (
     <div className="">
       <div className="flex">
