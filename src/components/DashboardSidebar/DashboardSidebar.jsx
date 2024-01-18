@@ -2,10 +2,11 @@ import useMenu from "./useMenu";
 import profileIcon from "../../assets/icon/profile.png";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import useAdmin from "../../Hooks/useAdmin";
 
 
 const DashboardSidebar = () => {
-  const isAdmin = true
+  const [isAdmin] = useAdmin()
   const { userNavMenu, adminNavMenu } = useMenu();
   const {logOutUser} = useAuth()
 
