@@ -109,6 +109,13 @@ const HotelDetails = () => {
                           <h1 className="text-lg font-semibold text-blue-950">
                             {room.room_name}
                           </h1>
+                          <div className="flex mt-1">
+                          <Rating
+                            sx={{ fontSize: "22px", color: "yellow" }}
+                            name="read-only"
+                            readOnly
+                          />
+                        </div>
                         </div>
                         <div className="flex gap-4">
                           <button className="rounded-none h-9 text-base py-1 min-h-fit ">

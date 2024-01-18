@@ -1,60 +1,31 @@
 import { useEffect, useState } from "react";
 const Banner = () => {
   const [currentSlider, setCurrentSlider] = useState(0);
-  const sliders = [
-    "https://source.unsplash.com/1200x640/?snow-fall",
-    "https://source.unsplash.com/1200x640/?Spring",
-    "https://source.unsplash.com/1200x640/?mountain",
-    "https://source.unsplash.com/1200x640/?river",
-    "https://source.unsplash.com/1200x640/?Autumn",
-  ];
-  const nextSlider = () =>
-    setCurrentSlider((currentSlider) =>
-      currentSlider === sliders.length - 1 ? 0 : currentSlider + 1
-    );
+  const sliders = [{img: "https://www.cssigniter.com/demos/milos/wp-content/uploads/sites/17/2021/04/Fotolia_52127130_Subscription_Monthly_XXL.jpg", title: "Istanbul", des: "Istanbul is the largest city in Turkey, serving as the country's economic, cultural and historic hub.",}, {img: "https://themetechmount.com/wordpress/a3trip/wp-content/uploads/2022/01/tour-d-05.png", title: "Istanbul", des: "Istanbul is the largest city in Turkey, serving as the country's economic, cultural and historic hub.",}, {img: "https://themes-themegoods.b-cdn.net/grandtour/demo2/wp-content/uploads/2016/12/jerome-prax-60091.jpg", title: "Istanbul", des: "Istanbul is the largest city in Turkey, serving as the country's economic, cultural and historic hub.",}, {img: "https://themetechmount.com/wordpress/a3trip/wp-content/uploads/2022/07/form-bg-01.jpg", title: "Istanbul",des: "Istanbul is the largest city in Turkey, serving as the country's economic, cultural and historic hub.",}, {img: "https://themetechmount.com/wordpress/a3trip/demo4/wp-content/uploads/sites/11/2023/12/d3-min.jpg", title: "Istanbul", des: "Istanbul is the largest city in Turkey, serving as the country's economic, cultural and historic hub.",},];
+  // if you don't want to change the slider automatically then you can just remove the useEffect
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      nextSlider();
-    }, 3000);
+    const intervalId = setInterval(() => setCurrentSlider(currentSlider === sliders.length - 1 ? 0 : currentSlider + 1), 5000);
     return () => clearInterval(intervalId);
   }, [currentSlider]);
   return (
     <div>
-      <div className="w-full mx-auto h-[240px] md:h-[470px] lg:h-[500px] flex flex-col lg:flex-row items-center overflow-hidden gap-5 lg:gap-10 px-10">
-        <div className="relative overflow-hidden">
-          {/* dots */}
-          <div className="flex h-fit rounded-full z-50 absolute right-0 bottom-1/2 w-fit gap-1 rotate-90">
-            {sliders.map((_, inx) => (
-              <button
-                key={inx}
-                onClick={() => setCurrentSlider(inx)}
-                className={`rounded-full duration-300 bg-white ${
-                  currentSlider === inx ? "w-10" : "w-2"
-                } h-2`}
-              ></button>
-            ))}
-          </div>
-          {/* slider container */}
-          <div
-            className="ease-linear duration-300 flex flex-col h-[340px] md:h-[670px] transform-gpu relative"
-            style={{ transform: `translateY(-${currentSlider * 100}%)` }}
-          >
-            {/* sliders */}
-            {sliders.map((_, inx) => (
-              <div
-                key={inx}
-                className="min-w-full duration-200 before:content-['Image'] before:bg-black/20 before:-z-10 before:absolute before:text-3xl before:flex before:justify-center before:items-center before:text-black/40 before:inset-0 relative"
-              >
-                <img
-                  src={_}
-                  className="w-full h-[340px] md:h-[670px] object-cover"
-                  alt={`Slider - ${inx + 1}`}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <div className="w-full h-72 sm:h-96 md:h-[540px] lg:h-[500px] xl:h-[780px] flex flex-col items-center justify-center gap-5 lg:gap-10 bg-cover bg-center before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear"
+                style={{ backgroundImage: `url(${sliders[currentSlider].img})` }}>
+                {/* text container here */}
+                <div className="drop-shadow-lg text-white text-center px-5">
+                    <h1 className="text-xl lg:text-3xl font-semibold mb-3">{sliders[currentSlider].title}</h1>
+                    <p className="text-sm md:text-base lg:text-lg">{sliders[currentSlider].des}</p>
+                </div>
+            </div>
+            {/* slider container */}
+            <div className="flex justify-center items-center gap-3 p-2">
+                {/* sliders */}
+                {sliders.map((slide, inx) => (
+                    <img onClick={() => setCurrentSlider(inx)} key={inx}
+                        src={slide.img} className={`w-10 md:w-20 h-6 sm:h-8 md:h-12 bg-black/20 ${currentSlider === inx ? 'border-2 border-black p-px' : ''} rounded-md md:rounded-lg box-content cursor-pointer`}
+                        alt={slide.title}/>
+                ))}
+            </div>
     </div>
   );
 };

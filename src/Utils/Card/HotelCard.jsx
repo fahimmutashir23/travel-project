@@ -12,7 +12,7 @@ const HotelCard = ({ hotel }) => {
   return (
    <div className="">
      <Link to={`/hotelDetails/${hotel._id}`}>
-      <div className="w-80 bg-white rounded-lg dark:border-gray-700 shadow-lg">
+      <div className="w-72 bg-white rounded-lg dark:border-gray-700 shadow-lg">
         <div className="w-full h-56 rounded-t-lg relative">
           <img
             className="p-2 w-full h-full object-cover rounded-2xl"
