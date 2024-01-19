@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const DashboardNav = () => {
   return (
     <div className="flex justify-between items-center py-3 px-4 bg-red-200 shadow-md fixed w-full z-30">
@@ -30,7 +32,6 @@ const DashboardNav = () => {
                     d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
                   />
                 </svg>
-                <span className="sr-only">Search</span>
               </button>
             </div>
           </div>
@@ -38,7 +39,7 @@ const DashboardNav = () => {
 
       </div>
       <div className="w-1/4 flex justify-end font-semibold">
-        <button>Account</button>
+        <Link className="btn" to='/'>Go Home</Link>
       </div>
     </div>
   );
