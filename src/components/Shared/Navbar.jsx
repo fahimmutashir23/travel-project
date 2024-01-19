@@ -4,6 +4,7 @@ import { TiThMenu } from "react-icons/ti";
 import useAuth from "../../Hooks/useAuth";
 import useAdmin from "../../Hooks/useAdmin";
 import useUsers from "../../Hooks/useUsers";
+import Logo from "../../Utils/Logo/Logo";
 
 const Navbar = () => {
   const { user, logOutUser } = useAuth();
@@ -64,11 +65,9 @@ const Navbar = () => {
                 {navLinks}
               </ul>
             </div>
-            <div>
-              <p className="text-pink-600 font-bold text-xs md:text-xs lg:text-base">
-                Tour & Travel
-              </p>
-            </div>
+            <Link to='/'>
+              <Logo width='14'/>
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="flex px-1 lg:gap-4 lg:text-md font-semibold">

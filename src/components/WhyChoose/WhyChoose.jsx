@@ -1,4 +1,3 @@
-import { Parallax } from "react-parallax";
 import videoBG from "../../assets/videobg/videoBG.mp4";
 
 const WhyChoose = () => {

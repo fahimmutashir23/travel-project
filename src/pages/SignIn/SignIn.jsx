@@ -9,6 +9,7 @@ import { Button } from "@mui/material";
 import { Google } from "@mui/icons-material";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Link, useNavigate } from "react-router-dom";
+import Title from "../../Utils/Title/Title";
 
 const SignIn = () => {
   const [errorMsg, setErrMsg] = useState("");
@@ -56,6 +57,7 @@ const SignIn = () => {
 
   return (
     <div className="relative -mt-5">
+      <Title title="Sign In" />
       <div
         className="h-[calc(100vh-100px)] border-2"
         style={{

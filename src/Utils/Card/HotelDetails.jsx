@@ -10,6 +10,7 @@ import { Rating } from "@mui/material";
 import { IoBed } from "react-icons/io5";
 import { FaUser } from "react-icons/fa6";
 import useAuth from "../../Hooks/useAuth";
+import Title from "../Title/Title";
 
 
 
@@ -40,6 +41,7 @@ const HotelDetails = () => {
 
   return (
     <div className="container">
+      <Title title={hotel.hotel_name} />
       <div className="px-2 pb-2">
         <h5 className="font-semibold text-5xl mb-3 leading-[130%]">
           {hotel.hotel_name}

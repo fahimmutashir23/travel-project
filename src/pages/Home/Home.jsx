@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { FaCar, FaHome, FaHotel } from "react-icons/fa";
 import { MdFlightTakeoff } from "react-icons/md";
 import TourPackages from "../../components/TourPackages/TourPackages";
+import Title from "../../Utils/Title/Title";
 const searchCategory = [
   { icon: <FaHome></FaHome>, name: "Search All", title: "Where to Go" },
   {
@@ -63,6 +64,7 @@ const Home = () => {
   }
   return (
     <div>
+      <Title title="Home" />
       <div className="overflow-hidden" data-aos="zoom-in">
         <div
           className="rounded-xl hero overflow-hidden h-[500px] text-white"

@@ -2,6 +2,7 @@ import { useState } from "react";
 import useTourPackages from "../../Hooks/useTourPackages";
 import Loader from "../../Utils/Loader/Loader";
 import TourPackagesCard from "../../components/TourPackages/TourPackagesCard";
+import Title from "../../Utils/Title/Title";
 
 const TourPackagesPage = () => {
   const [tourPackages, isLoading] = useTourPackages("", {});
@@ -48,6 +49,7 @@ const TourPackagesPage = () => {
 
   return (
     <div>
+      <Title title="Tour Packages" />
       <div
         className="w-full h-72 sm:h-96 md:h-[540px] lg:h-[500px] xl:h-[780px] flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-50 overflow-hidden"
         style={{

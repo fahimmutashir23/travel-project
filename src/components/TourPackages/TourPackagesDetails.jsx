@@ -5,6 +5,7 @@ import Banner from "./package/Banner";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Loader from "../../Utils/Loader/Loader";
+import Title from "../../Utils/Title/Title";
 
 const TourPackagesDetails = () => {
   const {id} = useParams()
@@ -24,6 +25,7 @@ const TourPackagesDetails = () => {
 
   return (
     <div>
+      <Title title="Details" />
       <Banner />
       <div className="flex">
         <TourDescription details ={details} />

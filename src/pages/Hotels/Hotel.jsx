@@ -5,6 +5,7 @@ import addNotification from "react-push-notification";
 const img = "https://i.postimg.cc/x8dvVkZ6/pexels-julius-silver-753626.jpg";
 import google from "../../assets/icon/google.png";
 import { ArrowDownward } from "@mui/icons-material";
+import Title from "../../Utils/Title/Title";
 
 const Hotel = () => {
   const [values, setValues] = useState([new DateObject(), new DateObject()]);
@@ -70,6 +71,7 @@ const Hotel = () => {
 
   return (
     <div>
+      <Title title="Hotel" />
       <div className="" data-aos="zoom-in">
         <div
           className="rounded-xl hero  h-[500px] text-white"

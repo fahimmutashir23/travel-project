@@ -9,6 +9,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Link, useNavigate } from "react-router-dom";
 import useCountry from "../../Hooks/useCountry";
 import Loader from "../../Utils/Loader/Loader";
+import Title from "../../Utils/Title/Title";
 
 const imgUploadUrl = `https://api.imgbb.com/1/upload?key=${
   import.meta.env.VITE_IMG_API_KEY
@@ -73,6 +74,7 @@ const SignUp = () => {
   };
   return (
     <div className="relative -mt-5">
+      <Title title="Sign Up" />
       <div
         className="h-[calc(100vh-100px)] border-2"
         style={{

@@ -5,6 +5,7 @@ import useAuth from "../../Hooks/useAuth";
 import ProfileUpdateModal from "../../Utils/ProfileUpdateModal/ProfileUpdateModal";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import Title from "../../Utils/Title/Title";
 
 const Profile = () => {
     const axiosPublic = useAxiosPublic();
@@ -47,6 +48,7 @@ refetch()
 
     return (
         <div className='flex justify-center items-center mt-5'>
+            <Title title="Profile" />
             <div className='bg-white shadow-lg rounded-2xl w-2/3'>
                 <img
                     alt='profile'
