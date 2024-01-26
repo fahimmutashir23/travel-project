@@ -101,6 +101,7 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
         roomId: reserveInfo.roomId,
         roomName: reserveInfo.roomName,
         roomPrice: reserveInfo.roomPrice,
+        totalPay: reserveInfo.roomPrice * reserveDays,
         checkIn: reserveInfo.checkIn,
         checkOut: reserveInfo.checkOut,
         transactionID: paymentIntent.id,
@@ -203,6 +204,7 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
             <div className="flex items-center gap-2 mt-2">
               <input
                 type="checkbox"
+                required
                 onChange={(e) => setCheck(e.target.checked)}
                 className="checkbox border-2 rounded-[4px] border-red-600"
               />

@@ -34,9 +34,9 @@ const Payment = ({
     email: user?.email,
     userName: user?.displayName,
     hotelName: hotel.hotel_name,
-    roomId: selectedRoom.room_id,
-    roomName: selectedRoom.room_name,
-    roomPrice: selectedRoom.room_price,
+    roomId: selectedRoom?.room_id,
+    roomName: selectedRoom?.room_name,
+    roomPrice: selectedRoom?.room_price,
     checkIn: reserveDate.checkIn,
     checkOut: reserveDate.checkOut,
   };
@@ -56,13 +56,13 @@ const Payment = ({
           <div className="divider divider-success"></div>
           <div>
             <h1 className="text-xl font-bold">
-              {selectedRoom.room_name} <span className="font-normal">of</span>{" "}
+              {selectedRoom?.room_name} <span className="font-normal">of</span>{" "}
               {hotel.hotel_name}{" "}
             </h1>
             <h3 className="text-xl mt-2">
               Payable Amount:{" "}
               <span className="font-bold">
-                {selectedRoom.room_price * reserveDays}$
+                {selectedRoom?.room_price * reserveDays}$
               </span>
             </h3>
           </div>
