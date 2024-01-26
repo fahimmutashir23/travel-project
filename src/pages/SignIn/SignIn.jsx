@@ -1,7 +1,7 @@
-import bg1 from "../../assets/backgroundImage/background1.jpg";
 import bg2 from "../../assets/backgroundImage/background2.jpg";
-import bg3 from "../../assets/backgroundImage/background3.jpg";
-import bg4 from "../../assets/backgroundImage/background4.jpg";
+// import bg1 from "../../assets/backgroundImage/background1.jpg";
+// import bg3 from "../../assets/backgroundImage/background3.jpg";
+// import bg4 from "../../assets/backgroundImage/background4.jpg";
 import { useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
@@ -77,9 +77,9 @@ const SignIn = () => {
         <div className=" w-9/12 bg-blue-800 bg-opacity-80 flex shadow-xl shadow-black">
           <div className="flex-1 relative">
             <img src={bg2} alt="" className="rounded-r-2xl" />
-            <div className="absolute inset-0 flex items-center justify-center">
+            <div className="absolute inset-0 top-52">
               <div>
-                <h2 className="text-5xl uppercase text-center font-bold text-blue-300 mb-10">
+                <h2 className="text-5xl uppercase text-center font-bold text-white  mb-10">
                   Welcome Back
                 </h2>
               </div>

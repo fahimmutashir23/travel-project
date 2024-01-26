@@ -19,13 +19,18 @@ const HotelDetails = () => {
   const {user} = useAuth()
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
+  const [roomId , setRoomId] = useState(null);
+  const [open, setOpen] = useState(false);
   const reserveDaysMillisecond = new Date(checkOutDate) - new Date(checkInDate);
   const reserveDays = reserveDaysMillisecond / (1000 * 60 * 60 * 24);
   const reserveDate = { checkIn: checkInDate, checkOut: checkOutDate };
   const axiosPublic = useAxiosPublic();
   const { id } = useParams();
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+
+  const handleOpen = (id) => {
+    setOpen(true)
+    setRoomId(id)
+  };
 
   const { data: hotel = [], isLoading } = useQuery({
     queryKey: ["hotels"],
@@ -91,10 +96,10 @@ const HotelDetails = () => {
           <p className="text-base mt-5 text-black text-left w-1/2">
             {hotel.description}
           </p>
-          <div className="">
-            {hotel.hotel_room?.map((room) => (
+          <div>
+            {hotel.hotel_room?.map((room, idx) => (
               <div
-                key={room.room_id}
+                key={idx}
                 className="flex flex-col justify-center shadow-md rounded-xl text-black"
               >
                 <div>
@@ -167,7 +172,7 @@ const HotelDetails = () => {
                         </div>
                         <div className="flex justify-end">
                           <button
-                            onClick={handleOpen}
+                            onClick={()=>handleOpen(idx+1)}
                             type="submit"
                             className={`btn w-full bg-[#E36252] mt-5 text-white rounded-md py-1 ${
                               (!user && "btn-disabled")||
@@ -179,12 +184,12 @@ const HotelDetails = () => {
                           </button>
                         </div>
                         <Payment
+                          room_id={roomId}
                           open={open}
                           setOpen={setOpen}
+                          hotel={hotel}
                           room={room}
-                          hotel_name={hotel.hotel_name}
                           reserveDate={reserveDate}
-                          id={hotel._id}
                           reserveDays={reserveDays}
                         ></Payment>
                       </div>

@@ -12,6 +12,8 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import moment from "moment";
+import PhoneInput from "react-phone-input-2";
+import useMessage from "./useMessage";
 
 const CheckOutForm = ({ reserveInfo, reserveDays }) => {
   const [loading, setLoading] = useState(false);
@@ -23,28 +25,30 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
   const { user } = useAuth();
   const [errorMassage, setErrorMassage] = useState(null);
   const date = moment().format("DD-MM-YYYY, h:mm a");
+  const [phone, setPhone] = useState("");
+  const [check, setCheck] = useState(false);
+  const message = useMessage(reserveInfo, reserveDays)
+
+  const handlePhone = (e) => {
+    setPhone(e);
+  };
 
   const emailInfo = {
     subject: "Our Travels Payment Confirmation",
-    message: `
-      Thank you for Booking Our Room.
-      Your Amount ${reserveInfo.roomPrice * reserveDays}$ is successfully pay.
-      Enjoy Your Travel session
-    `
-  }
+    message: message,
+  };
 
   useEffect(() => {
-    const price = reserveInfo.roomPrice * reserveDays
-    axiosSecure
-      .post("/payment-intent", { price: price })
-      .then((res) => {
-        setClientSecret(res.data.clientSecret);
-      });
+    const price = reserveInfo.roomPrice * reserveDays;
+    axiosSecure.post("/payment-intent", { price: price }).then((res) => {
+      setClientSecret(res.data.clientSecret);
+    });
   }, [axiosSecure, reserveDays, reserveInfo.roomPrice]);
 
   const handlePayment = async (e) => {
     e.preventDefault();
     setLoading(true);
+    const name = e.target.name.value;
 
     if (!stripe || !elements) {
       return;
@@ -60,23 +64,21 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
     if (error) {
       setErrorMassage(error);
     } else {
-      
       setErrorMassage(null);
-  }
-  const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
-      clientSecret,
-      {
-          payment_method: {card: card, billing_details: {
-              email: user?.email,
-              name: user?.displayName,
-              address: {
-                postal_code: postalCode,
+    }
+    const { paymentIntent, error: confirmError } =
+      await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: card,
+          billing_details: {
+            email: user?.email,
+            name: user?.displayName,
+            address: {
+              postal_code: postalCode,
             },
-                 
-              },
           },
         },
-      );
+      });
 
     if (confirmError) {
       setErrorMassage(confirmError);
@@ -84,14 +86,17 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
       setErrorMassage(null);
     }
     if (paymentIntent.status === "succeeded") {
-      setErrorMassage('Successfully pay! Please got to your booking section or check your email and collect your payment receipt.')
+      setErrorMassage(
+        "Successfully pay! Please got to your booking section or check your email and collect your payment receipt."
+      );
       setLoading(false);
-      e.target.reset()
+      e.target.reset();
 
       const reserveInfoExtend = {
         id: reserveInfo.id,
         email: reserveInfo.email,
-        userName: reserveInfo.userName,
+        phone: phone,
+        userName: name,
         hotelName: reserveInfo.hotelName,
         roomId: reserveInfo.roomId,
         roomName: reserveInfo.roomName,
@@ -101,14 +106,16 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
         transactionID: paymentIntent.id,
         date: date,
         status: "Pending",
-        category: "Hotels"
+        category: "Hotels",
       };
 
-      axiosSecure.post("/bookings", {reserveInfoExtend, emailInfo}).then((res) => {
-        if (res.data.insertedId) {
-          toast("Booking Success");
-        }
-      });
+      axiosSecure
+        .post("/bookings", { reserveInfoExtend, emailInfo })
+        .then((res) => {
+          if (res.data.insertedId) {
+            toast("Booking Success");
+          }
+        });
     }
   };
 
@@ -129,6 +136,7 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
           </label>
           <input
             className="w-full px-3 py-1 mb-1 border-2 bg-transparent border-gray-200 rounded-md focus:outline-none"
+            name="name"
             placeholder="Your Name"
             type="text"
             defaultValue={user?.displayName}
@@ -185,6 +193,35 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
               placeholder="POST"
               className="w-24 px-3 py-1 mb-1 border-2 bg-transparent border-gray-200 rounded-md focus:outline-none"
             />
+          </div>
+        </div>
+        <div className="mb-3">
+          <div className="mb-3 border-2 px-1 py-2 rounded-md bg-white">
+            <span>
+              Your phone number is require for Secure your Information.
+            </span>
+            <div className="flex items-center gap-2 mt-2">
+              <input
+                type="checkbox"
+                onChange={(e) => setCheck(e.target.checked)}
+                className="checkbox border-2 rounded-[4px] border-red-600"
+              />
+              <div
+                className={`${
+                  !check ? "w-0 overflow-hidden" : "w-96 overflow-hidden transition-all duration-1000"
+                } `}
+              >
+                <PhoneInput
+                  country={"bd"}
+                  value={phone}
+                  onChange={handlePhone}
+                  inputProps={{
+                    name: "phone",
+                    required: true,
+                  }}
+                />
+              </div>
+            </div>
           </div>
         </div>
         <button

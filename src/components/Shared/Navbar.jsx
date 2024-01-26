@@ -1,10 +1,9 @@
-
+import logo1 from '../../assets/Logo/Logo3.png';
 import { Link, NavLink } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 import useAuth from "../../Hooks/useAuth";
 import useAdmin from "../../Hooks/useAdmin";
 import useUsers from "../../Hooks/useUsers";
-import Logo from "../../Utils/Logo/Logo";
 
 const Navbar = () => {
   const { user, logOutUser } = useAuth();
@@ -66,7 +65,7 @@ const Navbar = () => {
               </ul>
             </div>
             <Link to='/'>
-              <Logo width='14'/>
+              <img src={logo1} alt="" className='w-14' />
             </Link>
           </div>
           <div className="navbar-center hidden lg:flex">

@@ -9,18 +9,6 @@ import Loader from "../../../Utils/Loader/Loader";
 import { useParams } from "react-router-dom";
 const animatedComponents = makeAnimated();
 
-// const hotelCategory = [
-//   "Business Hotel",
-//   "Airport Hotels",
-//   "Suite Hotels",
-//   "Extended Stay Hotels",
-//   "Serviced Apartments",
-//   "Resort Hotels",
-//   "Casino Hotels",
-//   "Convention Center",
-//   "City Hotels",
-//   "Motels",
-// ];
 const options = [
   { value: "Non-Smoking", label: "Non-Smoking" },
   { value: "40m", label: "40m" },
