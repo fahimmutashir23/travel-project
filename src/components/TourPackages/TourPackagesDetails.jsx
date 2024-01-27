@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import TourDescription from "./TourDescription";
 import TourPackageForm from "./TourPackageForm";
 import Banner from "./package/Banner";
@@ -31,6 +31,7 @@ const TourPackagesDetails = () => {
         <TourDescription details ={details} />
         <TourPackageForm details ={details} />
       </div>
+      <Link to='/pdf'>PDF</Link>
     </div>
   );
 };

@@ -17,13 +17,17 @@ import Title from "../Title/Title";
 
 const HotelDetails = () => {
   const {user} = useAuth()
-  const [checkInDate, setCheckInDate] = useState("");
-  const [checkOutDate, setCheckOutDate] = useState("");
+  const [checkInDate, setCheckInDate] = useState({});
+  const [checkOutDate, setCheckOutDate] = useState({});
   const [roomId , setRoomId] = useState(null);
   const [open, setOpen] = useState(false);
-  const reserveDaysMillisecond = new Date(checkOutDate) - new Date(checkInDate);
-  const reserveDays = reserveDaysMillisecond / (1000 * 60 * 60 * 24);
+
+
+  const reserveDaysMillisecond = new Date(checkOutDate.date) - new Date(checkInDate.date);
+  const days = reserveDaysMillisecond / (1000 * 60 * 60 * 24);
+  const reserveDays = {days, id : checkOutDate.id} 
   const reserveDate = { checkIn: checkInDate, checkOut: checkOutDate };
+
   const axiosPublic = useAxiosPublic();
   const { id } = useParams();
 
@@ -40,9 +44,18 @@ const HotelDetails = () => {
     },
   });
 
+  const handleCheckIn = (date, id) => {
+    setCheckInDate({date, id});
+  }
+
+  const handleCheckOut = (date, id) => {
+    setCheckOutDate({date, id});
+  }
+
   if (isLoading) {
     return <Loader width={20} center="center"></Loader>;
   }
+
 
   return (
     <div className="container">
@@ -150,7 +163,8 @@ const HotelDetails = () => {
                               </label>
                               <br />
                               <input
-                                onChange={(e) => setCheckInDate(e.target.value)}
+                                // onChange={(e) => setCheckInDate(e.target.value)}
+                                onChange={(e)=>handleCheckIn(e.target.value, room.room_id)}
                                 type="date"
                                 name="checkIn"
                                 className="p-2 border rounded-md mt-2 mr-3"
@@ -160,9 +174,10 @@ const HotelDetails = () => {
                               <label className="lg:mr-12">check-out</label>
                               <br />
                               <input
-                                onChange={(e) =>
-                                  setCheckOutDate(e.target.value)
-                                }
+                                // onChange={(e) =>
+                                //   setCheckOutDate(e.target.value)
+                                // }
+                                onChange={(e)=>handleCheckOut(e.target.value, room.room_id)}
                                 type="date"
                                 name="checkOut"
                                 className="p-2 border rounded-md mt-2"
@@ -176,8 +191,7 @@ const HotelDetails = () => {
                             type="submit"
                             className={`btn w-full bg-[#E36252] mt-5 text-white rounded-md py-1 ${
                               (!user && "btn-disabled")||
-                              (!checkInDate && "btn-disabled") ||
-                              (!checkOutDate && "btn-disabled")
+                              (idx+1 !== checkOutDate.id && "btn-disabled")
                             }`}
                           >
                             Reserve

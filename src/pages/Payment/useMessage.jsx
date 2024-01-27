@@ -1,15 +1,13 @@
 
-
-
 const useMessage = (info, reserveDays) => {
     const emailBody = `
-    <p>Dear Mr. Xxxx,</p>
-    <p>Greetings from Ours Travels.</p>
+    Dear Mr. Xxxx,
+    Greetings from Ours Travels.
      
-    <p>Thank you for choosing to stay with us. We are pleased to confirm the reservation for ${info.userName}.</p>
-    <p>${info.roomPrice * reserveDays}$The details of the booking confirmation are attached along with this Invoice.</p>
+    Thank you for choosing to stay with us. We are pleased to confirm the reservation for ${info.userName}.
+    ${info.roomPrice * reserveDays}$The details of the booking confirmation are attached along with this Invoice.
     
-    <p>Please let us know how we could assist on the above matters. Thank you.</p>
+    Please let us know how we could assist on the above matters. Thank you.
 
     Your Invoice: 
     

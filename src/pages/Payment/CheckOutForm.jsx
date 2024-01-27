@@ -28,7 +28,7 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
   const [phone, setPhone] = useState("");
   const [check, setCheck] = useState(false);
   const message = useMessage(reserveInfo, reserveDays)
-
+  
   const handlePhone = (e) => {
     setPhone(e);
   };

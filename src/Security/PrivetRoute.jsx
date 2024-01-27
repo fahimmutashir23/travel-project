@@ -16,6 +16,7 @@ const PrivetRout = ({ children }) => {
   if (user) {
     return children;
   } 
+  
   else {
     return (
       Swal.fire({
