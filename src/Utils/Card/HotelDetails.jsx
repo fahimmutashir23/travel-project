@@ -105,8 +105,8 @@ const HotelDetails = () => {
       </div>
       <div className="flex flex-col lg:justify-between my-4 mx-auto">
         <div className="font-semibold capitalize text-lg">
-          Rooms details in {hotel.hotel_name} hotel
-          <p className="text-base mt-5 text-black text-left w-1/2">
+          Rooms details of <span className="text-xl font-semibold">{hotel.hotel_name}</span>
+          <p className="text-base mt-2 text-black text-left w-1/2 mb-10">
             {hotel.description}
           </p>
           <div>
@@ -130,11 +130,7 @@ const HotelDetails = () => {
                             {room.room_name}
                           </h1>
                           <div className="flex mt-1">
-                          <Rating
-                            sx={{ fontSize: "22px", color: "yellow" }}
-                            name="read-only"
-                            readOnly
-                          />
+                            <h1>Room Price: {room.room_price}$</h1>
                         </div>
                         </div>
                         <div className="flex gap-4">
@@ -163,7 +159,6 @@ const HotelDetails = () => {
                               </label>
                               <br />
                               <input
-                                // onChange={(e) => setCheckInDate(e.target.value)}
                                 onChange={(e)=>handleCheckIn(e.target.value, room.room_id)}
                                 type="date"
                                 name="checkIn"
@@ -174,9 +169,6 @@ const HotelDetails = () => {
                               <label className="lg:mr-12">check-out</label>
                               <br />
                               <input
-                                // onChange={(e) =>
-                                //   setCheckOutDate(e.target.value)
-                                // }
                                 onChange={(e)=>handleCheckOut(e.target.value, room.room_id)}
                                 type="date"
                                 name="checkOut"

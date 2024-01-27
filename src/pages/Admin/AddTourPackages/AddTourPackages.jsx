@@ -38,8 +38,8 @@ const AddTourPackages = () => {
     const type = e.target.type.value;
     const departure = e.target.departure.value;
     const img1 = e.target.image1.files[0];
-    const img2 = e.target.image2.files[0];
-    const img3 = e.target.image3.files[0];
+    // const img2 = e.target.image2.files[0];
+    // const img3 = e.target.image3.files[0];
     const durations = duration;
     const night = nights;
     const maxParticipants = maxParticipant;
@@ -47,7 +47,8 @@ const AddTourPackages = () => {
     const description = e.target.description.value;
     const tourActivities = activities.map((service) => service.value);
     const tourIncludes = includes.map((service) => service.value);
-    // const info = {name, destination, img1, img2, img3, durations, night, maxParticipants,price, description, tourActivities, tourIncludes}
+    // const info = {name, destination, img1, durations, night, maxParticipants,price, description, tourActivities, tourIncludes}
+    // console.log(info);
 
     const imgFile = { image: img1 };
     const res = await axiosPublic.post(imgUploadUrl, imgFile, {

@@ -27,9 +27,9 @@ const TourPackagesDetails = () => {
     <div>
       <Title title="Details" />
       <Banner />
-      <div className="flex">
-        <TourDescription details ={details} />
-        <TourPackageForm details ={details} />
+      <div className="flex gap-4">
+        <div className="w-8/12"><TourDescription details ={details} /></div>
+        <div className="flex-1"><TourPackageForm details ={details} /></div>
       </div>
       <Link to='/pdf'>PDF</Link>
     </div>
