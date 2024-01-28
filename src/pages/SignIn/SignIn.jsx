@@ -43,6 +43,7 @@ const SignIn = () => {
   const handleGoogleSignIn = () => {
     googleSignIn().then((res) => {
       if (res) {
+        navigate('/')
         const userInfo = {
           name: res.user.displayName,
           email: res.user.email,

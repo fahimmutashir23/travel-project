@@ -6,7 +6,7 @@ const useMenu = () => {
       <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-1" : ""
+            isActive ? "bg-blue-500 min-w-full text-white py-1" : "hover:translate-x-2 transition-all duration-300"
           }
           to="/allBookings"
         >
@@ -174,11 +174,11 @@ const useMenu = () => {
       <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-2" : ""
+            isActive ? "bg-blue-500 rounded-none min-w-full text-white py-2" : ""
           }
           to="/dashboard/dashboard"
         >
-          <div className="hover:translate-x-3 transition-transform duration-300">
+          <div className="block hover:translate-x-3 transition-transform duration-300">
             Dashboard
           </div>
         </NavLink>

@@ -13,8 +13,9 @@ const TourPackageForm = ({ details }) => {
   const [date, setDate] = useState('')
   const [open, setOpen] = useState(false);
 
-  const {id, name, price, discount } = details;
-  const discountRate = (price * discount) / 100;
+  const {_id, name, price, discount } = details;
+  const discountRate = (price * discount || 0 ) / 100;
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +26,7 @@ const TourPackageForm = ({ details }) => {
     const dDate = date
     const adultPerson = adult;
     const childrenPerson = children;
-    const bookingsInfo = {id, packageName: name, userName, userEmail, date: dDate, adultPerson, childrenPerson, price, discountRate}
+    const bookingsInfo = {id: _id, packageName: name, userName, userEmail, date: dDate, adultPerson, childrenPerson, price, discountRate}
     setBookingsInfo(bookingsInfo)
     setOpen(true)
   };

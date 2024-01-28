@@ -177,11 +177,12 @@ const HotelDetails = () => {
                             </div>
                           </div>
                         </div>
-                        <div className="flex justify-end">
+                        <div className="flex flex-col justify-end">
+                          <p className="mt-5 text-sm text-gray-600">{!user && 'Login first to reserve'}</p>
                           <button
                             onClick={()=>handleOpen(idx+1)}
                             type="submit"
-                            className={`btn w-full bg-[#E36252] mt-5 text-white rounded-md py-1 ${
+                            className={`btn w-full bg-[#E36252] text-white rounded-md py-1 ${
                               (!user && "btn-disabled")||
                               (idx+1 !== checkOutDate.id && "btn-disabled")
                             }`}

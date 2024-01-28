@@ -28,14 +28,13 @@ import useAuth from "../../Hooks/useAuth";
     const [phone, setPhone] = useState("");
     const [check, setCheck] = useState(false);
     const message = (
-    `Dear Mr. Xxxx,
+    `Dear ${bookingsInfo.userName},
     Greetings from Ours Travels.
      
     Thank you for choosing to stay with us. We are pleased to confirm the Package for ${bookingsInfo.userName}.
     ${bookingsInfo.price - bookingsInfo.discountRate}$The details of the booking confirmation are attached along with this Invoice.
     
     Please let us know how we could assist on the above matters. Thank you.
-
     Your Invoice: 
     
     Best Regards,
@@ -45,6 +44,7 @@ import useAuth from "../../Hooks/useAuth";
     Mobile: +880 1581868984 | E-mail: ourtravels@gmail.com
     Tour and Travel 
     Gulshan, House 19, Road 17, Dhaka 1212, Bangladesh`)
+
     
     const handlePhone = (e) => {
       setPhone(e);
@@ -102,20 +102,17 @@ import useAuth from "../../Hooks/useAuth";
         setErrorMassage(null);
       }
       if (paymentIntent.status === "succeeded") {
-        setErrorMassage(
-          "Successfully pay! Please got to your booking section or check your email and collect your payment receipt."
-        );
         setLoading(false);
         e.target.reset();
   
-        const packageBookingsInfo = {
+        const reserveInfoExtend = {
           id: bookingsInfo.id,
           email: bookingsInfo.userEmail,
           phone: phone,
           userName: bookingsInfo.userName,
           packageName: bookingsInfo.packageName,
           children : bookingsInfo.childrenPerson,
-          adult : bookingsInfo.adultPerson,
+          adult : bookingsInfo.adult,
           amount: bookingsInfo.price - bookingsInfo.discountRate,
           totalPay: totalPrice,
           date: bookingsInfo.date,
@@ -126,10 +123,13 @@ import useAuth from "../../Hooks/useAuth";
         };
   
         axiosSecure
-          .post("/bookings", { packageBookingsInfo, emailInfo })
+          .post("/bookings", { reserveInfoExtend, emailInfo })
           .then((res) => {
             if (res.data.insertedId) {
               toast("Booking Success");
+              setErrorMassage(
+                "Successfully pay! Please got to your booking section or check your email and collect your payment receipt."
+              );
             }
           });
       }
