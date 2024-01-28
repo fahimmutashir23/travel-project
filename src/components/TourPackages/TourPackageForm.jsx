@@ -1,28 +1,33 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { RiHeadphoneFill } from "react-icons/ri";
+import PackagePayment from "../../pages/TourPackagesPage/packagesPayment";
 
 const TourPackageForm = ({ details }) => {
+  const [bookingsInfo, setBookingsInfo] = useState({});
   const [adult, setAdult] = useState(0);
   const [children, setChildren] = useState(0);
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [date, setDate] = useState('')
+  const [open, setOpen] = useState(false);
 
-  const { name, price, discount } = details;
+  const {id, name, price, discount } = details;
   const discountRate = (price * discount) / 100;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const userFirstName = firstName;
     const userLastName = lastName
+    const userName = userFirstName + " " + userLastName
     const userEmail = email
     const dDate = date
     const adultPerson = adult;
     const childrenPerson = children;
-
-    
+    const bookingsInfo = {id, packageName: name, userName, userEmail, date: dDate, adultPerson, childrenPerson, price, discountRate}
+    setBookingsInfo(bookingsInfo)
+    setOpen(true)
   };
 
   return (
@@ -186,6 +191,7 @@ const TourPackageForm = ({ details }) => {
               </button>
             </form>
           </div>
+          <PackagePayment open={open} setOpen={setOpen} bookingsInfo={bookingsInfo} />
         </div>
   );
 };
