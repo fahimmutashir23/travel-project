@@ -1,3 +1,4 @@
+import bgVdo from "../../assets/backgroundImage/seeVdo2.mp4"
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Hotels from "../../components/Hotels/Hotels";
@@ -65,25 +66,19 @@ const Home = () => {
   return (
     <div>
       <Title title="Home" />
-      <div className="overflow-hidden" data-aos="zoom-in">
-        <div
-          className="rounded-xl hero overflow-hidden h-[500px] text-white"
-          style={{
-            backgroundImage:
-              "url(https://www.cssigniter.com/demos/milos/wp-content/uploads/sites/17/2021/04/Fotolia_62721680_Subscription_Monthly_XL.jpg)",
-            backgroundSize: "cover",
-          }}
-        >
-          <div className="hero-overlay bg-black bg-opacity-40"></div>
+      <div className="overflow-hidden relative" data-aos="zoom-in">
+        <div className="rounded-xl hero overflow-hidden h-[500px] text-white">
+          <video src={bgVdo} autoPlay loop muted className="h-full w-full object-cover" />
+          <div className="hero-overlay bg-black bg-opacity-20"></div>
           <div
             data-aos="zoom-in"
             data-aos-offset="300"
             data-aos-easing="ease-in-sine"
             data-aos-duration="1000"
-            className="flex justify-center items-center h-[500px] hero-content"
+            className="flex items-center"
           >
             <div className="text-center z-10">
-              <p className="font-bold text-xl lg:text-2xl mb-2 text-orange-600">
+              <p className="font-bold text-xl lg:text-2xl text-orange-600">
                 Discover the Planet
               </p>
               <div className="">
@@ -129,7 +124,7 @@ const Home = () => {
         </div>
       </div>
       <Hotels hotels={hotels} />
-      <TourPackages></TourPackages>
+      <TourPackages />
       <About />
       <PopularDestination />
       <WhyChoose />

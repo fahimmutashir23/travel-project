@@ -1,12 +1,17 @@
 import { NavLink } from "react-router-dom";
+import Lottie from 'lottie-react';
+import dashboardIcon from "../../assets/lottie/dashboardLottie.json"
 
 const useMenu = () => {
+
+
+
   const subMenu = (
     <>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white  text-xl">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-1" : "hover:translate-x-2 transition-all duration-300"
+            isActive ? "bg-gray-600 min-w-full text-white py-1" : "hover:translate-x-2 transition-all duration-300"
           }
           to="/allBookings"
         >
@@ -15,10 +20,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-1" : ""
+            isActive ? "bg-gray-600 min-w-full text-white py-1" : ""
           }
           to="/hotel"
         >
@@ -27,10 +32,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-1" : ""
+            isActive ? "bg-gray-600 min-w-full text-white py-1" : ""
           }
           to="/flight"
         >
@@ -39,10 +44,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white  text-xl">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-1" : ""
+            isActive ? "bg-gray-600 min-w-full text-white py-1" : ""
           }
           to="/car"
         >
@@ -57,10 +62,10 @@ const useMenu = () => {
   // Admin Bookings Submenu
   const adminBookingsSubMenu = (
     <>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-1" : ""
+            isActive ? "bg-gray-600 min-w-full text-white py-1" : ""
           }
           to="/dashboard/allBookings"
         >
@@ -69,10 +74,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-1" : ""
+            isActive ? "bg-gray-600 min-w-full text-white py-1" : ""
           }
           to="/dashboard/packagesBookings"
         >
@@ -81,10 +86,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-1" : ""
+            isActive ? "bg-gray-600 min-w-full text-white py-1" : ""
           }
           to="/dashboard/hotelBookings"
         >
@@ -93,10 +98,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-1" : ""
+            isActive ? "bg-gray-600 min-w-full text-white py-1" : ""
           }
           to="/dashboard/flightBookings"
         >
@@ -105,10 +110,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-1" : ""
+            isActive ? "bg-gray-600 min-w-full text-white py-1" : ""
           }
           to="/dashboard/carBookings"
         >
@@ -123,11 +128,11 @@ const useMenu = () => {
   // User Menu
   const userNavMenu = (
     <>
-       <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+       <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "bg-blue-500 min-w-full text-white py-2"
+              ? "bg-gray-600 min-w-full text-white py-2"
               : ""
           }
           to="/account"
@@ -141,10 +146,10 @@ const useMenu = () => {
           <ul className="w-full">{subMenu}</ul>
         </details>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-1" : ""
+            isActive ? "bg-gray-600 min-w-full text-white py-1" : ""
           }
           to="/profile"
         >
@@ -153,10 +158,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white  text-xl">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-3" : ""
+            isActive ? "bg-gray-600 min-w-full text-white py-3" : ""
           }
           to="/All Receipt"
         >
@@ -171,22 +176,29 @@ const useMenu = () => {
   // Admin Menu
   const adminNavMenu = (
     <>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 rounded-none min-w-full text-white py-2" : ""
+            isActive ? "bg-gray-600 rounded-none min-w-full text-white py-2" : ""
           }
           to="/dashboard/dashboard"
         >
-          <div className="block hover:translate-x-3 transition-transform duration-300">
-            Dashboard
+          <div className="flex items-center gap-3 hover:translate-x-3 transition-transform duration-300">
+          <div>
+          <Lottie
+           animationData={dashboardIcon}
+           style={{ width: '32px', height: '32px'}}
+           loop={true}
+           autoPlay={true}
+           /> 
+          </div> Dashboard
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white  text-xl">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-3" : ""
+            isActive ? "bg-gray-600 rounded-none min-w-full text-white py-3" : ""
           }
           to="/dashboard/allUsers"
         >
@@ -195,16 +207,16 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <details>
           <summary>Current Bookings</summary>
           <ul className="w-full">{adminBookingsSubMenu}</ul>
         </details>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-3" : ""
+            isActive ? "bg-gray-600 rounded-none min-w-full text-white py-3" : ""
           }
           to="/dashboard/addHotels"
         >
@@ -213,10 +225,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-3" : ""
+            isActive ? "bg-gray-600 rounded-none min-w-full text-white py-3" : ""
           }
           to="/dashboard/allRooms"
         >
@@ -225,10 +237,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-3" : ""
+            isActive ? "bg-gray-600 rounded-none min-w-full text-white py-3" : ""
           }
           to="/dashboard/addTourPackages"
         >
@@ -237,10 +249,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-base">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-3" : ""
+            isActive ? "bg-gray-600 rounded-none min-w-full text-white py-3" : ""
           }
           to="/dashboard/allPackages"
         >
@@ -249,10 +261,10 @@ const useMenu = () => {
           </div>
         </NavLink>
       </li>
-      <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white  text-xl">
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white  text-xl">
         <NavLink
           className={({ isActive }) =>
-            isActive ? "bg-blue-500 min-w-full text-white py-3" : ""
+            isActive ? "bg-gray-600 rounded-none min-w-full text-white py-3" : ""
           }
           to="/dashboard/allPayments"
         >
