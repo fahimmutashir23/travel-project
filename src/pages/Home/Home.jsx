@@ -71,11 +71,7 @@ const Home = () => {
           <video src={bgVdo} autoPlay loop muted className="h-full w-full object-cover" />
           <div className="hero-overlay bg-black bg-opacity-20"></div>
           <div
-            data-aos="zoom-in"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine"
-            data-aos-duration="1000"
-            className="flex items-center"
+            className="absolute"
           >
             <div className="text-center z-10">
               <p className="font-bold text-xl lg:text-2xl text-orange-600">

@@ -31,6 +31,7 @@ const HotelDetails = () => {
   const axiosPublic = useAxiosPublic();
   const { id } = useParams();
 
+
   const handleOpen = (id) => {
     setOpen(true)
     setRoomId(id)
@@ -56,7 +57,6 @@ const HotelDetails = () => {
     return <Loader width={20} center="center"></Loader>;
   }
 
-
   return (
     <div className="container">
       <Title title={hotel.hotel_name} />
@@ -66,40 +66,20 @@ const HotelDetails = () => {
         </h5>
         <p>{hotel.hotel_location}</p>
       </div>
-      <div className="flex gap-2 flex-col md:flex-row  2xl:flex-row">
+      <div className="flex gap-2 flex-col md:flex-row 2xl:flex-row">
         <div className="w-1/2">
           <img
-            src="https://i.postimg.cc/N0bYyZRj/westine2.jpg"
+            src={hotel.img_gallery.img1}
             alt=""
-            className="w-[100%] h-full rounded-md"
+            className="w-full h-full rounded-md"
           />
         </div>
         <div className="w-1/2">
-          <div className="col-span-12 lg:col-span-4">
-            <div className="flex gap-2">
-              <img
-                src="https://i.postimg.cc/Yq9dq4mH/westine3.jpg"
-                alt=""
-                className="w-[47%] h-[51%] mb-5 rounded-md ml-2"
-              />
-              <img
-                src="https://i.postimg.cc/yxkBmxGQ/westine1.jpg"
-                alt=""
-                className="w-[47%] h-[51%] mb-5 rounded-md mr-2"
-              />
-            </div>
-            <div className="flex gap-2">
-              <img
-                src="https://i.postimg.cc/B6VCvQ6c/westine4.jpg"
-                alt=""
-                className="w-[47%] rounded-md ml-2"
-              />
-              <img
-                src="https://i.postimg.cc/B6VCvQ6c/westine4.jpg"
-                alt=""
-                className="w-[47%] rounded-md mr-2"
-              />
-            </div>
+          <div className="grid grid-cols-2 gap-2">
+            <img src={hotel.img_gallery.img2} alt="" className="rounded-md w-full h-full" />
+            <img src={hotel.img_gallery.img3} alt="" className="rounded-md w-full h-full" />
+            <img src={hotel.img_gallery.img4} alt="" className="rounded-md w-full h-full" />
+            <img src={hotel.img_gallery.img5} alt="" className="rounded-md w-full h-full" />
           </div>
         </div>
       </div>
