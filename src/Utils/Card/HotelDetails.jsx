@@ -67,19 +67,19 @@ const HotelDetails = () => {
         <p>{hotel.hotel_location}</p>
       </div>
       <div className="flex gap-2 flex-col md:flex-row 2xl:flex-row">
-        <div className="w-1/2">
+        <div className="md:w-1/2">
           <img
             src={hotel.img_gallery.img1}
             alt=""
-            className="w-full h-full rounded-md"
+            className="md:w-full rounded-md md:h-[600px]"
           />
         </div>
-        <div className="w-1/2">
-          <div className="grid grid-cols-2 gap-2">
-            <img src={hotel.img_gallery.img2} alt="" className="rounded-md w-full h-full" />
-            <img src={hotel.img_gallery.img3} alt="" className="rounded-md w-full h-full" />
-            <img src={hotel.img_gallery.img4} alt="" className="rounded-md w-full h-full" />
-            <img src={hotel.img_gallery.img5} alt="" className="rounded-md w-full h-full" />
+        <div className="md:w-1/2">
+          <div className="grid grid-cols-2 gap-1.5">
+            <img src={hotel.img_gallery.img2} alt="" className="rounded-md md:w-full md:h-[297px] h-[100px]" />
+            <img src={hotel.img_gallery.img3} alt="" className="rounded-md md:w-full md:h-[297px] h-[100px]" />
+            <img src={hotel.img_gallery.img4} alt="" className="rounded-md md:w-full md:h-[297px] h-[100px]" />
+            <img src={hotel.img_gallery.img5} alt="" className="rounded-md md:w-full md:h-[297px] h-[100px]" />
           </div>
         </div>
       </div>
