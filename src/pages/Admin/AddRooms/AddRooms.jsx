@@ -33,11 +33,16 @@ const AddRooms = () => {
   const [bathroom, setBathroom] = useState(0);
   const [guest, setGuest] = useState(0);
   const [hotelName, setHotelName] = useState('');
+  const [roomNum, setRoomNum] = useState(null);
 
   useEffect(() => {
     axiosSecure.get(`/hotels/${id}`)
-    .then(res => setHotelName(res.data.hotel_name))
+    .then(res => {
+      setHotelName(res.data.hotel_name)
+      setRoomNum(res.data.hotel_room)
+    })
   }, [axiosSecure, id])
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,6 +67,7 @@ const AddRooms = () => {
     if (res.data.data.display_url) {
       setLoading(false);
       const roomInfo = {
+        room_id: roomNum.length + 1,
         room_name: room_name,
         room_price: room_price,
         sleeps: sleeps,
@@ -70,7 +76,8 @@ const AddRooms = () => {
         bathrooms: bathrooms,
         guests: guests,
         room_img: [res.data.data.display_url],
-        room_details: [room_details]
+        room_details: [room_details],
+        available: true
       };
 
       const response = await axiosSecure.patch(`/rooms/${id}`, roomInfo);
