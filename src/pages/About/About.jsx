@@ -1,9 +1,10 @@
+import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
+
 const About = () => {
   return (
     <div>
       <div>
-        <p className="text-center text-lg mb-2 mt-14 font-bold">Discover</p>
-        <h1 className="text-center text-4xl mb-5 font-bold">About us</h1>
+        <PageTitleForHome title='About Ours' />
       </div>
       <section className="bg-base-200">
         <div className="container px-6 mx-auto">

@@ -1,12 +1,10 @@
+import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
 import videoBG from "../../assets/videobg/videoBG.mp4";
 
 const WhyChoose = () => {
   return (
-    <div>
-      <p className="text-center text-3xl mb-2 mt-10 font-bold">Why Choose Us</p>
-      <h1 className="text-center text-lg mb-5 font-bold">
-        Here are reasons you should plan trip with us
-      </h1>
+    <div className="my-10">
+      <PageTitleForHome title='Why Choose us' />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto">
         <div className="flex-1 justify-center items-center">

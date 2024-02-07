@@ -1,6 +1,7 @@
 
 import useTourPackages from "../../Hooks/useTourPackages";
 import Loader from "../../Utils/Loader/Loader";
+import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
 import Blogs from "../Blogs/Blogs";
 
 import TourPackagesCard from "./TourPackagesCard";
@@ -15,9 +16,9 @@ const TourPackages = () => {
 
   return (
     <div className="mt-16">
+        <PageTitleForHome title='Featured tours' />
       <div className="grid grid-cols-4 gap-2 md:grid-cols-6">
         <div className="col-span-4 p-2">
-          <h3 className="text-4xl font-bold mb-8">FEATURED TOURS</h3>
           <div className="">
             {tourPackages.map((tourPackage) => (
               <TourPackagesCard

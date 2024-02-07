@@ -126,12 +126,14 @@ import useAuth from "../../Hooks/useAuth";
           .post("/bookings", { reserveInfoExtend, emailInfo })
           .then((res) => {
             if (res.data.insertedId) {
-              toast("Booking Success");
+              toast("Booking Success")
               setErrorMassage(
                 "Successfully pay! Please got to your booking section or check your email and collect your payment receipt."
               );
             }
           });
+
+          // axiosSecure.patch('/bookings',)
       }
     };
   
