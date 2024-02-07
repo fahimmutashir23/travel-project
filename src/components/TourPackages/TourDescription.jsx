@@ -3,6 +3,7 @@ import { IoMdArrowDropright } from "react-icons/io";
 
 
 const TourDescription = ({ details }) => {
+ console.log(details);
   const {
     name,
     description,
@@ -20,37 +21,19 @@ const TourDescription = ({ details }) => {
 
   return (
     <div>
+     <div className="flex flex-row gap-5 mt-16 mb-4">
+     <h1 className="text-2xl font-semibold bg-red-50 px-4 rounded-lg py-2">Name: {name}</h1>
+      <h1 className="text-2xl font-semibold bg-red-50 px-4 rounded-lg py-2">Type: {accommodation.type}</h1>
+      <h1 className="text-2xl font-semibold bg-red-50 px-4 rounded-lg py-2">NIghts: {accommodation.nights}</h1>
+     </div>
       <p>
-        Budapest is one of the most beautiful cities in Europe to be enjoyed on
-        Hungary tours. It comprises of two distinct parts, Buda which is hilly
-        and is located on the west bank of the Danube and Pest which is flat and
-        is located on the right bank. The city has 5 UNESCO world heritage
-        protected sites. It has two large islands in the middle of the river
-        which are both very central. One is Margarita Island which is popular
-        with the locals with its parks, leisure centres and swimming pools.
+        {description}
       </p>
       <p className="mt-5">
-        It is a city of culture with more than 200 museums, 40 theatres, 7
-        concert halls and an opera house. It is also known for its “coffee
-        culture” due to its many cafes and is also well known for its many
-        excellent spas first introduced by the Romans who discovered the
-        underground thermal springs.
+        {description}
       </p>
       <p className="mt-5">
-        The principal tourist attractions on Hungary tours are many. Buda Castle
-        was originally built in 1265. The Hungarian Parliament Building is a
-        Gothic landmark. The Museum of Fine Arts has more than 100,000 exhibits.
-        St. Stephen’s Cathedral is a tall and imposing building and St. Mathias
-        Church is over 700 years old. There are some magnificent and beautiful
-        wide boulevards and squares. Andrassy Avenue is an elegant tree-lined
-        avenue which has been awarded UNESCO World Heritage status. It is 2.5
-        kms/1.5 miles long. Another is Vaci Street with its many shops,
-        restaurants and cafes. Other prominent landmarks are Heroes Square, the
-        attractive Hungarian State Opera House, the largest baroque castle in
-        the world, Godollo Castle, Fisherman’s Bastion situated on Castle Hill
-        with its many stairs and walkways and where one has amazing panoramic
-        views of the city and the Chain Bridge which spans the Danube and was
-        considered an architectural wonder when it was built in 1849.
+      {description}
       </p>
       <div className="divider"></div>
       <div className="flex gap-14">
@@ -82,8 +65,18 @@ const TourDescription = ({ details }) => {
         </div>
       </div>
       <div className="divider"></div>
+      <div className="flex gap-44">
+        <div>ACTIVITIES</div>
+        <div className="">
+          <div>{activities[0]}</div>
+          <div>{activities[1]}</div>
+          <div>{activities[2]}</div>
+          
+        </div>
+      </div>
+      <div className="divider"></div>
       <div>
-        <h1>What to Expect</h1>
+
         <p className="mt-5">
           On your maiden visit to the Big Apple, be sure to allow a minimum of
           three days so you can take a breath and enjoy all the city has to
@@ -114,6 +107,11 @@ const TourDescription = ({ details }) => {
           Morning market tour.
         </div>
       </div>
+     <div className="flex gap-10 mt-4 "> <img src={image} alt="" className="h-64 rounded-lg w-80" />
+     <img src={image} alt="" className="h-64 rounded-lg w-80" />
+     <img src={image} alt="" className="h-64 rounded-lg w-80" />
+     </div>
+  
     </div>
   );
 };
