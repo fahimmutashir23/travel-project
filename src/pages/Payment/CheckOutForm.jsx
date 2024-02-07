@@ -117,6 +117,8 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
             toast("Booking Success");
           }
         });
+
+        axiosSecure.patch(`/hotel/${reserveInfo.id}`)
     }
   };
 
