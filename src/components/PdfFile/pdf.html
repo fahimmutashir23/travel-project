@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice</title>
+<link rel="stylesheet" type="text/css" href="./pdf.css">
+</head>
+<body>
+
+<div class="border">
+  <div class="flex justify-between">
+    <div>
+      <h1 class="text-3xl text-green-600 font-semibold">Ours Travels</h1>
+      <h3>Dhanmondi-27, Dhaka-1205</h3>
+      <h3>Bangladesh</h3>
+      <h3>Phone: +880 1581 868984</h3>
+    </div>
+    <div>
+      <h1 class="text-4xl text-gray-500 font-semibold uppercase">Invoice</h1>
+      <h4>
+        Invoice: <span class="ml-10 text-gray-800">#123524</span>
+      </h4>
+      <h4>
+        Issue date: <span class="ml-10 text-gray-800">{date}</span>
+      </h4>
+    </div>
+  </div>
+
+  <div class="mt-16">
+    <h4>
+      Name: <span></span>
+    </h4>
+    <h4>
+      Email: <span></span>
+    </h4>
+    <h4>
+      Phone: <span></span>
+    </h4>
+  </div>
+
+  <div>
+    <table class="w-full">
+      <thead>
+        <tr class="border bg-slate-400 text-white flex">
+          <th class="text-left px-4 py-1 border w-12">Sl</th>
+          <th class="border flex-1">Descriptions</th>
+          <th class="border w-2/12">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border h-[100px] flex">
+          <td class="px-4 py-2 border w-12 font-semibold text-xl">1.</td>
+          <td class="border flex-1 px-4 py-2 text-xl font-semibold">Description 1</td>
+          <td class="border w-2/12 px-4 py-2 text-xl font-semibold">$10.00</td>
+        </tr>
+        <tr class="h-[50px] flex">
+          <td class="border flex-1 px-4 py-2 text-xl text-right italic">Thank you for your transition</td>
+          <td class="border w-4/12 px-4 py-2 text-xl font-semibold flex justify-around"><span>Total:</span><span>$10.00</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="flex justify-center text-center mt-10">
+    <p class="font-bold">If you Have any question about this Invoice, please contact us via this email. <br /> Must Included Your Name, Email and Phone number</p>
+  </div>
+</div>
+
+</body>
+</html>
+

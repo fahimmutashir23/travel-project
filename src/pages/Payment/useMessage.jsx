@@ -9,7 +9,7 @@ const useMessage = (info, reserveDays) => {
     
     Please let us know how we could assist on the above matters. Thank you.
 
-    Your Invoice: 
+    Your Invoice is attested. Please check it.
     
     Best Regards,
 
