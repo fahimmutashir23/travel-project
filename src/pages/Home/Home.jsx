@@ -74,7 +74,7 @@ const Home = () => {
             className="absolute"
           >
             <div className="text-center z-10">
-              <p className="font-bold text-xl lg:text-2xl text-orange-600">
+              <p className="font-medium text-xl lg:text-2xl text-white">
                 Discover the Planet
               </p>
               <div className="">
@@ -107,7 +107,7 @@ const Home = () => {
                     />
                     <button
                       type="submit"
-                      className="absolute top-0 end-0 p-2.5 text-xl w-1/6 flex justify-center items-center gap-2 h-full text-white bg-pink-700 rounded-e-lg border border-white hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                      className="absolute top-0 end-0 p-2.5 bg-blue-600 text-xl w-1/6 flex justify-center items-center gap-2 h-full text-white rounded-r-md border border-none hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transition-all duration-300"
                     >
                       Search
                       <span className="sr-only">Search</span>
