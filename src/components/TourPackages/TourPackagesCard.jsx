@@ -17,12 +17,15 @@ const TourPackagesCard = ({ tourPackage }) => {
 
   return (
     <div>
-      <div className="flex max-w-5xl  bg-base-200 border-dotted border-slate-800 mb-5 rounded-xl">
+      <div className="flex max-w-5xl bg-base-200 border-dotted border-slate-800 mb-5 rounded-xl group hover:-skew-x-6 transition-all duration-300 overflow-hidden">
         <div className="relative">
-          <img className="overflow-hidden w-80 h-64 rounded-xl" src={image}  />
+          <img className="overflow-hidden w-80 h-64 rounded-xl group-hover:scale-105 transition-all duration-300" src={image} />
 
           {discount && (
-            <span className="absolute top-3 rounded-r-md text-white text-lg px-5  bg-yellow-600" style={{ borderRadius: "0 100px 0 100px" }}>
+            <span
+              className="absolute top-3 rounded-r-md text-white text-lg px-5  bg-yellow-600"
+              style={{ borderRadius: "0 100px 0 100px" }}
+            >
               {discount}% OFF
             </span>
           )}
