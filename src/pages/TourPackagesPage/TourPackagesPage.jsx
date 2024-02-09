@@ -3,6 +3,7 @@ import useTourPackages from "../../Hooks/useTourPackages";
 import Loader from "../../Utils/Loader/Loader";
 import TourPackagesCard from "../../components/TourPackages/TourPackagesCard";
 import Title from "../../Utils/Title/Title";
+import { Discover } from "../../components/TourPackages/Discover";
 
 const TourPackagesPage = () => {
   const [tourPackages, isLoading] = useTourPackages("", {});
@@ -143,13 +144,38 @@ const TourPackagesPage = () => {
               />
             ))}
           </div>
+          
         </div>
+       
       </div>
-      <div className="mt-16">
+      <div className="absolute w-1/2 -mt-7 z-10 ml-56">
+                    <input
+                      type="search"
+                      name="search"
+                      id="search-dropdown"
+                      className="block p-5 w-full z-70 text-sm text-gray-900 bg-gray-500 rounded-md  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                    
+                      required
+                    />
+                    <button
+                      type="submit"
+                      className="absolute top-0 end-0 p-2.5 text-xl w-1/6 flex justify-center items-center gap-2 h-full text-white bg-pink-700 rounded-e-lg border border-white hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                      Search
+                      <span className="sr-only">Search</span>
+                    </button>
+            </div>
+              
+              
+      <div className="flex px-5 gap-44">
+      <div className="mt-32">
         {tourPackages.map((tourPackage) => (
           <TourPackagesCard key={tourPackage._id} tourPackage={tourPackage} />
         ))}
       </div>
+     <Discover/>
+      </div>
+     
     </div>
   );
 };

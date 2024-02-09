@@ -3,6 +3,7 @@ import useTourPackages from "../../Hooks/useTourPackages";
 import Loader from "../../Utils/Loader/Loader";
 import Blogs from "../Blogs/Blogs";
 
+
 import TourPackagesCard from "./TourPackagesCard";
 
 
@@ -25,6 +26,7 @@ const TourPackages = () => {
                 tourPackage={tourPackage}
               ></TourPackagesCard>
             ))}
+           
           </div>
         </div>
         <Blogs />

@@ -10,7 +10,7 @@ const Hotels = ({hotels}) => {
         <h1 className="text-center text-4xl mb-5 font-bold">Discover Hotels</h1>
       </div>
       <div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {hotels.slice(0, 8)?.map((hotel) => (
             <HotelCard key={hotel._id} hotel={hotel}></HotelCard>
           ))}
