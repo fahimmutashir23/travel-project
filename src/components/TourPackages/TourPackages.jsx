@@ -1,23 +1,22 @@
-import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import useTourPackages from "../../Hooks/useTourPackages";
 import Loader from "../../Utils/Loader/Loader";
 import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
 import Blogs from "../Blogs/Blogs";
 import TourPackagesCard from "./TourPackagesCard";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 const TourPackages = () => {
   const axiosPublic = useAxiosPublic();
+  const [webControllersAPI, setWebControllersAPI] = useState({});
 
-  const {data: webControllersAPI = []} = useQuery({
-    queryKey: [''],
-    queryFn: async ()=> {
-        const res = await axiosPublic(`/webControllers/${1}`)
-        return res.data
-    }
-})
+
+useEffect(() => {
+  axiosPublic(`/webControllers/${1}`)
+  .then(res => setWebControllersAPI(res.data))
+}, [])
+
   const [tourPackages, isLoading, refetch] = useTourPackages(webControllersAPI?.numOfShowInHome, {});
 
   useEffect(() => {
@@ -40,6 +39,7 @@ const TourPackages = () => {
                 tourPackage={tourPackage}
               ></TourPackagesCard>
             ))}
+           
           </div>
         </div>
         <Blogs />

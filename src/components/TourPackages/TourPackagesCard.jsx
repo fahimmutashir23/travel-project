@@ -17,9 +17,9 @@ const TourPackagesCard = ({ tourPackage }) => {
 
   return (
     <div>
-      <div className="flex max-w-4xl mx-auto bg-base-200 border-dotted border-slate-800 mb-5">
+      <div className="flex max-w-5xl  bg-base-200 border-dotted border-slate-800 mb-5 rounded-xl">
         <div className="relative">
-          <img className="overflow-hidden w-72 h-52" src={image} />
+          <img className="overflow-hidden w-80 h-64 rounded-xl" src={image}  />
 
           {discount && (
             <span className="absolute top-3 rounded-r-md text-white text-lg px-5  bg-yellow-600" style={{ borderRadius: "0 100px 0 100px" }}>
@@ -35,11 +35,11 @@ const TourPackagesCard = ({ tourPackage }) => {
             </div>
             <div className="flex gap-10">
               <p className="text-xs uppercase flex flex-col">
-                <span className="font-semibold text-sm -mb-1">date</span>
+                <span className="font-semibold text-sm mb-1">date</span>
                 {departureDate}
               </p>
               <p className="text-xs uppercase flex flex-col">
-                <span className="font-semibold text-sm -mb-1">departure</span>
+                <span className="font-semibold text-sm mb-1">departure</span>
                 {destination}
               </p>
             </div>

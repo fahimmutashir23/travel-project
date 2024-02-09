@@ -36,6 +36,8 @@ const Home = () => {
   const [search, setSearch] = useState("");
   const [webControllersAPI] = useWebControllers(2);
 
+
+
   const handleClick = (item) => {
     setPlaceholder(item.name);
     setTitle(item.title);
@@ -122,11 +124,13 @@ const Home = () => {
         </div>
       </div>
       <Hotels hotels={hotels} />
+      <WhyChoose />
       <TourPackages />
       <About />
-      <PopularDestination />
-      <WhyChoose />
       <Weekly />
+      <PopularDestination />
+      
+      
       <News />
     </div>
   );
