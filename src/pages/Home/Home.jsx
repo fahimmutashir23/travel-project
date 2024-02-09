@@ -120,11 +120,13 @@ const Home = () => {
         </div>
       </div>
       <Hotels hotels={hotels} />
+      <WhyChoose />
       <TourPackages />
       <About />
-      <PopularDestination />
-      <WhyChoose />
       <Weekly />
+      <PopularDestination />
+      
+      
       <News />
     </div>
   );
