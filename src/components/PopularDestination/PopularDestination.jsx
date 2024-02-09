@@ -1,10 +1,10 @@
+import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
+
 const PopularDestination = () => {
   return (
     <div>
-      <p className="text-center text-lg mb-2 mt-10 font-bold">Discover</p>
-      <h1 className="text-center text-4xl mb-5 font-bold">
-        Popular Destination
-      </h1>
+      <p className="text-center text-lg -mb-5 mt-10 font-bold">Discover</p>
+      <PageTitleForHome title='Popular Destination' />
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         <div className="space-y-2">
           <a href="#" className="group relative block overflow-hidden">

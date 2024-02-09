@@ -26,7 +26,6 @@ import AirBookings from "../pages/Admin/AirBookings/AirBookings";
 import TourPackagesPage from "../pages/TourPackagesPage/TourPackagesPage";
 import PrivetRoute from "../Security/PrivetRoute";
 import AdminRoute from "../Security/AdminRoute";
-import Pdf from "../components/PdfFile/Pdf";
 
 const Router = createBrowserRouter([
   {
@@ -65,11 +64,7 @@ const Router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
-      },
-      {
-        path: "/pdf",
-        element: <Pdf />,
-      },
+      }
     ],
   },
   {

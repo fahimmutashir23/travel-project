@@ -1,8 +1,9 @@
+import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
 
 const Weekly = () => {
     return (
         <div>
-            <p className="text-center text-3xl mb-2 mt-10 font-bold">Discover Weekly </p>
+            <PageTitleForHome title='Discover weekly' />
             <h1 className="text-center text-lg mb-5 font-bold">
                 It is a long established fact that a reader will be distracted...
             </h1>

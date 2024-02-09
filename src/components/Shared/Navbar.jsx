@@ -75,13 +75,13 @@ const Navbar = () => {
           </div>
           <div className="navbar-end">
             {
-              user? <p>Hi! <span className="text-violet-500">{users[0].name}</span></p> : ''
+              user? <p>Hi! <span className="text-violet-500">{users[0]?.name}</span></p> : ''
             }
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
                   <img
-                    src= {user ? users[0].profileImage : "https://i.ibb.co/LpR33BN/male-avatar-profile-picture-vector-10210618.jpg"}
+                    src= {user ? users[0]?.profileImage : "https://i.ibb.co/LpR33BN/male-avatar-profile-picture-vector-10210618.jpg"}
                     alt=""
                   />
                 </div>

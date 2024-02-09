@@ -15,6 +15,9 @@ import moment from "moment";
 import PhoneInput from "react-phone-input-2";
 import useMessage from "./useMessage";
 
+
+
+
 const CheckOutForm = ({ reserveInfo, reserveDays }) => {
   const [loading, setLoading] = useState(false);
   const [clientSecret, setClientSecret] = useState("");
@@ -27,15 +30,13 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
   const date = moment().format("DD-MM-YYYY, h:mm a");
   const [phone, setPhone] = useState("");
   const [check, setCheck] = useState(false);
-  const message = useMessage(reserveInfo, reserveDays)
-  
+  const message = useMessage(reserveInfo, reserveDays);
+  const [pdf, setPdf] = useState(null);
+
+
+
   const handlePhone = (e) => {
     setPhone(e);
-  };
-
-  const emailInfo = {
-    subject: "Our Travels Payment Confirmation",
-    message: message,
   };
 
   useEffect(() => {
@@ -92,31 +93,53 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
       setLoading(false);
       e.target.reset();
 
-      const reserveInfoExtend = {
-        id: reserveInfo.id,
+      const invoiceInfo = {
+        name,
         email: reserveInfo.email,
-        phone: phone,
-        userName: name,
-        hotelName: reserveInfo.hotelName,
-        roomId: reserveInfo.roomId,
-        roomName: reserveInfo.roomName,
-        roomPrice: reserveInfo.roomPrice,
-        totalPay: reserveInfo.roomPrice * reserveDays,
-        checkIn: reserveInfo.checkIn,
-        checkOut: reserveInfo.checkOut,
-        transactionID: paymentIntent.id,
-        date: date,
-        status: "Pending",
-        category: "Hotels",
+        descriptions: reserveInfo.roomId +'of'+ reserveInfo.hotelName,
+        date,
+        amount: reserveInfo.roomPrice * reserveDays,
+        phone,
+        transactionID: paymentIntent.id
+      }
+    
+      const emailInfo = {
+        to: reserveInfo.email,
+        subject: "Our Travels Payment Confirmation",
+        message: message,
+        invoiceInfo
       };
 
-      axiosSecure
-        .post("/bookings", { reserveInfoExtend, emailInfo })
-        .then((res) => {
-          if (res.data.insertedId) {
-            toast("Booking Success");
-          }
-        });
+      axiosSecure.post("/generatePdf", emailInfo )
+      .then((res) => setPdf(res.data));
+
+        const reserveInfoExtend = {
+          id: reserveInfo.id,
+          email: reserveInfo.email,
+          phone: phone,
+          userName: name,
+          hotelName: reserveInfo.hotelName,
+          roomId: reserveInfo.roomId,
+          roomName: reserveInfo.roomName,
+          roomPrice: reserveInfo.roomPrice,
+          totalPay: reserveInfo.roomPrice * reserveDays,
+          checkIn: reserveInfo.checkIn,
+          checkOut: reserveInfo.checkOut,
+          transactionID: paymentIntent.id,
+          date: date,
+          status: "Pending",
+          category: "Hotels",
+        };
+
+        axiosSecure
+          .post("/bookings", { reserveInfoExtend, emailInfo })
+          .then((res) => {
+            if (res.data.insertedId) {
+              toast("Booking Success");
+            }
+          });
+
+        axiosSecure.patch(`/hotel/${reserveInfo.id}`);
     }
   };
 
@@ -210,7 +233,9 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
               />
               <div
                 className={`${
-                  !check ? "w-0 overflow-hidden" : "w-96 overflow-hidden transition-all duration-1000"
+                  !check
+                    ? "w-0 overflow-hidden"
+                    : "w-96 overflow-hidden transition-all duration-1000"
                 } `}
               >
                 <PhoneInput
