@@ -26,6 +26,7 @@ import AirBookings from "../pages/Admin/AirBookings/AirBookings";
 import TourPackagesPage from "../pages/TourPackagesPage/TourPackagesPage";
 import PrivetRoute from "../Security/PrivetRoute";
 import AdminRoute from "../Security/AdminRoute";
+import WebControl from "../pages/Admin/WebControl/WebControl";
 
 const Router = createBrowserRouter([
   {
@@ -138,6 +139,10 @@ const Router = createBrowserRouter([
       {
         path: "/dashboard/flightBookings",
         element: <AirBookings />,
+      },
+      {
+        path: "/dashboard/webControl",
+        element: <WebControl />,
       },
     ],
   },

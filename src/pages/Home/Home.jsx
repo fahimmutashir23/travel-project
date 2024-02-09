@@ -13,6 +13,7 @@ import { FaCar, FaHome, FaHotel } from "react-icons/fa";
 import { MdFlightTakeoff } from "react-icons/md";
 import TourPackages from "../../components/TourPackages/TourPackages";
 import Title from "../../Utils/Title/Title";
+import useWebControllers from "../../Hooks/useWebControllers";
 const searchCategory = [
   { icon: <FaHome></FaHome>, name: "Search All", title: "Where to Go" },
   {
@@ -33,6 +34,7 @@ const Home = () => {
   const [placeHolder, setPlaceholder] = useState("Search All");
   const [title, setTitle] = useState("Where to Go");
   const [search, setSearch] = useState("");
+  const [webControllersAPI] = useWebControllers(2);
 
   const handleClick = (item) => {
     setPlaceholder(item.name);
@@ -46,7 +48,7 @@ const Home = () => {
   } = useQuery({
     queryKey: ["hotelsHome"],
     queryFn: async () => {
-      const res = await axiosPublic(`/hotels?search=${search}`);
+      const res = await axiosPublic(`/hotels?search=${search}&limit=${webControllersAPI?.numOfShowInHome}`);
       return res.data;
     },
   });
@@ -58,7 +60,7 @@ const Home = () => {
 
   useEffect(() => {
     refetch();
-  }, [search, refetch]);
+  }, [search, webControllersAPI, refetch]);
 
   if (isLoading) {
     return <Loader width="20" center="center"></Loader>;

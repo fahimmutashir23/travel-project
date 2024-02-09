@@ -4,11 +4,13 @@ import { TiThMenu } from "react-icons/ti";
 import useAuth from "../../Hooks/useAuth";
 import useAdmin from "../../Hooks/useAdmin";
 import useUsers from "../../Hooks/useUsers";
+import { useEffect } from 'react';
 
 const Navbar = () => {
   const { user, logOutUser } = useAuth();
   const [isAdmin] = useAdmin();
-  const [users] = useUsers(user?.email);
+  const [users, refetch] = useUsers(user?.email);
+
 
 
   const navLinks = (
@@ -47,7 +49,6 @@ const Navbar = () => {
     </>
   );
 
-  
   return (
     <div className="">
       <div className="flex">

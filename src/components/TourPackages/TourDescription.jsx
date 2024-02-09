@@ -3,7 +3,7 @@ import { IoMdArrowDropright } from "react-icons/io";
 
 
 const TourDescription = ({ details }) => {
- console.log(details);
+
   const {
     name,
     description,
