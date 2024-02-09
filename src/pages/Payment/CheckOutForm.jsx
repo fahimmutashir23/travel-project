@@ -99,7 +99,8 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
         descriptions: reserveInfo.roomId +'of'+ reserveInfo.hotelName,
         date,
         amount: reserveInfo.roomPrice * reserveDays,
-        phone
+        phone,
+        transactionID: paymentIntent.id
       }
     
       const emailInfo = {

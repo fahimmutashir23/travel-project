@@ -32,10 +32,11 @@ import useAuth from "../../Hooks/useAuth";
     Greetings from Ours Travels.
      
     Thank you for choosing to stay with us. We are pleased to confirm the Package for ${bookingsInfo.userName}.
-    ${bookingsInfo.price - bookingsInfo.discountRate}$The details of the booking confirmation are attached along with this Invoice.
+    ${bookingsInfo.price - bookingsInfo.discountRate}$. The details of the booking confirmation are attached along with this Invoice.
     
     Please let us know how we could assist on the above matters. Thank you.
-    Your Invoice: 
+    
+    Your Invoice is attested. Please check it. 
     
     Best Regards,
 
@@ -45,15 +46,13 @@ import useAuth from "../../Hooks/useAuth";
     Tour and Travel 
     Gulshan, House 19, Road 17, Dhaka 1212, Bangladesh`)
 
+    const [pdf, setPdf] = useState(null);
+
     
     const handlePhone = (e) => {
       setPhone(e);
     };
   
-    const emailInfo = {
-      subject: "Our Travels Payment Confirmation",
-      message: message,
-    };
   
     useEffect(() => {
       const price = totalPrice;
@@ -104,6 +103,26 @@ import useAuth from "../../Hooks/useAuth";
       if (paymentIntent.status === "succeeded") {
         setLoading(false);
         e.target.reset();
+
+        const invoiceInfo = {
+          name: bookingsInfo.userName,
+          email: bookingsInfo.userEmail,
+          descriptions: bookingsInfo.packageName,
+          date,
+          amount: bookingsInfo.price - bookingsInfo.discountRate,
+          phone,
+          transactionID: paymentIntent.id
+        }
+      
+        const emailInfo = {
+          to: bookingsInfo.userEmail,
+          subject: "Our Travels Payment Confirmation",
+          message: message,
+          invoiceInfo
+        };
+  
+        axiosSecure.post("/generatePdf", emailInfo )
+        .then((res) => setPdf(res.data));
   
         const reserveInfoExtend = {
           id: bookingsInfo.id,
@@ -133,7 +152,7 @@ import useAuth from "../../Hooks/useAuth";
             }
           });
 
-          // axiosSecure.patch('/bookings',)
+          axiosSecure.patch(`/bookPackages/${bookingsInfo.id}`)
       }
     };
   
