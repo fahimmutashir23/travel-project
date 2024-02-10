@@ -167,11 +167,7 @@ const PopularDestination = () => {
                 </div>
                 <div className="grid gap-4">
                   <div>
-                    {/* <img
-                      className="h-auto max-w-full rounded-lg object-cover object-center"
-                      src="https://i.postimg.cc/YqJXBVBG/pexels-paul-gr-ber-12625003.jpg"
-                      alt="gallery-photo"
-                    /> */}
+
                     <a href="#" className="group relative block bg-black h-44 w-[260px] rounded-xl">
                       <img
                         alt=""

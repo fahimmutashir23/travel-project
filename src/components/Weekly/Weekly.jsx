@@ -52,7 +52,7 @@ const Weekly = () => {
 
                             <form className="mt-4">
                                 <button
-                                    className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
+                                    className="block w-full rounded bg-blue-400 text-white p-3 text-lg font-semibold transition hover:scale-105"
                                 >
                                     View Details
                                 </button>
@@ -100,7 +100,7 @@ const Weekly = () => {
 
                             <form className="mt-4">
                                 <button
-                                    className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
+                                    className="block w-full rounded bg-blue-400 text-white p-3 text-lg font-semibold transition hover:scale-105"
                                 >
                                     View Details
                                 </button>
@@ -148,7 +148,7 @@ const Weekly = () => {
 
                             <form className="mt-4">
                                 <button
-                                    className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
+                                    className="block w-full rounded bg-blue-400 text-white p-3 text-lg font-semibold transition hover:scale-105"
                                 >
                                     View Details
                                 </button>
