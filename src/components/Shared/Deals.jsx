@@ -3,7 +3,7 @@ import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome"
 
 export const Deals = () => {
   return (
-    <div>
+    <div className="mt-10">
          <div>
         <PageTitleForHome title='Discover Special Deals!' />
       </div>
@@ -15,7 +15,7 @@ export const Deals = () => {
 				
 				<p className=" py-7 font-bold text-5xl mt-12 text-white">Discover Special Deals!</p>
 				<p className=" text-white">Make sure to check out these special promotions</p>
-				<button className="text-white mt-4 bg-blue-500 px-4 py-2 rounded-lg font-semibold">SEE TOUR </button>
+				<button className="text-white mt-14 bg-blue-500 px-4 py-2 rounded-lg font-semibold ">SEE TOUR </button>
 			</div>
 			
 			
