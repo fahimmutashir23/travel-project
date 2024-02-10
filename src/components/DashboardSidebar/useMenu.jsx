@@ -59,7 +59,7 @@ const useMenu = () => {
     </>
   );
 
-  // Admin Bookings Submenu
+  // Admin Bookings Submenu --------------------------------------------------------------------------------------
   const adminBookingsSubMenu = (
     <>
       <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
@@ -125,7 +125,7 @@ const useMenu = () => {
     </>
   );
 
-  // User Menu
+  // User Menu --------------------------------------------------------------------------------------
   const userNavMenu = (
     <>
        <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
@@ -173,7 +173,7 @@ const useMenu = () => {
     </>
   );
 
-  // Admin Menu
+  // Admin Menu --------------------------------------------------------------------------------------
   const adminNavMenu = (
     <>
       <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-base">
@@ -270,6 +270,18 @@ const useMenu = () => {
         >
           <div className="hover:translate-x-3 transition-transform duration-300 text-base">
             All Payments
+          </div>
+        </NavLink>
+      </li>
+      <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white  text-xl">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "bg-gray-600 rounded-none min-w-full text-white py-3" : ""
+          }
+          to="/dashboard/webControl"
+        >
+          <div className="hover:translate-x-3 transition-transform duration-300 text-base">
+            Web Control
           </div>
         </NavLink>
       </li>

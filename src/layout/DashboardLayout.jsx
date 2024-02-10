@@ -7,7 +7,7 @@ const DashboardLayout = () => {
     <div>
         <DashboardNav />
       <div className="flex gap-1">
-        <div className="w-2/12 mt-[85px]">
+        <div className="w-2/12 mt-[85px] h-[calc(100vh-85px)] overflow-y-hidden">
           <DashboardSidebar></DashboardSidebar>
         </div>
         <div className="flex-1 mt-[100px] px-6">

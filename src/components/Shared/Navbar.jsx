@@ -3,13 +3,26 @@ import { Link, NavLink } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 import useAuth from "../../Hooks/useAuth";
 import useAdmin from "../../Hooks/useAdmin";
-import useUsers from "../../Hooks/useUsers";
+import { useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 const Navbar = () => {
   const { user, logOutUser } = useAuth();
   const [isAdmin] = useAdmin();
-  const [users] = useUsers(user?.email);
+  const axiosSecure = useAxiosSecure();
 
+  const {data: users = [], refetch} = useQuery({
+    queryKey: [''],
+    queryFn: async () => {
+      const res = await axiosSecure(`/users?email=${user?.email}`)
+      return res.data
+    }
+  })
+
+  useEffect(() => {
+      refetch()
+  }, [user, users])
 
   const navLinks = (
     <>
@@ -47,7 +60,6 @@ const Navbar = () => {
     </>
   );
 
-  
   return (
     <div className="">
       <div className="flex">

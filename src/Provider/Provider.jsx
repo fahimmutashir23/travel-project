@@ -8,6 +8,7 @@ const provider = new GoogleAuthProvider()
 
 // eslint-disable-next-line react/prop-types
 const Provider = ({children}) => {
+    
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 

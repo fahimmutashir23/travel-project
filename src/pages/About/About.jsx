@@ -116,11 +116,11 @@ const About = () => {
           </div>
         </div>
       </section> */}
-      <section className="p-4 lg:p-8 dark:bg-gray-800 dark:text-gray-100">
+      <section className="p-4 lg:p-8 dark:bg-gray-100 ">
 	<div className="container mx-auto space-y-12">
 		<div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
-			<img src="https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/03/img-74-3.jpg" alt="" className="h-80 dark:bg-gray-500 aspect-video" />
-			<div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
+			<img src="https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/03/img-74-3.jpg" alt="" className="h-80 bg-gray-100 aspect-video" />
+			<div className="flex flex-col justify-center flex-1 p-6 bg-gray-200">
       <h3 className="text-3xl font-bold">KNOW ABOUT US</h3>
 				<p className="my-6 dark:text-gray-400">Welcome to our world of wanderlust! Embark on unforgettable
                 journeys, discover hidden gems, and create timeless memories
@@ -136,10 +136,10 @@ const About = () => {
 			</div>
 		</div>
 		<div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse">
-			<img src="https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/03/img-79.jpg" alt="" className="h-80 dark:bg-gray-500 aspect-video" />
-			<div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-900">
+			<img src="https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/03/img-79.jpg" alt="" className="h-80 bg-gray-100 aspect-video" />
+			<div className="flex flex-col justify-center flex-1 p-6 bg-gray-200">
 				<h3 className="text-3xl font-bold">KNOW ABOUT US</h3>
-				<p className="my-6 dark:text-gray-400">Welcome to our world of wanderlust! Embark on unforgettable
+				<p className="my-6">Welcome to our world of wanderlust! Embark on unforgettable
                 journeys, discover hidden gems, and create timeless memories
                 with our curated selection of travel experiences. From
                 breathtaking landscapes to cultural escapades, our tours cater
@@ -150,7 +150,7 @@ const About = () => {
                 itineraries ensure an enchanting travel experience every step of
                 the way. Start planning your next adventure today and let us
                 guide you to the extraordinary..</p>
-				<button type="button" className="self-start bg-sky-500 px-6 py-2 text-white font-bold rounded-lg">SEE MORE</button>
+				<button type="button" className="self-start bg-sky-500 px-6 py-2 text-white font-bold rounded-md">SEE MORE</button>
 			</div>
 		</div>
 

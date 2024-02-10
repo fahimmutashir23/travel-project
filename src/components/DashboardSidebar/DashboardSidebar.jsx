@@ -49,8 +49,8 @@ const navigate = useNavigate();
       <ul className="text-xl font-medium">
           {isAdmin ? adminNavMenu : userNavMenu}
         </ul>
-        <div className="bg-black w-full h-[1px] mt-4"></div>
         <div>
+        <div className="bg-black w-full h-[1px] mt-40"></div>
           <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-xl">
             <button
             onClick={handleLogOut}

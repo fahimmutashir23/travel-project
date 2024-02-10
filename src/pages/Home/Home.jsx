@@ -1,4 +1,4 @@
-import bgVdo from "../../assets/backgroundImage/seeVdo2.mp4"
+import bgVdo from "../../assets/backgroundImage/videobg2.mp4"
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Hotels from "../../components/Hotels/Hotels";
@@ -14,6 +14,7 @@ import { MdFlightTakeoff } from "react-icons/md";
 import TourPackages from "../../components/TourPackages/TourPackages";
 import Title from "../../Utils/Title/Title";
 import { Deals } from "../../components/Shared/Deals";
+import useWebControllers from "../../Hooks/useWebControllers";
 const searchCategory = [
   { icon: <FaHome></FaHome>, name: "Search All", title: "Where to Go" },
   {
@@ -34,6 +35,9 @@ const Home = () => {
   const [placeHolder, setPlaceholder] = useState("Search All");
   const [title, setTitle] = useState("Where to Go");
   const [search, setSearch] = useState("");
+  const [webControllersAPI] = useWebControllers(2);
+
+
 
   const handleClick = (item) => {
     setPlaceholder(item.name);
@@ -47,7 +51,7 @@ const Home = () => {
   } = useQuery({
     queryKey: ["hotelsHome"],
     queryFn: async () => {
-      const res = await axiosPublic(`/hotels?search=${search}`);
+      const res = await axiosPublic(`/hotels?search=${search}&limit=${webControllersAPI?.numOfShowInHome}`);
       return res.data;
     },
   });
@@ -59,7 +63,7 @@ const Home = () => {
 
   useEffect(() => {
     refetch();
-  }, [search, refetch]);
+  }, [search, webControllersAPI, refetch]);
 
   if (isLoading) {
     return <Loader width="20" center="center"></Loader>;
@@ -68,9 +72,9 @@ const Home = () => {
     <div>
       <Title title="Home" />
       <div className="overflow-hidden relative" data-aos="zoom-in">
-        <div className="rounded-xl hero overflow-hidden h-[500px] text-white">
-          <video src={bgVdo} autoPlay loop muted className="h-full w-full object-cover" />
-          <div className="hero-overlay bg-black bg-opacity-20"></div>
+        <div className="rounded-xl hero overflow-hidden h-[600px] text-white">
+          <video src={bgVdo} autoPlay loop muted className="h-full w-full" />
+          <div className="hero-overlay bg-black bg-opacity-30"></div>
           <div
             className="absolute"
           >
@@ -126,8 +130,6 @@ const Home = () => {
       <About />
       <Weekly />
       <PopularDestination />
-      
-      
       <News />
       <Deals/>
     </div>

@@ -10,24 +10,24 @@ import Provider from "./Provider/Provider";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Notifications } from "react-push-notification";
-import 'react-date-range/dist/styles.css'; // main style file
-import 'react-date-range/dist/theme/default.css'; // theme css file
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
 import { HelmetProvider } from "react-helmet-async";
 const queryClient = new QueryClient();
 AOS.init();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Notifications position="top-right"/>
+    <Notifications position="top-right" />
     <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <Provider>
-        <div className="z-40">
-          <Toaster />
-        </div>
-        <RouterProvider router={Router}></RouterProvider>
-      </Provider>
-    </QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+          <Provider>
+            <div className="z-40">
+              <Toaster />
+            </div>
+            <RouterProvider router={Router}></RouterProvider>
+          </Provider>
+      </QueryClientProvider>
     </HelmetProvider>
   </React.StrictMode>
 );
