@@ -7,25 +7,25 @@ import Loader from "../../../Utils/Loader/Loader";
 import BookingsTable from "../Bookings/BookingsTable";
 
 const HotelBookings = () => {
-    const category = "Hotels"
-    const [searchValue, setSearchValue] = useState({});
-    const [booking, isLoading, refetch] = useBooking({}, searchValue, category);
+  const category = "Hotels";
+  const [searchValue, setSearchValue] = useState({});
+  const [booking, isLoading, refetch] = useBooking({}, searchValue, category);
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        const searchValue = e.target.search.value;
-        setSearchValue(searchValue)
-        e.target.reset()
-    };
-    
-    useEffect(() => {
-        refetch()
-    }, [searchValue])
-    
-      if (isLoading) {
-        return <Loader width="20" center="center" />;
-      }
-     
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const searchValue = e.target.search.value;
+    setSearchValue(searchValue);
+    e.target.reset();
+  };
+
+  useEffect(() => {
+    refetch();
+  }, [searchValue]);
+
+  if (isLoading) {
+    return <Loader width="20" center="center" />;
+  }
+
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -64,7 +64,7 @@ const HotelBookings = () => {
         </div>
       </div>
       <div className="relative overflow-x-auto shadow-md rounded-md">
-        <table className="w-full text-left rtl:text-right ">
+        <table className="w-full text-left rtl:text-right">
           <thead className="text-lg uppercase bg-blue-400 text-white ">
             <tr>
               <th scope="col" className="px-6 py-3">
@@ -72,6 +72,9 @@ const HotelBookings = () => {
               </th>
               <th scope="col" className="px-6 py-3">
                 User Email
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Description
               </th>
               <th scope="col" className="px-6 py-3 text-center">
                 Status
@@ -87,7 +90,7 @@ const HotelBookings = () => {
               </th>
             </tr>
           </thead>
-            
+
           <tbody>
             {booking.map((bookingsItem) => (
               <BookingsTable
