@@ -203,7 +203,7 @@ const PopularDestination = () => {
     <div>
       <img
         className="h-auto max-w-full rounded-lg object-cover object-center"
-        src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+        src="https://i.postimg.cc/YqJXBVBG/pexels-paul-gr-ber-12625003.jpg"
         alt="gallery-photo"
       />
     </div>
