@@ -5,7 +5,7 @@ export const Deals = () => {
 	return (
 		<div className="mt-10">
 			<div>
-				<PageTitleForHome title='Discover Special Deals!' />
+				<PageTitleForHome title='Special Deals!' />
 			</div>
 
 			<section className="my-8">
