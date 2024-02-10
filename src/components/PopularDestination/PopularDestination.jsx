@@ -115,11 +115,6 @@ const PopularDestination = () => {
                     </a>
                   </div>
                   <div>
-                    {/* <img
-                      className="h-[175px] max-w-full rounded-lg object-cover object-center"
-                      src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80 "
-                      alt="gallery-photo"
-                    /> */}
                      <a href="#" className="group relative block bg-black h-[175px] max-w-full rounded-xl">
                       <img
                         alt=""
