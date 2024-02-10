@@ -144,11 +144,34 @@ const PopularDestination = () => {
 </a>
     </div>
     <div>
-      <img
+      {/* <img
         className="h-auto max-w-full rounded-lg object-cover object-center"
         src="https://i.postimg.cc/RC1CtrX9/pexels-nick-karvounis-15483478.jpg"
         alt="gallery-photo"
-      />
+      /> */}
+      <a href="#" className="group relative block bg-black h-44 w-[260px] rounded-xl">
+  <img
+    alt=""
+    src="https://i.postimg.cc/RC1CtrX9/pexels-nick-karvounis-15483478.jpg"
+    className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+  />
+
+  <div className="relative p-4 sm:p-6 lg:p-6">
+    <p className="text-sm font-medium uppercase tracking-widest text-pink-500">new zealand</p>
+
+    <p className="text-xl font-bold text-white sm:text-2xl">new zealand</p>
+
+    <div className="mt-32 sm:mt-48 lg:mt-[30px]">
+      <div
+        className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+      >
+        <p className="text-sm text-white">
+        A group of passionate adventurers dedicated to creating the best journey for every traveler
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
     </div>
   </div>
   <div className="grid gap-4">
