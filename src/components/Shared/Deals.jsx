@@ -11,13 +11,14 @@ export const Deals = () => {
 <section className="my-8">
 	<div className="container mx-auto grid grid-cols-1 gap-8 lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-2">
 		<div className="flex flex-col items-center mx-12 lg:mx-0 h-96 bg-cover rounded-lg" style={{backgroundImage: 'url(https://i.postimg.cc/VsCDWfSB/pexels-serge-degtyarev-6687998.jpg)'}}>
-			<div className="relative text-start">
+			<div className="relative text-start px-6">
 				
-				<p className="px-6 py-7 font-bold text-5xl mt-12 text-white">Discover Special Deals!.</p>
-				<p className="px-6 text-white">Make sure to check out these special promotions</p>
+				<p className=" py-7 font-bold text-5xl mt-12 text-white">Discover Special Deals!</p>
+				<p className=" text-white">Make sure to check out these special promotions</p>
+				<button className="text-white mt-4 bg-blue-500">SEE TOUR </button>
 			</div>
 			
-			<p>Leroy Jenkins</p>
+			
 		</div>
 		<div className="flex flex-col items-center max-w-lg mx-12 lg:mx-0">
 			<div className="relative text-center">
