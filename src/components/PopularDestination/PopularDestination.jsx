@@ -225,8 +225,8 @@ const PopularDestination = () => {
     </div>
     <div>
       <img
-        className="h-auto max-w-full rounded-lg object-cover object-center "
-        src="https://docs.material-tailwind.com/img/team-3.jpg"
+        className="h-[260px] max-w-full rounded-lg object-cover object-center "
+        src="https://i.postimg.cc/Z5v5CWQs/pexels-dmitry-kharitonov-20099418.jpg"
         alt="gallery-photo"
       />
     </div>
