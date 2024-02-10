@@ -115,11 +115,34 @@ const PopularDestination = () => {
                     </a>
                   </div>
                   <div>
-                    <img
+                    {/* <img
                       className="h-[175px] max-w-full rounded-lg object-cover object-center"
                       src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80 "
                       alt="gallery-photo"
-                    />
+                    /> */}
+                     <a href="#" className="group relative block bg-black h-[175px] max-w-full rounded-xl">
+                      <img
+                        alt=""
+                        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80"
+                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+                      />
+
+                      <div className="relative p-4 sm:p-6 lg:p-8">
+                        <p className="text-sm font-medium uppercase tracking-widest text-pink-500">new zealand</p>
+
+                        <p className="text-xl font-bold text-white sm:text-xl">new zealand</p>
+
+                        <div className="mt-32 sm:mt-48 lg:mt-[30px]">
+                          <div
+                            className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                          >
+                            <p className="text-xs text-white">
+                              A group of passionate adventurers dedicated to creating the best journey for every traveler
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
                   </div>
                   <div>
                     <img
