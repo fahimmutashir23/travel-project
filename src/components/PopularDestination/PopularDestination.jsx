@@ -161,22 +161,6 @@ const PopularDestination = () => {
       />
     </div>
   </div>
-  {/* <div className="grid gap-4">
-    <div>
-      <img
-        className="h-auto max-w-full rounded-lg object-cover object-center"
-        src="https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=687&amp;q=80"
-        alt="gallery-photo"
-      />
-    </div>
-    <div>
-      <img
-        className="h-auto max-w-full rounded-lg object-cover object-center"
-        src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=927&amp;q=80"
-        alt="gallery-photo"
-      />
-    </div>
-  </div> */}
 </div>
 </div>
    </div>
