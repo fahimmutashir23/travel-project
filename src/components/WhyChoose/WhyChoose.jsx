@@ -1,6 +1,7 @@
+
 import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
 import videoBG from "../../assets/videobg/videoBG.mp4";
-
+import CountUp from 'react-countup';
 const WhyChoose = () => {
   return (
     <div className="my-10">
@@ -50,9 +51,19 @@ const WhyChoose = () => {
           </p>
         </div>
       </div>
-      <div className="w-full h-80 mt-5 overflow-hidden rounded-lg">
+      <div className="w-full h-80 mt-5 overflow-hidden rounded-lg relative">
         <video src={videoBG} autoPlay loop muted className="h-full w-full object-cover"></video>
+        
       </div>
+      <div className="text-white flex absolute -mt-56 font-bold gap-80 px-36 text-3xl leading-10">
+          <div className="items-center text-center">
+          <CountUp start={0} end={3000} delay={6}/>
+          <h1 className="te">Total Package</h1>
+          </div>
+          <div className="items-center text-center">
+          <CountUp start={0} end={2200} delay={6}/><h1>Total Booking</h1> </div>
+          <div className="items-center text-center"><CountUp start={0} end={12} delay={6}/> <h1>Total Hotel</h1></div>
+        </div>
     </div>
   );
 };

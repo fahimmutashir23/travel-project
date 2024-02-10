@@ -2,7 +2,7 @@ import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
 
 const Weekly = () => {
     return (
-        <div>
+        <div className="mt-[60px]">
             <PageTitleForHome title='Discover weekly' />
             <h1 className="text-center text-lg mb-5 font-bold">
                 It is a long established fact that a reader will be distracted...
@@ -52,7 +52,7 @@ const Weekly = () => {
 
                             <form className="mt-4">
                                 <button
-                                    className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
+                                    className="block w-full rounded bg-blue-400 text-white p-3 text-lg font-semibold transition hover:scale-105"
                                 >
                                     View Details
                                 </button>
@@ -100,7 +100,7 @@ const Weekly = () => {
 
                             <form className="mt-4">
                                 <button
-                                    className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
+                                    className="block w-full rounded bg-blue-400 text-white p-3 text-lg font-semibold transition hover:scale-105"
                                 >
                                     View Details
                                 </button>
@@ -148,7 +148,7 @@ const Weekly = () => {
 
                             <form className="mt-4">
                                 <button
-                                    className="block w-full rounded bg-yellow-400 p-4 text-sm font-medium transition hover:scale-105"
+                                    className="block w-full rounded bg-blue-400 text-white p-3 text-lg font-semibold transition hover:scale-105"
                                 >
                                     View Details
                                 </button>
