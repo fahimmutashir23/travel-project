@@ -4,7 +4,7 @@ const PopularDestination = () => {
   return (
     <div className="mt-[120px]">
       <p className="text-center text-lg -mb-5 mt-10 font-bold">Discover</p>
-      <PageTitleForHome title='Popular Destination' />
+      <PageTitleForHome title='Our Gallery' />
 
       <div className="container mx-auto">
         <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
