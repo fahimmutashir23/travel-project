@@ -104,13 +104,13 @@ const PopularDestination = () => {
   <div className="relative p-4 sm:p-6 lg:p-8">
     <p className="text-sm font-medium uppercase tracking-widest text-pink-500">new zealand</p>
 
-    <p className="text-xl font-bold text-white sm:text-2xl">new zealand</p>
+    <p className="text-xl font-bold text-white sm:text-xl">new zealand</p>
 
-    <div className="mt-32 sm:mt-48 lg:mt-72">
+    <div className="mt-32 sm:mt-48 lg:mt-[30px]">
       <div
         className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
       >
-        <p className="text-sm text-white">
+        <p className="text-xs text-white">
         A group of passionate adventurers dedicated to creating the best journey for every traveler
         </p>
       </div>
@@ -119,11 +119,6 @@ const PopularDestination = () => {
 </a>
     </div>
     <div>
-      {/* <img
-        className=" max-w-full rounded-lg object-cover object-center h-[480px]"
-        src="https://i.postimg.cc/BZpFMGZV/pexels-confinedriley-11595339.jpg"
-        alt="gallery-photo"
-      /> */}
         <a href="#" className="group relative block bg-black max-w-full h-[480px] rounded-xl">
   <img
     alt=""
