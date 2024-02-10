@@ -72,8 +72,8 @@ const Home = () => {
     <div>
       <Title title="Home" />
       <div className="overflow-hidden relative" data-aos="zoom-in">
-        <div className="rounded-xl hero overflow-hidden h-[600px] text-white">
-          <video src={bgVdo} autoPlay loop muted className="h-full w-full" />
+        <div className="rounded-xl hero overflow-hidden h-[600px] w-full text-white">
+          <video src={bgVdo} autoPlay loop muted className="h-full w-full object-cover" />
           <div className="hero-overlay bg-black bg-opacity-30"></div>
           <div
             className="absolute"
