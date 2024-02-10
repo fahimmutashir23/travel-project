@@ -39,7 +39,6 @@ useEffect(() => {
                 tourPackage={tourPackage}
               ></TourPackagesCard>
             ))}
-           
           </div>
         </div>
         <Blogs />
