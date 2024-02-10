@@ -13,6 +13,7 @@ import { FaCar, FaHome, FaHotel } from "react-icons/fa";
 import { MdFlightTakeoff } from "react-icons/md";
 import TourPackages from "../../components/TourPackages/TourPackages";
 import Title from "../../Utils/Title/Title";
+import { Deals } from "../../components/Shared/Deals";
 const searchCategory = [
   { icon: <FaHome></FaHome>, name: "Search All", title: "Where to Go" },
   {
@@ -128,6 +129,7 @@ const Home = () => {
       
       
       <News />
+      <Deals/>
     </div>
   );
 };
