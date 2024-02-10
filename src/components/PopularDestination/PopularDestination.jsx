@@ -94,11 +94,6 @@ const PopularDestination = () => {
    <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
   <div className="grid gap-4">
     <div>
-      {/* <img
-        className="h-44 w-96 rounded-lg object-cover object-center"
-        src="https://i.postimg.cc/wx2RDsjw/pexels-ahmet-polat-9289144.jpg"
-        alt="gallery-photo"
-      /> */}
        <a href="#" className="group relative block bg-black h-44 w-[260px] rounded-xl">
   <img
     alt=""
