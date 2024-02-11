@@ -15,6 +15,7 @@ import TourPackages from "../../components/TourPackages/TourPackages";
 import Title from "../../Utils/Title/Title";
 import { Deals } from "../../components/Shared/Deals";
 import useWebControllers from "../../Hooks/useWebControllers";
+import { Blog } from "../../components/Blog/Blog";
 const searchCategory = [
   { icon: <FaHome></FaHome>, name: "Search All", title: "Where to Go" },
   {
@@ -130,8 +131,9 @@ const Home = () => {
       <About />
       <Weekly />
       <PopularDestination />
-      <News />
+     <Blog/>
       <Deals/>
+      <News />
     </div>
   );
 };

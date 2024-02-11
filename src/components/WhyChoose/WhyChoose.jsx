@@ -4,7 +4,7 @@ import videoBG from "../../assets/videobg/videoBG.mp4";
 import CountUp from 'react-countup';
 const WhyChoose = () => {
   return (
-    <div className="my-10">
+    <div className="mt-[60px]">
       <PageTitleForHome title='Why Choose us' />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto">
