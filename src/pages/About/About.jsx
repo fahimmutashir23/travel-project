@@ -117,7 +117,7 @@ const About = () => {
         </div>
       </section> */}
       <section className="p-4 lg:p-8 dark:bg-gray-100 ">
-	<div className="container mx-auto space-y-12">
+	<div className="mx-auto space-y-12">
 		<div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
 			<img src="https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/03/img-74-3.jpg" alt="" className="h-80 bg-gray-100 aspect-video" />
 			<div className="flex flex-col justify-center flex-1 p-6 bg-gray-200">

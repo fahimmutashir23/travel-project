@@ -138,7 +138,6 @@ const Home = () => {
      <Blog/>
       <Deals/>
       <News />
-      <Deals/>
     </div>
   );
 };
