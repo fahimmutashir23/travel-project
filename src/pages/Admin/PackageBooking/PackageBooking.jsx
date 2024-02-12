@@ -7,7 +7,7 @@ import Loader from "../../../Utils/Loader/Loader";
 import BookingsTable from "../Bookings/BookingsTable";
 
 const PackageBooking = () => {
-  const category = "Packages";
+  const category = "Package";
   const [searchValue, setSearchValue] = useState({});
   const [booking, isLoading, refetch] = useBooking({}, searchValue, category);
 
@@ -27,7 +27,7 @@ const PackageBooking = () => {
   }
 
   return (
-    <div>
+    <div className="h-[calc(100vh-85px)] overflow-y-hidden">
       <div className="flex justify-between items-center">
         <div className="flex-1"></div>
         <PageTitle title="Packages Booking" />
@@ -73,6 +73,9 @@ const PackageBooking = () => {
               </th>
               <th scope="col" className="px-6 py-3">
                 User Email
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Description
               </th>
               <th scope="col" className="px-6 py-3 text-center">
                 Status

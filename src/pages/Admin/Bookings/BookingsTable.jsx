@@ -9,7 +9,7 @@ import { useState } from "react";
 import { CirclesWithBar } from "react-loader-spinner";
 
 const BookingsTable = ({ bookingsItem, refetch, statFetch }) => {
-    const {userName, email, category, status, _id} = bookingsItem;
+    const {userName, email, category, status, _id, packageName, hotelName} = bookingsItem;
     const axiosSecure = useAxiosSecure()
     const [loading, setLoading] = useState(false)
 
@@ -68,6 +68,7 @@ const BookingsTable = ({ bookingsItem, refetch, statFetch }) => {
           {userName}
         </th>
         <td className="px-6 py-4">{email}</td>
+        <td className="px-6 py-4">{packageName || hotelName}</td>
         <td className="px-6 py-4 text-center">{status}</td>
         <td className="px-6 py-4 text-center">{category}</td>
         <td className="px-6 py-4 text-center">
