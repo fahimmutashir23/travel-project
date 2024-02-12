@@ -6,7 +6,7 @@ const About = () => {
       <div>
         <PageTitleForHome title='About' />
       </div>
-      <section className="p-4 lg:p-8 dark:bg-gray-100 ">
+      <section className=" dark:bg-gray-100 ">
 	<div className="mx-auto space-y-12">
 		<div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
 			<img src="https://cozystay.loftocean.com/island-resort/wp-content/uploads/sites/3/2023/03/img-74-3.jpg" alt="" className="h-80 bg-gray-100 aspect-video" />
