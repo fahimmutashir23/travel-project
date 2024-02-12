@@ -15,7 +15,7 @@ const PageTitleForHome = ({ title }) => {
               {text}{" "}
             </span>
           ))}{" "}
-          <span className="text-violet-600 ">{greenText}</span>
+          <span className="text-blue-600 ">{greenText}</span>
         </h1>
         <h1 className="text-4xl md:text-6xl opacity-10 font-bold border-black pr-2 uppercase absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
           {blackText.map((text) => (

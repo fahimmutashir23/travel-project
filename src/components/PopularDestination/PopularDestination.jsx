@@ -17,7 +17,7 @@ const PopularDestination = () => {
                       <img
                         alt=""
                         src="https://i.postimg.cc/wx2RDsjw/pexels-ahmet-polat-9289144.jpg"
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-80 rounded-xl"
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
@@ -42,7 +42,7 @@ const PopularDestination = () => {
                       <img
                         alt=""
                         src="https://i.postimg.cc/BZpFMGZV/pexels-confinedriley-11595339.jpg"
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-80 rounded-xl"
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
@@ -67,7 +67,7 @@ const PopularDestination = () => {
                       <img
                         alt=""
                         src="https://i.postimg.cc/RC1CtrX9/pexels-nick-karvounis-15483478.jpg"
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-50 rounded-xl"
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-6">
@@ -94,7 +94,7 @@ const PopularDestination = () => {
                       <img
                         alt=""
                         src="https://i.postimg.cc/nV94VWnR/pexels-tetyana-kovyrina-17981433.jpg"
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-50 rounded-xl"
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
@@ -172,7 +172,7 @@ const PopularDestination = () => {
                       <img
                         alt=""
                         src="https://i.postimg.cc/YqJXBVBG/pexels-paul-gr-ber-12625003.jpg"
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-50 rounded-xl"
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
