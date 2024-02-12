@@ -96,7 +96,7 @@ const CheckOutForm = ({ reserveInfo, reserveDays }) => {
       const invoiceInfo = {
         name,
         email: reserveInfo.email,
-        descriptions: reserveInfo.roomId +'of'+ reserveInfo.hotelName,
+        descriptions: reserveInfo.roomName +'of'+ reserveInfo.hotelName,
         date,
         amount: reserveInfo.roomPrice * reserveDays,
         phone,
