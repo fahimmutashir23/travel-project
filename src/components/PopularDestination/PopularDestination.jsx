@@ -6,7 +6,7 @@ const PopularDestination = () => {
       <p className="text-center text-lg -mb-5 mt-10 font-bold">Discover</p>
       <PageTitleForHome title="Our Gallery" />
 
-      <div className="container mx-auto">
+      <div className="mx-auto">
         <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
           <div className="w-[55%]">
             <div className="w-full">
@@ -20,7 +20,7 @@ const PopularDestination = () => {
                       <img
                         alt=""
                         src="https://i.postimg.cc/wx2RDsjw/pexels-ahmet-polat-9289144.jpg"
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-80 rounded-xl"
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
@@ -51,7 +51,7 @@ const PopularDestination = () => {
                       <img
                         alt=""
                         src="https://i.postimg.cc/BZpFMGZV/pexels-confinedriley-11595339.jpg"
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-80 rounded-xl"
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
@@ -82,7 +82,7 @@ const PopularDestination = () => {
                       <img
                         alt=""
                         src="https://i.postimg.cc/RC1CtrX9/pexels-nick-karvounis-15483478.jpg"
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-50 rounded-xl"
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-6">
@@ -115,7 +115,7 @@ const PopularDestination = () => {
                       <img
                         alt=""
                         src="https://i.postimg.cc/nV94VWnR/pexels-tetyana-kovyrina-17981433.jpg"
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-50 rounded-xl"
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
@@ -210,7 +210,7 @@ const PopularDestination = () => {
                       <img
                         alt=""
                         src="https://i.postimg.cc/YqJXBVBG/pexels-paul-gr-ber-12625003.jpg"
-                        className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50 rounded-xl"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-50 rounded-xl"
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
@@ -299,8 +299,8 @@ const PopularDestination = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-center flex-1 -mt-[280px] p-6 bg-slate-200">
-            <h3 className="text-3xl font-bold">KNOW ABOUT US</h3>
+          <div className="flex flex-col justify-center flex-1 -mt-[280px] p-6">
+            <h3 className="text-3xl font-bold">Our Gallery</h3>
             <p className="my-6 dark:text-gray-400">
               Welcome to our world of wanderlust! Embark on unforgettable
               journeys, discover hidden gems, and create timeless memories with

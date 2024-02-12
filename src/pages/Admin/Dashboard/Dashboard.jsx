@@ -153,14 +153,14 @@ const Dashboard = () => {
 
       <div className="flex items-center justify-center md:mt-24">
         <div className="">
-          <PieChart width={400} height={300}>
+          <PieChart width={500} height={390}>
             <Pie
               data={data}
               cx="50%"
               cy="50%"
               labelLine={false}
               label={renderCustomizedLabel}
-              outerRadius={80}
+              outerRadius={170}
               fill="#8884d8"
               dataKey="value"
             >
@@ -176,8 +176,8 @@ const Dashboard = () => {
         </div>
         <div>
           <BarChart
-            width={500}
-            height={300}
+            width={600}
+            height={400}
             data={data1}
             margin={{
               top: 20,

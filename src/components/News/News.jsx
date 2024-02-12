@@ -64,7 +64,7 @@ const News = () => {
       </span>
       <span className="text-sm font-bold">Live</span>
     </span>
-    <h1 className="font-serif text-2xl font-semibold group-hover:underline dark:text-gray-100">Morbi mattis justo est, ac consectetur dui eleifend vitae. Donec venenatis?</h1>
+    <h1 className="font-serif text-2xl font-semibold group-hover:underline text-white">Morbi mattis justo est, ac consectetur dui eleifend vitae. Donec venenatis?</h1>
   </a>
 </div>
 		<div className="hidden py-2 xl:col-span-3 lg:col-span-4 md:hidden lg:block">
