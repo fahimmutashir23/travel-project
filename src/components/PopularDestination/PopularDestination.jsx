@@ -300,7 +300,7 @@ const PopularDestination = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center flex-1 -mt-[280px] p-6 bg-slate-200">
-            <h3 className="text-3xl font-bold">KNOW ABOUT US</h3>
+            <h3 className="text-3xl font-bold">Our Gallery</h3>
             <p className="my-6 dark:text-gray-400">
               Welcome to our world of wanderlust! Embark on unforgettable
               journeys, discover hidden gems, and create timeless memories with
