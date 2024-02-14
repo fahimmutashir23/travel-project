@@ -9,7 +9,7 @@ import useStat from "../../../Hooks/useStat";
 
 const AllPackages = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [tourPackages, isLoading, refetch] = useTourPackages(10, searchValue);
+  const [tourPackages, isLoading, refetch] = useTourPackages({}, searchValue);
   const [statistics] = useStat()
 
   const handleSearch = (e) => {

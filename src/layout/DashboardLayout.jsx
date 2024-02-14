@@ -10,7 +10,7 @@ const DashboardLayout = () => {
         <div className="w-2/12 mt-[85px] h-[calc(100vh-85px)] overflow-y-hidden">
           <DashboardSidebar></DashboardSidebar>
         </div>
-        <div className="w-10/12 mt-[100px] px-6">
+        <div className="w-10/12 mt-[100px] px-6 h-[calc(100vh-100px)] overflow-y-auto">
           <Outlet></Outlet>
         </div>
       </div>
