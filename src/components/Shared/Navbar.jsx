@@ -3,14 +3,21 @@ import { Link, NavLink } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 import useAuth from "../../Hooks/useAuth";
 import useAdmin from "../../Hooks/useAdmin";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
 
 const Navbar = () => {
   const { user, logOutUser } = useAuth();
-  const [isAdmin] = useAdmin();
+  const [isAdmin, setIsAdmin] = useState(null);
   const axiosSecure = useAxiosSecure();
+
+  useEffect(()=> {
+    axiosSecure(`/users?email=${user?.email}`)
+    .then(res => {
+      setIsAdmin(res.data[0].admin)
+    })
+  }, [axiosSecure, user?.email])
 
   const {data: users = [], refetch} = useQuery({
     queryKey: [''],
