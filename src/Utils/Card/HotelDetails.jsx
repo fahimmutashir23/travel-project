@@ -1,40 +1,38 @@
 /* eslint-disable react/prop-types */
-
+import mapImg from "../../assets/backgroundImage/mapImg.jpg";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { useState } from "react";
 import Payment from "../../pages/Payment/Payment";
-import { Rating } from "@mui/material";
+import { Button, Rating } from "@mui/material";
 import { IoBed } from "react-icons/io5";
 import { FaUser } from "react-icons/fa6";
 import useAuth from "../../Hooks/useAuth";
 import Title from "../Title/Title";
-
-
-
+import { LaunchOutlined } from "@mui/icons-material";
+import MapModal from "../MapModal/MapModal";
 
 const HotelDetails = () => {
-  const {user} = useAuth()
+  const { user } = useAuth();
   const [checkInDate, setCheckInDate] = useState({});
   const [checkOutDate, setCheckOutDate] = useState({});
-  const [roomId , setRoomId] = useState(null);
+  const [roomId, setRoomId] = useState(null);
   const [open, setOpen] = useState(false);
 
-
-  const reserveDaysMillisecond = new Date(checkOutDate.date) - new Date(checkInDate.date);
+  const reserveDaysMillisecond =
+    new Date(checkOutDate.date) - new Date(checkInDate.date);
   const days = reserveDaysMillisecond / (1000 * 60 * 60 * 24);
-  const reserveDays = {days, id : checkOutDate.id} 
+  const reserveDays = { days, id: checkOutDate.id };
   const reserveDate = { checkIn: checkInDate, checkOut: checkOutDate };
 
   const axiosPublic = useAxiosPublic();
   const { id } = useParams();
 
-
   const handleOpen = (id) => {
-    setOpen(true)
-    setRoomId(id)
+    setOpen(true);
+    setRoomId(id);
   };
 
   const { data: hotel = [], isLoading } = useQuery({
@@ -46,12 +44,12 @@ const HotelDetails = () => {
   });
 
   const handleCheckIn = (date, id) => {
-    setCheckInDate({date, id});
-  }
+    setCheckInDate({ date, id });
+  };
 
   const handleCheckOut = (date, id) => {
-    setCheckOutDate({date, id});
-  }
+    setCheckOutDate({ date, id });
+  };
 
   if (isLoading) {
     return <Loader width={20} center="center"></Loader>;
@@ -76,19 +74,58 @@ const HotelDetails = () => {
         </div>
         <div className="md:w-1/2">
           <div className="grid grid-cols-2 gap-1.5">
-            <img src={hotel.img_gallery.img2} alt="" className="rounded-md md:w-full md:h-[297px] h-[100px]" />
-            <img src={hotel.img_gallery.img3} alt="" className="rounded-md md:w-full md:h-[297px] h-[100px]" />
-            <img src={hotel.img_gallery.img4} alt="" className="rounded-md md:w-full md:h-[297px] h-[100px]" />
-            <img src={hotel.img_gallery.img5} alt="" className="rounded-md md:w-full md:h-[297px] h-[100px]" />
+            <img
+              src={hotel.img_gallery.img2}
+              alt=""
+              className="rounded-md md:w-full md:h-[297px] h-[100px]"
+            />
+            <img
+              src={hotel.img_gallery.img3}
+              alt=""
+              className="rounded-md md:w-full md:h-[297px] h-[100px]"
+            />
+            <img
+              src={hotel.img_gallery.img4}
+              alt=""
+              className="rounded-md md:w-full md:h-[297px] h-[100px]"
+            />
+            <img
+              src={hotel.img_gallery.img5}
+              alt=""
+              className="rounded-md md:w-full md:h-[297px] h-[100px]"
+            />
           </div>
         </div>
       </div>
       <div className="flex flex-col lg:justify-between my-4 mx-auto">
         <div className="font-semibold capitalize text-lg">
-          Rooms details of <span className="text-xl font-semibold">{hotel.hotel_name}</span>
-          <p className="text-base mt-2 text-black text-left w-1/2 mb-10">
-            {hotel.description}
-          </p>
+          <div className="md:flex gap-4">
+            <div className="flex-1">
+              Details of{" "}
+              <span className="text-xl font-bold">{hotel.hotel_name}</span>
+              <p className="text-base mt-2 text-black text-left mb-10">
+                {hotel.description}
+              </p>
+            </div>
+            <div
+              style={{ backgroundImage: `url(${mapImg})` }}
+              className="w-3/12 h-28 rounded-lg bg-cover border-2 border-violet-600 md:mt-10 overflow-hidden"
+            >
+              <div className="w-full h-full bg-gradient-to-b from-white flex justify-center items-center">
+                <div className="text-center space-y-5">
+                  <h3 className="text-2xl font-bold text-blue-700">
+                    See Hotel Location
+                  </h3>
+                  <Button 
+                  onClick={()=>document.getElementById('map_modal').showModal()}
+                  variant="contained" endIcon={<LaunchOutlined />}>
+                    View Map
+                  </Button>
+                </div>
+                <MapModal id="map_modal" hotel = {hotel} />
+              </div>
+            </div>
+          </div>
           <div>
             {hotel.hotel_room?.map((room, idx) => (
               <div
@@ -111,7 +148,7 @@ const HotelDetails = () => {
                           </h1>
                           <div className="flex mt-1">
                             <h1>Room Price: {room.room_price}$</h1>
-                        </div>
+                          </div>
                         </div>
                         <div className="flex gap-4">
                           <button className="rounded-none h-9 text-base py-1 min-h-fit ">
@@ -139,7 +176,9 @@ const HotelDetails = () => {
                               </label>
                               <br />
                               <input
-                                onChange={(e)=>handleCheckIn(e.target.value, room.room_id)}
+                                onChange={(e) =>
+                                  handleCheckIn(e.target.value, room.room_id)
+                                }
                                 type="date"
                                 name="checkIn"
                                 className="p-2 border rounded-md mt-2 mr-3"
@@ -149,7 +188,9 @@ const HotelDetails = () => {
                               <label className="lg:mr-12">check-out</label>
                               <br />
                               <input
-                                onChange={(e)=>handleCheckOut(e.target.value, room.room_id)}
+                                onChange={(e) =>
+                                  handleCheckOut(e.target.value, room.room_id)
+                                }
                                 type="date"
                                 name="checkOut"
                                 className="p-2 border rounded-md mt-2"
@@ -158,13 +199,15 @@ const HotelDetails = () => {
                           </div>
                         </div>
                         <div className="flex flex-col justify-end">
-                          <p className="mt-5 text-sm text-gray-600">{!user && 'Login first to reserve'}</p>
+                          <p className="mt-5 text-sm text-gray-600">
+                            {!user && "Login first to reserve"}
+                          </p>
                           <button
-                            onClick={()=>handleOpen(idx+1)}
+                            onClick={() => handleOpen(idx + 1)}
                             type="submit"
                             className={`btn w-full bg-[#E36252] text-white rounded-md py-1 ${
-                              (!user && "btn-disabled")||
-                              (idx+1 !== checkOutDate.id && "btn-disabled")
+                              (!user && "btn-disabled") ||
+                              (idx + 1 !== checkOutDate.id && "btn-disabled")
                             }`}
                           >
                             Reserve

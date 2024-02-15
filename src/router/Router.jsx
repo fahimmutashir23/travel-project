@@ -27,6 +27,11 @@ import TourPackagesPage from "../pages/TourPackagesPage/TourPackagesPage";
 import PrivetRoute from "../Security/PrivetRoute";
 import AdminRoute from "../Security/AdminRoute";
 import WebControl from "../pages/Admin/WebControl/WebControl";
+import Trains from "../pages/Trains/Trains";
+import Cars from "../pages/Cars/Cars";
+import Flights from "../pages/Flights/Flights";
+import Attractions from "../pages/Attractions/Attractions";
+import TravelsPlanner from "../pages/Travels Planner/TravelsPlanner";
 
 const Router = createBrowserRouter([
   {
@@ -65,7 +70,27 @@ const Router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
-      }
+      },
+      {
+        path: "/trains",
+        element: <Trains />,
+      },
+      {
+        path: "/cars",
+        element: <Cars />,
+      },
+      {
+        path: "/flights",
+        element: <Flights />,
+      },
+      {
+        path: "/attractions",
+        element: <Attractions />,
+      },
+      {
+        path: "/planner",
+        element: <TravelsPlanner />,
+      },
     ],
   },
   {

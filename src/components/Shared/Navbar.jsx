@@ -2,7 +2,6 @@ import logo1 from '../../assets/Logo/Logo3.png';
 import { Link, NavLink } from "react-router-dom";
 import { TiThMenu } from "react-icons/ti";
 import useAuth from "../../Hooks/useAuth";
-import useAdmin from "../../Hooks/useAdmin";
 import { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
@@ -68,9 +67,9 @@ const Navbar = () => {
   );
 
   return (
-    <div className="">
+    <>
       <div className="flex">
-        <div className="navbar bg-base-100 fixed z-20 shadow-lg px-4">
+        <div className="navbar bg-base-200 fixed z-20 shadow-lg px-4">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn px-1 lg:hidden">
@@ -149,7 +148,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
