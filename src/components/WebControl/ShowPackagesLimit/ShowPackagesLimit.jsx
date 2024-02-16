@@ -27,7 +27,7 @@ const handleSubmit = (e) => {
 }
 
   return (
-    <div className="border-l-[10px] p-1 border-blue-400 rounded-md border-b border-t w-64 border-r rounded-r-none shadow-md bg-gray-100">
+    <div className="border-l-[10px] p-1 border-blue-400 rounded-md border-b border-t w-64 border-r rounded-r-none shadow-md bg-gray-100 max-h-full">
       <h1 className="font-semibold text-lg ml-2">Packages show in home</h1>
       <div className="w-48">
         <input

@@ -39,12 +39,12 @@ const AdvertisementSec = () => {
   }
 
   return (
-    <div className="border">
-      <div>
-        <h4>Upload Advertisement poster</h4>
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="poster" />
-          <button type="submit">Upload</button>
+    <div className="border-[2px] border-blue-400">
+      <div className="m-2">
+        <h4 className="text-lg font-semibold">Upload Advertisement poster</h4>
+        <form onSubmit={handleSubmit} className="flex my-2">
+          <input type="text" name="poster" className="w-full px-3 py-2 bg-gray-100 rounded-l-md" placeholder="Poster URL" />
+          <button className="bg-blue-400 text-white font-semibold px-4 rounded-r-md" type="submit">Upload</button>
         </form>
       </div>
       <div>

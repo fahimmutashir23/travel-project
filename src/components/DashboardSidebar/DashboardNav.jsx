@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import logo1 from '../../assets/Logo/Logo3.png';
 
 const DashboardNav = () => {
   return (
     <div className="flex justify-between items-center py-3 px-4 bg-red-200 shadow-md fixed w-full z-30">
       <div className="w-1/3">
-        <h1 className="text-2xl font-bold">logo</h1>
+        <img src={logo1} alt="logo" className="w-14" />
       </div>
       <div className="flex-1">
         <form>
