@@ -1,11 +1,10 @@
-
 import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
 import videoBG from "../../assets/videobg/videoBG.mp4";
-import CountUp from 'react-countup';
+import CountUp from "react-countup";
 const WhyChoose = () => {
   return (
     <div className="mt-[60px]">
-      <PageTitleForHome title='Why Choose us' />
+      <PageTitleForHome title="Why Choose us" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto">
         <div className="flex-1 justify-center items-center">
@@ -52,18 +51,30 @@ const WhyChoose = () => {
         </div>
       </div>
       <div className="w-full h-80 mt-5 overflow-hidden rounded-lg relative">
-        <video src={videoBG} autoPlay loop muted className="h-full w-full object-cover"></video>
-        
-      </div>
-      <div className="text-white flex absolute -mt-56 font-bold gap-80 px-36 text-3xl leading-10">
-          <div className="items-center text-center">
-          <CountUp start={0} end={3000} delay={6}/>
-          <h1 className="te">Total Package</h1>
+        <video
+          src={videoBG}
+          autoPlay
+          loop
+          muted
+          className="h-full w-full object-cover"
+        ></video>
+        <div className="text-white absolute top-[50%] right-[50%] translate-x-[50%] -translate-y-[50%]  w-full font-bold text-4xl">
+          <div className="flex justify-evenly">
+            <div className="items-center text-center bg-black p-4 bg-opacity-40 rounded-md w-44">
+              <CountUp start={0} end={3000} delay={10} />
+              <h1 className="italic">Package</h1>
+            </div>
+            <div className="items-center text-center bg-black p-4 bg-opacity-40 rounded-md w-44">
+              <CountUp start={0} end={13} delay={10} />
+              <h1 className="italic">Award</h1>{" "}
+            </div>
+            <div className="items-center text-center bg-black p-4 bg-opacity-40 rounded-md w-44">
+              <CountUp start={0} end={12} delay={10} />{" "}
+              <h1 className="italic">Hotel</h1>
+            </div>
           </div>
-          <div className="items-center text-center">
-          <CountUp start={0} end={2200} delay={6}/><h1>Total Booking</h1> </div>
-          <div className="items-center text-center"><CountUp start={0} end={12} delay={6}/> <h1>Total Hotel</h1></div>
         </div>
+      </div>
     </div>
   );
 };

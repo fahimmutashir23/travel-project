@@ -42,14 +42,12 @@ const Home = () => {
   const [advertisement, setAdvertisement] = useState(null);
 
   useEffect(() => {
-    axiosPublic('/advertisements')
-    .then(res => {
-      const advertisementData = res.data.find(item => item.isActive === true);
-      setAdvertisement(advertisementData)
-    })
-    setOpen(true)
-  }, [])
-
+    axiosPublic("/advertisements").then((res) => {
+      const advertisementData = res.data.find((item) => item.isActive === true);
+      setAdvertisement(advertisementData);
+    });
+    setOpen(true);
+  }, []);
 
   const handleClick = (item) => {
     setPlaceholder(item.name);
@@ -148,10 +146,14 @@ const Home = () => {
       <About />
       <Weekly />
       <PopularDestination />
-     <Blog/>
-      <Deals/>
+      <Blog />
+      <Deals />
       <News />
-      <AdvertisementModal open={open} setOpen={setOpen} advertisement = {advertisement} />
+      <AdvertisementModal
+        open={open}
+        setOpen={setOpen}
+        advertisement={advertisement}
+      />
     </div>
   );
 };
