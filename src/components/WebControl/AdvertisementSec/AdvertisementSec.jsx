@@ -7,20 +7,7 @@ import AdvertisementTable from "./AdvertisementTable";
 const AdvertisementSec = () => {
   const axiosSecure = useAxiosSecure();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const poster = e.target.poster.value;
-    const data = {
-      url: poster,
-      isActive: false,
-    };
-
-    axiosSecure.post("/advertisements", data).then((res) => {
-      if (res.data.insertedId) {
-        toast("Upload Successful");
-      }
-    });
-  };
+  
 
   const {
     data: advertisements = [],
@@ -33,6 +20,23 @@ const AdvertisementSec = () => {
       return res.data;
     },
   });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const poster = e.target.poster.value;
+    const data = {
+      url: poster,
+      isActive: false,
+    };
+
+    axiosSecure.post("/advertisements", data).then((res) => {
+      if (res.data.insertedId) {
+        toast("Upload Successful");
+        refetch()
+        e.target.reset()
+      }
+    });
+  };
 
   if (isLoading) {
     return <Loader />;
