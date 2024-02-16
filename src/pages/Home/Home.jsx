@@ -122,13 +122,13 @@ const Home = () => {
                       type="search"
                       name="search"
                       id="search-dropdown"
-                      className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-md  focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                      className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-black bg-opacity-30 rounded-md  border-blue-300 border"
                       placeholder={`Search ${placeHolder}...`}
                       required
                     />
                     <button
                       type="submit"
-                      className="absolute top-0 end-0 p-2.5 bg-blue-600 text-xl w-1/6 flex justify-center items-center gap-2 h-full text-white rounded-r-md border border-none hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transition-all duration-300"
+                      className="absolute top-0 end-0 p-2.5 bg-blue-500 text-xl w-1/6 flex justify-center items-center gap-2 h-full text-white rounded-r-md border border-none hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transition-all duration-300"
                     >
                       Search
                       <span className="sr-only">Search</span>
