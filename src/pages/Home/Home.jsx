@@ -16,6 +16,7 @@ import Title from "../../Utils/Title/Title";
 import { Deals } from "../../components/Shared/Deals";
 import useWebControllers from "../../Hooks/useWebControllers";
 import { Blog } from "../../components/Blog/Blog";
+import AdvertisementModal from "../../Utils/AdvertisementModal/AdvertisementModal";
 const searchCategory = [
   { icon: <FaHome></FaHome>, name: "Search All", title: "Where to Go" },
   {
@@ -37,6 +38,18 @@ const Home = () => {
   const [title, setTitle] = useState("Where to Go");
   const [search, setSearch] = useState("");
   const [webControllersAPI] = useWebControllers(2);
+  const [open, setOpen] = useState(false);
+  const [advertisement, setAdvertisement] = useState(null);
+
+  useEffect(() => {
+    axiosPublic('/advertisements')
+    .then(res => {
+      const advertisementData = res.data.find(item => item.isActive === true);
+      setAdvertisement(advertisementData)
+    })
+    setOpen(true)
+  }, [])
+
 
   const handleClick = (item) => {
     setPlaceholder(item.name);
@@ -138,6 +151,7 @@ const Home = () => {
      <Blog/>
       <Deals/>
       <News />
+      <AdvertisementModal open={open} setOpen={setOpen} advertisement = {advertisement} />
     </div>
   );
 };
