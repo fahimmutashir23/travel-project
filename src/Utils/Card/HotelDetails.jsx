@@ -366,13 +366,13 @@ const HotelDetails = () => {
           <div className="mt-20">
           
             <div className="dark:text-gray-100">
-              <p> Reviews...</p>
+              <p className="font-semibold mb-5 text-black dark:text-white text-3xl"> Reviews...</p>
             </div>
-            <div className="pt-12 border-t dark:border-gray-700">
+            <div className="pt-12 border-t dark:border-gray-700 border w-1/3">
               <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
                 <img src="https://source.unsplash.com/75x75/?portrait" alt="" className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-700" />
                 <div className="flex flex-col">
-                  <h4 className="text-lg font-semibold">Leroy Jenkins</h4>
+                  <h4 className="text-lg font-semibold mb-3" >Leroy Jenkins</h4>
                   <div>
                     <Rating
                       sx={{ fontSize: "20px" }}
@@ -381,7 +381,7 @@ const HotelDetails = () => {
                       readOnly
                     />
                   </div>
-                  <p className="dark:text-gray-400">{hotel?.guest_review?.description}</p>
+                  <p className="dark:text-gray-400 mt-3">{hotel?.guest_review?.description}</p>
                 </div>
               </div>
               <div className="flex justify-center pt-4 space-x-4 align-center">
@@ -436,7 +436,7 @@ const HotelDetails = () => {
           modifier: 1,
           slideShadows: true,
         }}
-        className="mySwiper mt-16"
+        className="mySwiper mt-32"
       >
         {tourPackages.map(item => (
 
