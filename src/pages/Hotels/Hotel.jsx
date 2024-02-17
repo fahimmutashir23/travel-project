@@ -70,7 +70,7 @@ const Hotel = () => {
   }, []);
 
   return (
-    <div>
+    <div className="pt-[80px]">
       <Title title="Hotel" />
       <div className="" data-aos="zoom-in">
         <div
@@ -125,7 +125,7 @@ const Hotel = () => {
                     />
                   </div>
                   <div className="flex-1">
-                    <div className="form-control border-[1px] rounded-md border-blue-600">
+                    <div className="form-control border-[1px] rounded-md border-blue-600 pb-4">
                       <div className="label">
                         <span className="label-text">Rooms and Guests</span>
                       </div>

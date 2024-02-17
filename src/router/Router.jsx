@@ -67,10 +67,7 @@ const Router = createBrowserRouter([
         path: "/packagesDetails/:id",
         element: <PrivetRoute><TourPackagesDetails /></PrivetRoute>,
       },
-      {
-        path: "/profile",
-        element: <Profile />,
-      },
+     
       {
         path: "/trains",
         element: <Trains />,
@@ -100,7 +97,8 @@ const Router = createBrowserRouter([
       {
         path: "/bookings",
         element: <AllBookings />,
-      },
+      }
+      
     ],
   },
   {
