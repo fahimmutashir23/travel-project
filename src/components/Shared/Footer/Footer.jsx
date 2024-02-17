@@ -3,19 +3,19 @@ import Logo from "../../../Utils/Logo/Logo";
 
 const Footer = () => {
   return (
-    <div className="mt-16 p-5 bg-gray-600">
-      <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+    <div className="p-5 bg-gray-600 bg-cover pt-16" style={{backgroundImage:"url(https://bestwpware.com/html/tf/edumim-bootstrap/assets/img/all-img/section-bg-5.png)"}}>
+      <div className="container flex flex-col justify-between mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3 text-white">
           <Link to="/">
             <Logo width="24" />
           </Link>
-          <p className="mt-3 -mb-1">Gulshan-2, Dhaka-1205,</p>
-          <p>Bangladesh</p>
+          <p className="mt-3 mb-1 text-black font-semibold text-lg ">Gulshan-2, Dhaka-1205,</p>
+          <p className="text-black font-semibold text-lg ">Bangladesh</p>
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="tracki uppercase dark:text-gray-50">Product</h3>
-            <ul className="space-y-1 text-yellow-100">
+            <h3 className="tracki uppercase dark:text-gray-50 text-black font-semibold text-lg ">Product</h3>
+            <ul className="space-y-1 text-base text-black">
               <li>
                 <Link to="/">Features</Link>
               </li>
@@ -31,8 +31,8 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="tracki uppercase dark:text-gray-50">Company</h3>
-            <ul className="space-y-1 text-yellow-100">
+            <h3 className="tracki uppercase dark:text-gray-50 text-black font-semibold text-lg">Company</h3>
+            <ul className="space-y-1 text-black text-base">
               <li>
                 <Link to="/">Privacy</Link>
               </li>
@@ -42,8 +42,8 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="uppercase dark:text-gray-50">Service</h3>
-            <ul className="space-y-1 text-yellow-100">
+            <h3 className="uppercase dark:text-gray-50 text-black font-semibold text-lg">Service</h3>
+            <ul className="space-y-1 text-black text-base">
               <li>
                 <Link to="/">Packages</Link>
               </li>
@@ -59,7 +59,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <div className="uppercase dark:text-gray-50">Social media</div>
+            <div className="uppercase dark:text-gray-50 text-black font-semibold text-lg">Social media</div>
             <div className="flex justify-start space-x-3">
               <a
                 rel="noopener noreferrer"

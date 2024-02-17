@@ -2,13 +2,13 @@ import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
 
 const News = () => {
     return (
-        <div>
+        <div className="mt-[120px]">
             <PageTitleForHome title='Our News' />
             <h1 className="text-center text-lg mb-5 font-bold">
                 This is our news portal......
             </h1>
-            <section className="px-5 py-10 dark:bg-gray-800 dark:text-gray-100">
-	<div className="container grid grid-cols-12 mx-auto gap-y-6 md:gap-10">
+            <section className="py-10 dark:bg-gray-800 dark:text-gray-100">
+	<div className="px-4 grid grid-cols-12 mx-auto gap-y-6 md:gap-10">
 		<div className="flex flex-col justify-between col-span-12 py-2 space-y-8 md:space-y-16 md:col-span-3">
 			<div className="flex flex-col space-y-8 md:space-y-12">
 				<div className="flex flex-col space-y-2">

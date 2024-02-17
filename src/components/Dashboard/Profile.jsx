@@ -47,7 +47,7 @@ const Profile = () => {
 refetch()
 
     return (
-        <div className='flex justify-center items-center mt-5'>
+        <div className='flex justify-center items-center mt-5 mb-56 pt-[75px]'>
             <Title title="Profile" />
             <div className='bg-white shadow-lg rounded-2xl w-2/4'>
                 <img
