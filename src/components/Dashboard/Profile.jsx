@@ -49,11 +49,11 @@ refetch()
     return (
         <div className='flex justify-center items-center mt-5'>
             <Title title="Profile" />
-            <div className='bg-white shadow-lg rounded-2xl w-2/3'>
+            <div className='bg-white shadow-lg rounded-2xl w-2/4'>
                 <img
                     alt='profile'
                     src='https://i.ibb.co/wc4vRdT/905777d0e9a1dbf3f0307a1e7c48e641.jpg'
-                    className='w-full mb-4 rounded-t-lg h-40'
+                    className='w-full mb-4 rounded-t-lg h-64 rounded-b-lg'
                 />
                 <div className='flex flex-col items-center justify-center p-4 -mt-20'>
                     <div className='relative block'>
@@ -64,29 +64,29 @@ refetch()
                         />
                     </div>
 
-                    <p className='p-2 px-4 text-xs text-white bg-blue-700 rounded-full mt-2'>
+                    <p className='p-2 px-4 text-sm font-semibold text-white bg-blue-700 rounded-full mt-2'>
                        User
                     </p>
                     <p className='mt-2 text-xl font-medium text-gray-800 '>
                         User Id: {userName+userID}
                     </p>
-                    <div className='w-full p-2 mt-4 rounded-lg'>
+                    <div className='w-full p-2 mt-6 rounded-lg'>
                         <div className='flex flex-wrap justify-between text-sm text-gray-600 '>
                           <div>
-                          <p className='flex flex-col'>
+                          <p className='flex mr-3 text-lg'>
                                 Name : 
-                                <span className='font-bold text-black '>
+                                <span className='font-bold text-black ml-2'>
                                 {users[0]?.name}
                                 </span>
                             </p>
-                            <p className='flex flex-col mt-3'>
+                            <p className='flex flex-col mt-3 text-lg'>
                                 Country : 
                                 <span className='font-bold text-black '>
                                 {users[0]?.country}
                                 </span>
                             </p>
                           </div>
-                            <p className='flex flex-col'>
+                            <p className='flex flex-col text-lg'>
                                 Email : 
                                 <span className='font-bold text-black '>{users[0]?.email}</span>
                             </p>
