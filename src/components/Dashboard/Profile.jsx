@@ -64,7 +64,7 @@ refetch()
                         />
                     </div>
 
-                    <p className='p-2 px-4 text-xs text-white bg-pink-700 rounded-full'>
+                    <p className='p-2 px-4 text-xs text-white bg-blue-700 rounded-full mt-2'>
                        User
                     </p>
                     <p className='mt-2 text-xl font-medium text-gray-800 '>
@@ -94,12 +94,12 @@ refetch()
                             <div>
                                 <button
                                 onClick={() => document.getElementById("profile_update_modal").showModal()}
-                                className='bg-[#b62e44] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
+                                className='bg-[#b62e44] px-10 py-2 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1'>
                                     Update Profile
                                 </button>
                                 <button
                                 onClick={handleResetPass}
-                                className='bg-[#b62e44] px-7 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053]'>
+                                className='bg-[#b62e44] px-7 py-2 mt-3 rounded-lg text-white cursor-pointer hover:bg-[#af4053]'>
                                     Change Password
                                 </button>
                             </div>
