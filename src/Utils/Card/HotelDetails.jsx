@@ -123,10 +123,10 @@ const HotelDetails = () => {
             </div>
             <div
               style={{ backgroundImage: `url(${mapImg})` }}
-              className="w-3/12 h-28 rounded-lg bg-cover border-2 border-violet-600 md:mt-10 overflow-hidden"
+              className="w-3/12 h-44 rounded-lg bg-cover border-2 border-violet-600 md:mt-10 overflow-hidden"
             >
               <div className="w-full h-full bg-gradient-to-b from-white flex justify-center items-center">
-                <div className="text-center space-y-5">
+                <div className="text-center space-y-9 pt-5 pb-5">
                   <h3 className="text-2xl font-bold text-blue-700">
                     See Hotel Location
                   </h3>
