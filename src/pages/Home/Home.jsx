@@ -17,6 +17,7 @@ import { Deals } from "../../components/Shared/Deals";
 import useWebControllers from "../../Hooks/useWebControllers";
 import { Blog } from "../../components/Blog/Blog";
 import AdvertisementModal from "../../Utils/AdvertisementModal/AdvertisementModal";
+import MobileNav from "../../layout/MobileNav";
 const searchCategory = [
   { icon: <FaHome></FaHome>, name: "Search All", title: "Where to Go" },
   {
@@ -83,77 +84,82 @@ const Home = () => {
   return (
     <div>
       <Title title="Home" />
-      <div className="overflow-hidden relative" data-aos="zoom-in">
-        <div className="rounded-xl hero overflow-hidden h-[600px] w-full text-white">
-          <video
-            src={bgVdo}
-            autoPlay
-            loop
-            muted
-            className="h-full w-full object-cover"
-          />
-          <div className="hero-overlay bg-black bg-opacity-30"></div>
-          <div className="absolute">
-            <div className="text-center z-10">
-              <p className="font-medium text-xl lg:text-2xl text-white">
-                Discover the Planet
-              </p>
-              <div className="">
-                <p className="font-semibold text-white text-xs lg:text-5xl">
-                  {title}
+      <div className="mr-12 pt-[74px]">
+        <MobileNav />
+      </div>
+      <div className="ml-[80px]">
+        <div className="overflow-hidden relative" data-aos="zoom-in">
+          <div className="rounded-xl hero overflow-hidden h-[600px] w-full text-white">
+            <video
+              src={bgVdo}
+              autoPlay
+              loop
+              muted
+              className="h-full w-full object-cover"
+            />
+            <div className="hero-overlay bg-black bg-opacity-30"></div>
+            <div className="absolute">
+              <div className="text-center z-10">
+                <p className="font-medium text-xl lg:text-2xl text-white">
+                  Discover the Planet
                 </p>
-                <div className="flex items-center justify-center gap-6 text-xl my-4">
-                  {searchCategory?.map((item, idx) => (
-                    <div key={idx} className={`h-8`}>
-                      <h2
-                        onClick={() => handleClick(item)}
-                        className={`flex items-center gap-2 hover:border-b-2 cursor-pointer ${
-                          title == item.title ? "border-b-2" : ""
-                        }`}
-                      >
-                        {item.icon} {item.name}
-                      </h2>
-                    </div>
-                  ))}
-                </div>
-                <form onSubmit={handleSearch}>
-                  <div className="relative w-full">
-                    <input
-                      type="search"
-                      name="search"
-                      id="search-dropdown"
-                      className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-black bg-opacity-30 rounded-md  border-blue-300 border"
-                      placeholder={`Search ${placeHolder}...`}
-                      required
-                    />
-                    <button
-                      type="submit"
-                      className="absolute top-0 end-0 p-2.5 bg-blue-500 text-xl w-1/6 flex justify-center items-center gap-2 h-full text-white rounded-r-md border border-none hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transition-all duration-300"
-                    >
-                      Search
-                      <span className="sr-only">Search</span>
-                    </button>
+                <div className="">
+                  <p className="font-semibold text-white text-xs lg:text-5xl">
+                    {title}
+                  </p>
+                  <div className="flex items-center justify-center gap-6 text-xl my-4">
+                    {searchCategory?.map((item, idx) => (
+                      <div key={idx} className={`h-8`}>
+                        <h2
+                          onClick={() => handleClick(item)}
+                          className={`flex items-center gap-2 hover:border-b-2 cursor-pointer ${title == item.title ? "border-b-2" : ""
+                            }`}
+                        >
+                          {item.icon} {item.name}
+                        </h2>
+                      </div>
+                    ))}
                   </div>
-                </form>
+                  <form onSubmit={handleSearch}>
+                    <div className="relative w-full">
+                      <input
+                        type="search"
+                        name="search"
+                        id="search-dropdown"
+                        className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-black bg-opacity-30 rounded-md  border-blue-300 border"
+                        placeholder={`Search ${placeHolder}...`}
+                        required
+                      />
+                      <button
+                        type="submit"
+                        className="absolute top-0 end-0 p-2.5 bg-blue-500 text-xl w-1/6 flex justify-center items-center gap-2 h-full text-white rounded-r-md border border-none hover:bg-pink-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 transition-all duration-300"
+                      >
+                        Search
+                        <span className="sr-only">Search</span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <Hotels hotels={hotels} />
+        <WhyChoose />
+        <TourPackages />
+        <About />
+        <Weekly />
+        <PopularDestination />
+        <Blog />
+        <Deals />
+        <News />
+        <AdvertisementModal
+          open={open}
+          setOpen={setOpen}
+          advertisement={advertisement}
+        />
       </div>
-      <Hotels hotels={hotels} />
-      <WhyChoose />
-      <TourPackages />
-      <About />
-      <Weekly />
-      <PopularDestination />
-      <Blog />
-      <Deals />
-      <News />
-      <AdvertisementModal
-        open={open}
-        setOpen={setOpen}
-        advertisement={advertisement}
-      />
+
     </div>
   );
 };
