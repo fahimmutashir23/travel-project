@@ -3,9 +3,9 @@ import logo1 from '../../assets/Logo/Logo3.png';
 
 const DashboardNav = () => {
   return (
-    <div className="flex justify-between items-center py-3 px-4 bg-red-200 shadow-md fixed w-full z-30">
+    <div className="flex justify-between items-center py-3 px-4 bg-blue-400 shadow-md fixed w-full z-30">
       <div className="w-1/3">
-        <img src={logo1} alt="logo" className="w-14" />
+        <img src={logo1} alt="logo" className="w-14 bg-white rounded-md pb-1" />
       </div>
       <div className="flex-1">
         <form>
