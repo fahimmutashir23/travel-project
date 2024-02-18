@@ -135,7 +135,7 @@ const useMenu = () => {
               ? "bg-gray-600 min-w-full text-white py-2"
               : ""
           }
-          to="/account"
+          to="/bookings/reviews"
         >
        <div className="hover:translate-x-3 transition-transform duration-300">Review Form</div>
         </NavLink>

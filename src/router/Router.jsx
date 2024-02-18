@@ -6,7 +6,6 @@ import SignUp from "../pages/SignUp/SignUp";
 import ErrorPage from "../Utils/Loader/ErrorPage";
 import Hotel from "../pages/Hotels/Hotel";
 import HotelDetails from "../Utils/Card/HotelDetails";
-import Profile from "../components/Dashboard/Profile";
 import AllBookings from "../pages/MyBookings/AllBookings/AllBookings";
 import Dashboard from "../pages/Admin/Dashboard/Dashboard";
 import DashboardLayout from "../layout/DashboardLayout";
@@ -32,6 +31,7 @@ import Cars from "../pages/Cars/Cars";
 import Flights from "../pages/Flights/Flights";
 import Attractions from "../pages/Attractions/Attractions";
 import TravelsPlanner from "../pages/Travels Planner/TravelsPlanner";
+import ReviewForm from "../components/Users/ReviewForm";
 
 const Router = createBrowserRouter([
   {
@@ -95,9 +95,13 @@ const Router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
-        path: "/bookings",
+        path: "/bookings/allbookings",
         element: <AllBookings />,
-      }
+      },
+      {
+        path: "/bookings/reviews",
+        element: <ReviewForm/>
+      },
       
     ],
   },
