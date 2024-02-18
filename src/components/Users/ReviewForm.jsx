@@ -9,7 +9,6 @@ const imgUploadUrl = `https://api.imgbb.com/1/upload?key=${
   import.meta.env.VITE_IMG_API_KEY
 }`;
 const ReviewForm = () => {
-    const [services, setServices] = useState(null);
     const [loading, setLoading] = useState(false);
     const axiosSecure = useAxiosSecure();
     const axiosPublic = useAxiosPublic();
@@ -17,13 +16,10 @@ const ReviewForm = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       setLoading(true);
-      const hotel_name = e.target.hotel_name.value;
-      const hotel_location = e.target.hotel_location.value;
-      const country = e.target.country.value;
-      const category = e.target.category.value;
+      const your_name = e.target.your_name.value;
+      const hotel_star = e.target.hotel_star.value;
       const description = e.target.description.value;
       const hotel_image = e.target.image.files[0];
-      const hotel_service = services.map((service) => service.value);
   
       const imgFile = { image: hotel_image };
       const res = await axiosPublic.post(imgUploadUrl, imgFile, {
@@ -35,18 +31,16 @@ const ReviewForm = () => {
       if (res.data.data.display_url) {
         setLoading(false);
         const hotelInfo = {
-          hotel_name,
+            your_name,
           hotel_img: res.data.data.display_url,
-          hotel_location,
-          Service: hotel_service,
-          category,
+          hotel_star,
           description,
-          hotel_country: country,
+         
         };
   
-        const response = await axiosSecure.post(`/hotels`, hotelInfo);
+        const response = await axiosSecure.post(`/reviews`, hotelInfo);
         if (response.data) {
-          toast("Hotel Added Successfully");
+          toast("Reviews Added Successfully");
           e.target.reset();
           setLoading(false);
         }
@@ -61,7 +55,7 @@ const ReviewForm = () => {
         <div className="relative z-0 w-full mb-5 group">
           <input
             type="text"
-            name="Your_Name"
+            name="your_name"
             id="floating_email"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 peer"
             placeholder=" "
