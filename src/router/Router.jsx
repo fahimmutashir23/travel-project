@@ -96,7 +96,7 @@ const Router = createBrowserRouter([
     element: <DashboardLayout />,
     children: [
       {
-        path: "/bookings/allbookings",
+        path: "/bookings",
         element: <AllBookings />,
       },
       {
