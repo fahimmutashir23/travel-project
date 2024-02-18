@@ -1,13 +1,26 @@
 import { Divider, IconButton, InputBase, Paper } from "@mui/material"
 import PageTitle from "../Shared/PageTitle/PageTitle"
 import { MenuOutlined, Search } from "@mui/icons-material"
-import useUsers from "../../Hooks/useUsers";
 import Loader from "../../Utils/Loader/Loader";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import useAuth from "../../Hooks/useAuth";
+import { useQuery } from "@tanstack/react-query";
+import ReceiptCard from "./receiptCard";
 
 const AllReceipt = () => {
-    const [users, isLoading, refetch] = useUsers();
+    const axiosPublic = useAxiosPublic();
+    const { user } = useAuth();
+  
+    const { data: bookings = [], isLoading , refetch} = useQuery({
+      queryKey: ["allBookings"],
+      queryFn: async () => {
+        const res = await axiosPublic(`/bookings?email=${user?.email}`);
+        return res.data;
+      },
+    });
+  
     if (isLoading) {
-      return <Loader width="20" center="center" />;
+      return <Loader width={20} center="center"></Loader>;
     }
   
     const handleSearch = (e) => {
@@ -15,10 +28,10 @@ const AllReceipt = () => {
     };
   return (
     <div> <div>
-    <div className="flex items-center">
+    <div className="flex items-center mb-10">
       <div className="flex-1">
         <h1 className="text-2xl font-semibold bg-blue-400 max-w-fit px-5 py-2 rounded-md text-white">
-          Total Receipts : <span>{users.length}</span>
+          Total Receipts : <span>{bookings.length}</span>
         </h1>
       </div>
         <PageTitle title="All Receipt" />
@@ -81,11 +94,13 @@ const AllReceipt = () => {
             <th scope="col" className="px-6 py-3 text-center">
               Amount
             </th>
-            
+           
           </tr>
         </thead>
-        <tbody>
-         
+        <tbody className="">
+        {bookings.map((booking, index) => (
+        <ReceiptCard key={index} booking={booking} refetch={refetch} />
+              ))}
         </tbody>
       </table>
     </div>
