@@ -163,7 +163,7 @@ const useMenu = () => {
           className={({ isActive }) =>
             isActive ? "bg-gray-600 min-w-full text-white py-3" : ""
           }
-          to="/All Receipt"
+          to="/bookings/allReceipt"
         >
           <div className="hover:translate-x-3 transition-transform duration-300 text-base">
             All Receipt

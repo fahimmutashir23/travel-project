@@ -32,6 +32,7 @@ import Flights from "../pages/Flights/Flights";
 import Attractions from "../pages/Attractions/Attractions";
 import TravelsPlanner from "../pages/Travels Planner/TravelsPlanner";
 import ReviewForm from "../components/Users/ReviewForm";
+import AllReceipt from "../components/Users/AllReceipt";
 
 const Router = createBrowserRouter([
   {
@@ -55,7 +56,7 @@ const Router = createBrowserRouter([
         path: "hotel",
         element: <Hotel />,
       },
-    {
+      {
         path: "tourPackagesPage",
         element: <TourPackagesPage />,
       },
@@ -67,7 +68,7 @@ const Router = createBrowserRouter([
         path: "/packagesDetails/:id",
         element: <PrivetRoute><TourPackagesDetails /></PrivetRoute>,
       },
-     
+
       {
         path: "/trains",
         element: <Trains />,
@@ -100,9 +101,13 @@ const Router = createBrowserRouter([
       },
       {
         path: "/bookings/reviews",
-        element: <ReviewForm/>
+        element: <ReviewForm />
       },
-      
+      {
+        path:"/bookings/allReceipt",
+        element:<AllReceipt/>
+      }
+
     ],
   },
   {
