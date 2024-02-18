@@ -18,7 +18,7 @@ const Profile = () => {
         return res.data
     }
    })
-   const userName = users[0]?.name.split(' ')[1].toLowerCase()
+   const userName = users[0]?.name.split(' ')[1].toLowerCase();
    const userID = users[0]?._id.slice(-10)
 
    const handleResetPass = () => {
@@ -47,7 +47,7 @@ const Profile = () => {
 refetch()
 
     return (
-        <div className='flex justify-center items-center mt-5 mb-56 pt-[75px]'>
+        <div className='flex justify-center items-center mt-5 mb-56'>
             <Title title="Profile" />
             <div className='bg-white shadow-lg rounded-2xl w-2/4'>
                 <img

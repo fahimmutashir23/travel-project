@@ -33,6 +33,7 @@ import Attractions from "../pages/Attractions/Attractions";
 import TravelsPlanner from "../pages/Travels Planner/TravelsPlanner";
 import ReviewForm from "../components/Users/ReviewForm";
 import AllReceipt from "../components/Users/AllReceipt";
+import Profile from "../components/Dashboard/Profile";
 
 const Router = createBrowserRouter([
   {
@@ -106,6 +107,10 @@ const Router = createBrowserRouter([
       {
         path:"/bookings/allReceipt",
         element:<AllReceipt/>
+      },
+      {
+        path:"/bookings/profile",
+        element:<Profile/>
       }
 
     ],

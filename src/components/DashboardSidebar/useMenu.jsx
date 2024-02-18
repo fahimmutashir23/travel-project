@@ -151,7 +151,7 @@ const useMenu = () => {
           className={({ isActive }) =>
             isActive ? "bg-gray-600 min-w-full text-white py-1" : ""
           }
-          to="/profile"
+          to="/bookings/profile"
         >
           <div className="hover:translate-x-3 transition-transform duration-300 text-base">
             Profile
