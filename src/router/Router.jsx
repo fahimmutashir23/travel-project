@@ -6,7 +6,6 @@ import SignUp from "../pages/SignUp/SignUp";
 import ErrorPage from "../Utils/Loader/ErrorPage";
 import Hotel from "../pages/Hotels/Hotel";
 import HotelDetails from "../Utils/Card/HotelDetails";
-import Profile from "../components/Dashboard/Profile";
 import AllBookings from "../pages/MyBookings/AllBookings/AllBookings";
 import Dashboard from "../pages/Admin/Dashboard/Dashboard";
 import DashboardLayout from "../layout/DashboardLayout";
@@ -32,6 +31,9 @@ import Cars from "../pages/Cars/Cars";
 import Flights from "../pages/Flights/Flights";
 import Attractions from "../pages/Attractions/Attractions";
 import TravelsPlanner from "../pages/Travels Planner/TravelsPlanner";
+import ReviewForm from "../components/Users/ReviewForm";
+import AllReceipt from "../components/Users/AllReceipt";
+import Profile from "../components/Dashboard/Profile";
 
 const Router = createBrowserRouter([
   {
@@ -55,7 +57,7 @@ const Router = createBrowserRouter([
         path: "hotel",
         element: <Hotel />,
       },
-    {
+      {
         path: "tourPackagesPage",
         element: <TourPackagesPage />,
       },
@@ -67,10 +69,7 @@ const Router = createBrowserRouter([
         path: "/packagesDetails/:id",
         element: <PrivetRoute><TourPackagesDetails /></PrivetRoute>,
       },
-      {
-        path: "/profile",
-        element: <Profile />,
-      },
+
       {
         path: "/trains",
         element: <Trains />,
@@ -101,6 +100,19 @@ const Router = createBrowserRouter([
         path: "/bookings",
         element: <AllBookings />,
       },
+      {
+        path: "/bookings/reviews",
+        element: <ReviewForm />
+      },
+      {
+        path:"/bookings/allReceipt",
+        element:<AllReceipt/>
+      },
+      {
+        path:"/bookings/profile",
+        element:<Profile/>
+      }
+
     ],
   },
   {

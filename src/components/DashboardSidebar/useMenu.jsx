@@ -135,9 +135,9 @@ const useMenu = () => {
               ? "bg-gray-600 min-w-full text-white py-2"
               : ""
           }
-          to="/account"
+          to="/bookings/reviews"
         >
-       <div className="hover:translate-x-3 transition-transform duration-300">Account</div>
+       <div className="hover:translate-x-3 transition-transform duration-300">Review Form</div>
         </NavLink>
       </li>
       <li className="text-base">
@@ -151,7 +151,7 @@ const useMenu = () => {
           className={({ isActive }) =>
             isActive ? "bg-gray-600 min-w-full text-white py-1" : ""
           }
-          to="/profile"
+          to="/bookings/profile"
         >
           <div className="hover:translate-x-3 transition-transform duration-300 text-base">
             Profile
@@ -163,7 +163,7 @@ const useMenu = () => {
           className={({ isActive }) =>
             isActive ? "bg-gray-600 min-w-full text-white py-3" : ""
           }
-          to="/All Receipt"
+          to="/bookings/allReceipt"
         >
           <div className="hover:translate-x-3 transition-transform duration-300 text-base">
             All Receipt
