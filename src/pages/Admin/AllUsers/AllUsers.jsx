@@ -1,12 +1,22 @@
 import { MenuOutlined, Search } from "@mui/icons-material";
-import useUsers from "../../../Hooks/useUsers";
 import Loader from "../../../Utils/Loader/Loader";
 import { Divider, IconButton, InputBase, Paper } from "@mui/material";
 import PageTitle from "../../../components/Shared/PageTitle/PageTitle";
 import AllUsersTable from "./AllUsersTable";
+import useAxiosSecure from "../../../Hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 const AllUsers = () => {
-  const [users, isLoading, refetch] = useUsers();
+  const axiosSecure = useAxiosSecure();
+
+  const {data: users = [], isLoading, refetch} = useQuery({
+    queryKey: [''],
+    queryFn: async () => {
+      const res = await axiosSecure(`/users`)
+      return res.data
+    }
+  })
+
   if (isLoading) {
     return <Loader width="20" center="center" />;
   }

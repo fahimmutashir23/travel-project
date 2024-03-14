@@ -13,6 +13,7 @@ import { FaHome } from "react-icons/fa";
 const Dashboard = () => {
   const [statistics, statLoading] = useStat()
 
+
   const data = [
     { name: "users", value: parseInt(statistics?.users) },
     { name: "TotalBookings", value: parseInt(statistics?.totalBookings) },
@@ -114,7 +115,7 @@ const Dashboard = () => {
           <div className="p-8">
             <small className="text-sm font-bold">Total Hotel</small>
             <br />
-            {statistics.totalHotels}
+            {statistics.totalHotel}
           </div>
         </div>
         

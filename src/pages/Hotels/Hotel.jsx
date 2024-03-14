@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
-import addNotification from "react-push-notification";
 const img = "https://i.postimg.cc/x8dvVkZ6/pexels-julius-silver-753626.jpg";
-import google from "../../assets/icon/google.png";
 import { ArrowDownward } from "@mui/icons-material";
 import Title from "../../Utils/Title/Title";
 
@@ -38,36 +36,7 @@ const Hotel = () => {
     e.target.reset();
   };
 
-  const handleNotify = () => {
-    addNotification({
-      title: "Your Notification",
-      subtitle: "This is a subtitle",
-      message: "This is a very long message",
-      icon: google,
-      theme: "darkblue",
-    });
-  };
 
-  useEffect(() => {
-    const now = new Date();
-
-    const desire = new Date('2024-01-01T18:49:00.000Z') // it is dynamic
-    const desiredTime = new Date(desire);
-
-    if (now > desiredTime) {
-      desiredTime.setDate(desiredTime.getDate() + 1);
-    }
-
-    const timeDifference = desiredTime - now;
-    
-    const timeoutId = setTimeout(() => {
-      handleNotify() 
-    }, timeDifference);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, []);
 
   return (
     <div>

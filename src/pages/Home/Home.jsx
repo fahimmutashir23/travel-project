@@ -17,6 +17,9 @@ import { Deals } from "../../components/Shared/Deals";
 import useWebControllers from "../../Hooks/useWebControllers";
 import { Blog } from "../../components/Blog/Blog";
 import AdvertisementModal from "../../Utils/AdvertisementModal/AdvertisementModal";
+import UpBtn from "../../Utils/upBtn/upBtn";
+
+
 const searchCategory = [
   { icon: <FaHome></FaHome>, name: "Search All", title: "Where to Go" },
   {
@@ -81,9 +84,9 @@ const Home = () => {
     return <Loader width="20" center="center"></Loader>;
   }
   return (
-    <div>
+    <div className="relative">
       <Title title="Home" />
-      <div className="overflow-hidden relative" data-aos="zoom-in">
+      <div id="upper" className="overflow-hidden relative" data-aos="zoom-in">
         <div className="rounded-xl hero overflow-hidden h-[600px] w-full text-white">
           <video
             src={bgVdo}
@@ -136,6 +139,11 @@ const Home = () => {
                   </div>
                 </form>
               </div>
+              <AdvertisementModal
+                open={open}
+                setOpen={setOpen}
+                advertisement={advertisement}
+              />
             </div>
           </div>
         </div>
@@ -149,11 +157,7 @@ const Home = () => {
       <Blog />
       <Deals />
       <News />
-      <AdvertisementModal
-        open={open}
-        setOpen={setOpen}
-        advertisement={advertisement}
-      />
+      <UpBtn />
     </div>
   );
 };
