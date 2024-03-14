@@ -6,8 +6,9 @@ import useAuth from "../Hooks/useAuth";
 
 const MobileNav = () => {
   const { logOutUser } = useAuth();
+
   return (
-    <div className="rounded-lg lg:w-[70px] bg-base-100 fixed z-10">
+    <div className="rounded-md lg:w-[70px] bg-base-100 z-10 h-[100vh] fixed">
       <div className="lg:flex lg:h-[calc(100vh-100px)] w-full flex-col justify-between border-e">
         <div className="border-t border-gray-100">
           <div className="px-2">
