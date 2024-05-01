@@ -2,7 +2,7 @@ import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
 
 const PopularDestination = () => {
   return (
-    <div className="mt-[120px]">
+    <div>
       <p className="text-center text-lg -mb-5 mt-10 font-bold">Discover</p>
       <PageTitleForHome title="Our Gallery" />
 
@@ -24,10 +24,6 @@ const PopularDestination = () => {
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
-                        <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
-                          new zealand
-                        </p>
-
                         <p className="text-xl font-bold text-white sm:text-xl">
                           new zealand
                         </p>
@@ -55,12 +51,8 @@ const PopularDestination = () => {
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
-                        <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
-                          new zealand
-                        </p>
-
                         <p className="text-xl font-bold text-white sm:text-2xl">
-                          new zealand
+                          Egypt
                         </p>
 
                         <div className="mt-32 sm:mt-48 lg:mt-72">
@@ -86,12 +78,8 @@ const PopularDestination = () => {
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-6">
-                        <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
-                          new zealand
-                        </p>
-
                         <p className="text-xl font-bold text-white sm:text-2xl">
-                          new zealand
+                          Russia
                         </p>
 
                         <div className="mt-32 sm:mt-48 lg:mt-[30px]">
@@ -115,16 +103,12 @@ const PopularDestination = () => {
                       <img
                         alt=""
                         src="https://i.postimg.cc/nV94VWnR/pexels-tetyana-kovyrina-17981433.jpg"
-                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-50 rounded-xl"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90 transition-opacity group-hover:opacity-50 rounded-lg"
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
-                        <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
-                          new zealand
-                        </p>
-
                         <p className="text-xl font-bold text-white sm:text-2xl">
-                          new zealand
+                          Nepal
                         </p>
 
                         <div className="mt-32 sm:mt-48 lg:mt-88">
@@ -150,12 +134,8 @@ const PopularDestination = () => {
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
-                        <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
-                          new zealand
-                        </p>
-
                         <p className="text-xl font-bold text-white sm:text-xl">
-                          new zealand
+                          Switzerland
                         </p>
 
                         <div className="mt-32 sm:mt-48 lg:mt-[30px]">
@@ -181,12 +161,9 @@ const PopularDestination = () => {
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
-                        <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
-                          new zealand
-                        </p>
 
                         <p className="text-xl font-bold text-white sm:text-xl">
-                          new zealand
+                          India
                         </p>
 
                         <div className="mt-32 sm:mt-48 lg:mt-[110px]">
@@ -205,7 +182,7 @@ const PopularDestination = () => {
                   <div>
                     <a
                       href="#"
-                      className="group relative block bg-black h-44 w-[260px] rounded-xl"
+                      className="group relative block bg-black h-44 w-full rounded-xl"
                     >
                       <img
                         alt=""
@@ -214,12 +191,8 @@ const PopularDestination = () => {
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
-                        <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
-                          new zealand
-                        </p>
-
                         <p className="text-xl font-bold text-white sm:text-xl">
-                          new zealand
+                          Albania
                         </p>
 
                         <div className="mt-32 sm:mt-48 lg:mt-[30px]">
@@ -245,12 +218,8 @@ const PopularDestination = () => {
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
-                        <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
-                          new zealand
-                        </p>
-
                         <p className="text-xl font-bold text-white sm:text-xl">
-                          new zealand
+                          Bangladesh
                         </p>
 
                         <div className="mt-32 sm:mt-48 lg:mt-[110px]">
@@ -276,12 +245,8 @@ const PopularDestination = () => {
                       />
 
                       <div className="relative p-4 sm:p-6 lg:p-8">
-                        <p className="text-sm font-medium uppercase tracking-widest text-pink-500">
-                          new zealand
-                        </p>
-
                         <p className="text-xl font-bold text-white sm:text-2xl">
-                          new zealand
+                          Jaflong
                         </p>
 
                         <div className="mt-32 sm:mt-48 lg:mt-44">
@@ -301,7 +266,7 @@ const PopularDestination = () => {
           </div>
           <div className="flex flex-col justify-center flex-1 -mt-[280px] p-6">
             <h3 className="text-3xl font-bold">Our Gallery</h3>
-            <p className="my-6 dark:text-gray-400">
+            <p className="my-6">
               Welcome to our world of wanderlust! Embark on unforgettable
               journeys, discover hidden gems, and create timeless memories with
               our curated selection of travel experiences. From breathtaking

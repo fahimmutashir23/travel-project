@@ -2,7 +2,7 @@ import PageTitleForHome from "../../Utils/PageTitleForHome/PageTitleForHome";
 
 const News = () => {
     return (
-        <div className="mt-[120px]">
+        <div>
             <PageTitleForHome title='Our News' />
             <h1 className="text-center text-lg mb-5 font-bold">
                 This is our news portal......
