@@ -5,6 +5,7 @@ import useAuth from "../../Hooks/useAuth";
 import { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import userAvatar from '../../assets/icon/userAvater.png'
 
 const Navbar = () => {
   const { user, logOutUser } = useAuth();
@@ -14,7 +15,7 @@ const Navbar = () => {
   useEffect(()=> {
     axiosSecure(`/users?email=${user?.email}`)
     .then(res => {
-      setIsAdmin(res.data[0].admin)
+      setIsAdmin(res.data[0]?.admin)
     })
   }, [axiosSecure, user?.email])
 
@@ -33,24 +34,24 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li>
-        <NavLink to="/" className="hover:underline">
+        <NavLink to="/" className="hover:text-green-200 duration-200 text-xl">
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to="/tourPackagesPage" className="hover:underline">
+        <NavLink to="/tourPackagesPage" className="hover:text-green-200 duration-200 text-xl">
           Tour Packages
         </NavLink>
       </li>
       <li>
-        <NavLink to="/hotel" className="hover:underline">
+        <NavLink to="/hotel" className="hover:text-green-200 duration-200 text-xl">
           Hotel
         </NavLink>
       </li>
       <li>
         <NavLink
         to='/signUp'
-          className="hover:underline"
+          className="hover:text-green-200 duration-200 text-xl"
         >
           Sign Up
         </NavLink>
@@ -58,7 +59,7 @@ const Navbar = () => {
       { !user && <li>
         <NavLink
         to='/signIn'
-          className="hover:underline"
+          className="hover:text-green-200 duration-200 text-xl"
         >
           Sign In
         </NavLink>
@@ -69,7 +70,7 @@ const Navbar = () => {
   return (
     <>
       <div className="flex">
-        <div className="navbar bg-base-200 fixed z-20 shadow-lg px-4">
+        <div className="navbar bg-[#231F20] text-white fixed z-20 shadow-lg px-4">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn px-1 lg:hidden">
@@ -96,37 +97,38 @@ const Navbar = () => {
               user? <p>Hi! <span className="text-violet-500">{users[0]?.name}</span></p> : ''
             }
             <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
+              <div tabIndex={0} className="">
+                <div className="">
                   <img
-                    src= {user ? users[0]?.profileImage : "https://i.ibb.co/LpR33BN/male-avatar-profile-picture-vector-10210618.jpg"}
+                    src= {user ? users[0]?.profileImage : userAvatar}
                     alt=""
+                    className='w-12 rounded-full hover:cursor-pointer hover:bg-white duration-300'
                   />
                 </div>
-              </label>
+              </div>
               <ul
                 tabIndex={0}
-                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-200 rounded-box w-40"
+                className="mt-3 z-[1] p-0 shadow menu menu-sm dropdown-content bg-[#231F20] rounded-md w-40"
               >
                 <Link to="/profile"><li>
-                  <button className="hover:underline">Profile</button>
+                  <button className="rounded-md text-xl font-semibold">Profile</button>
                 </li></Link>
 
                 <li>
-                  <Link to="/bookings" className="hover:underline">My Bookings</Link>
+                  <Link to="/bookings" className="rounded-md text-xl font-semibold">My Bookings</Link>
                 </li>
                 {user && isAdmin && <li>
-                  <Link to="/dashboard/dashboard" className="hover:underline">Admin</Link>
+                  <Link to="/dashboard/dashboard" className="rounded-md text-xl font-semibold">Admin</Link>
                 </li>}
                 <li>
-                  <button className="hover:underline">Favorite</button>
+                  <button className="rounded-md text-xl font-semibold">Favorite</button>
                 </li>
                 <hr />
                 {user ? (
                   <li>
                     <button
                       onClick={() => logOutUser()}
-                      className="hover:underline"
+                      className="rounded-md text-xl font-semibold"
                     >
                       LogOut
                     </button>
@@ -137,7 +139,7 @@ const Navbar = () => {
                       onClick={() =>
                         document.getElementById("my_modal_2").showModal()
                       }
-                      className="hover:underline"
+                      className="rounded-md text-xl font-semibold"
                     >
                       SignIn
                     </NavLink>

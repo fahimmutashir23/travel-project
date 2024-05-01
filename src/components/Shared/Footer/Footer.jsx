@@ -5,14 +5,16 @@ import { FaLinkedin, FaYoutube } from "react-icons/fa";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
 import moment from "moment/moment";
 import moon from "../../../assets/Pattern/Sprinkle.svg"
+import useAuth from "../../../Hooks/useAuth";
 
 
 const Footer = () => {
   const year = moment().format('YYYY');
+  const {user} = useAuth()
   return (
     <div
-    style={{backgroundImage: `url(${moon})`}}
-    className="mt-16 bg-[#231F20] ml-16 text-white">
+    style={{backgroundImage: `url(${moon})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}
+    className={`mt-16 bg-[#231F20] ${user? 'ml-16' : 'ml-0'} text-white bg-center`}>
       <div className="flex flex-col justify-between py-10 px-5 mx-auto lg:flex-row lg:space-y-0">
         <div className="lg:w-2/5 text-white">
           <Link to="/">

@@ -1,7 +1,4 @@
 import bg2 from "../../assets/backgroundImage/background2.jpg";
-// import bg1 from "../../assets/backgroundImage/background1.jpg";
-// import bg3 from "../../assets/backgroundImage/background3.jpg";
-// import bg4 from "../../assets/backgroundImage/background4.jpg";
 import { useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
@@ -58,7 +55,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="relative -mt-5">
+    <div className="relative md:mt-[72px]">
       <Title title="Sign In" />
       <div
         className="h-[calc(100vh-100px)] border-2"
@@ -72,11 +69,11 @@ const SignIn = () => {
 
       <div className="absolute -top-4 inset-0 bg-white h-6"></div>
       <div className="absolute -bottom-4 w-full bg-white h-6"></div>
-      <div className="absolute -right-4 -top-2 w-6 bg-white h-[calc(100%+50px)]"></div>
-      <div className="absolute -left-4 -top-1 w-6 bg-white h-[calc(100%+50px)]"></div>
+      <div className="absolute right-0 -top-2 w-2 bg-white h-[calc(100%+50px)]"></div>
+      <div className="absolute left-0 -top-1 w-2 bg-white h-[calc(100%+50px)]"></div>
 
       <div className="absolute inset-0 flex items-center justify-center mx-auto">
-        <div className=" w-9/12 bg-blue-800 bg-opacity-80 flex shadow-xl shadow-black">
+        <div className=" w-9/12 bg-blue-800 bg-opacity-80 flex shadow-xl shadow-black ">
           <div className="flex-1 relative">
             <img src={bg2} alt="" className="rounded-r-2xl" />
             <div className="absolute inset-0 top-52">
@@ -124,7 +121,7 @@ const SignIn = () => {
                 </p>
                 <button
                   type="submit"
-                  className="btn bg-green-600 border-none text-base-100 w-full hover:bg-orange-900"
+                  className="btn bg-green-600 border-none text-xl text-base-100 w-full hover:bg-orange-900"
                 >
                   Submit
                 </button>
