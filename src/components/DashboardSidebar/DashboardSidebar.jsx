@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAdmin from "../../Hooks/useAdmin";
 import useUsers from "../../Hooks/useUsers";
+import './dashboardSidebar.css'
 
 const DashboardSidebar = () => {
   const [isAdmin] = useAdmin();
@@ -17,7 +18,7 @@ const DashboardSidebar = () => {
   };
 
   return (
-    <div className="bg-base-300 h-full overflow-y-auto">
+    <div className="bg-base-300 h-full overflow-y-auto sidebar">
       <div className="py-4 flex items-center justify-center">
         <div className="flex flex-col items-center">
           <img
