@@ -152,7 +152,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center md:mt-24">
+      <div className="flex items-center justify-around md:mt-24">
         <div className="">
           <PieChart width={500} height={390}>
             <Pie
@@ -203,16 +203,6 @@ const Dashboard = () => {
           </BarChart>
         </div>
       </div>
-      {/* <div className="mt-24">
-        <iframe
-          className=""
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.7114350606766!2d90.41214257543398!3d23.793287978641107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7a72f17bb83%3A0x57188ff62fd95026!2sThe%20Westin%20Dhaka!5e0!3m2!1sen!2sus!4v1705070715390!5m2!1sen!2sus"
-          width="1000"
-          height="400"
-          allowfullscreen=""
-          loading="lazy"
-        ></iframe>
-      </div> */}
     </div>
   );
 };

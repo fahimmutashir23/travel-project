@@ -1,10 +1,11 @@
+import './dashboardSidebar.css'
 import useMenu from "./useMenu";
 import profileIcon from "../../assets/icon/profile.png";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAdmin from "../../Hooks/useAdmin";
 import useUsers from "../../Hooks/useUsers";
-import './dashboardSidebar.css'
+import { MdOutlineLogout } from "react-icons/md";
 
 const DashboardSidebar = () => {
   const [isAdmin] = useAdmin();
@@ -57,15 +58,16 @@ const DashboardSidebar = () => {
         </ul>
         <div>
           <div className="bg-black w-full h-[1px] mt-40"></div>
-          <li className="menu py-0 rounded-none px-0 hover:bg-blue-500 hover:text-white text-xl">
+          <li className="menu py-0 rounded-none px-0 hover:bg-gray-600 hover:text-white text-xl group">
             <button
               onClick={handleLogOut}
               className={({ isActive }) =>
                 isActive ? "bg-blue-500 min-w-full text-white py-3" : ""
               }
             >
-              <div className="hover:translate-x-3 transition-transform duration-300 text-base font-semibold">
-                Log Out
+              <div className="text-xl flex items-center gap-2 font-semibold">
+              <MdOutlineLogout className="text-2xl text-blue-500"/>
+                <span className="group-hover:translate-x-3 transition-transform duration-300 ">Log Out</span>
               </div>
             </button>
           </li>
