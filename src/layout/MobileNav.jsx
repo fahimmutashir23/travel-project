@@ -9,14 +9,14 @@ const MobileNav = () => {
 
   return (
     <div className="rounded-md lg:w-[70px] bg-base-100 z-10 h-[100vh] fixed">
-      <div className="lg:flex lg:h-[calc(100vh-100px)] w-full flex-col justify-between border-e">
+      <div className="lg:flex lg:h-[calc(100vh-100px)] w-full flex-col items-center justify-between border-e">
         <div className="border-t border-gray-100">
           <div className="px-2">
             <ul className="space-y-6 border-t border-gray-100 flex items-center lg:block">
               <li>
                 <Link
                   to="/hotel"
-                  className="lg:group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                  className="lg:group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700 group"
                 >
                   <FaHotel className="lg:text-2xl text-blue-500" />
 
@@ -28,11 +28,11 @@ const MobileNav = () => {
               <li>
                 <Link
                   to="/tourPackagesPage"
-                  className="lg:group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                  className="lg:group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700 group"
                 >
                   <TbPackages className="lg:text-2xl text-blue-500" />
 
-                  <span className="absolute top-1/2 left-10 -translate-y-1/2 rounded-r-md w-0 bg-blue-500 py-1.5 text-xs font-medium group-hover:w-32 transition-all duration-300 group-hover:px-4 group-hover:text-white group-hover:text-opacity-100 group-hover:opacity-100 opacity-0">
+                  <span className="absolute top-1/2 left-10 -translate-y-1/2 rounded-r-md w-24 bg-blue-500 py-1.5 text-xs font-medium group-hover:w-32 transition-all duration-300 group-hover:px-4 group-hover:text-white group-hover:text-opacity-100 group-hover:opacity-100 opacity-0">
                     Travel Packages
                   </span>
                 </Link>
@@ -64,7 +64,7 @@ const MobileNav = () => {
               <li>
                 <Link
                   to="/cars"
-                  className="lg:group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700"
+                  className="lg:group relative flex justify-center rounded px-2 py-1.5 text-gray-500 hover:bg-gray-50 hover:text-gray-700 group"
                 >
                   <FaCar className="lg:text-2xl text-blue-500" />
 
@@ -80,7 +80,7 @@ const MobileNav = () => {
                 >
                   <MdAttractions className="lg:text-2xl text-blue-500" />
 
-                  <span className="absolute top-1/2 left-10 -translate-y-1/2 rounded-r-md w-0 bg-blue-500 py-1.5 text-xs font-medium group-hover:w-36 transition-all duration-300 group-hover:px-4 group-hover:text-white group-hover:text-opacity-100 group-hover:opacity-100 opacity-0">
+                  <span className="absolute top-1/2 left-10 -translate-y-1/2 rounded-r-md w-28 bg-blue-500 py-1.5 text-xs font-medium group-hover:w-36 transition-all duration-300 group-hover:px-4 group-hover:text-white group-hover:text-opacity-100 group-hover:opacity-100 opacity-0">
                     Attractions & Tours
                   </span>
                 </Link>
@@ -96,7 +96,7 @@ const MobileNav = () => {
                     className="w-5 lg:w-8"
                   />
 
-                  <span className="absolute top-1/2 left-10 -translate-y-1/2 rounded-r-md w-0 bg-blue-500 py-1.5 text-xs font-medium group-hover:w-28 transition-all duration-300 group-hover:px-4 group-hover:text-white group-hover:text-opacity-100 group-hover:opacity-100 opacity-0">
+                  <span className="absolute top-1/2 left-10 -translate-y-1/2 rounded-r-md w-20 bg-blue-500 py-1.5 text-xs font-medium group-hover:w-28 transition-all duration-300 group-hover:px-4 group-hover:text-white group-hover:text-opacity-100 group-hover:opacity-100 opacity-0">
                     Travel Planer
                   </span>
                 </Link>

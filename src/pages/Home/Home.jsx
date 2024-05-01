@@ -48,8 +48,8 @@ const Home = () => {
     axiosPublic("/advertisements").then((res) => {
       const advertisementData = res.data.find((item) => item.isActive === true);
       setAdvertisement(advertisementData);
+      setOpen(advertisementData.url ? true : false);
     });
-    setOpen(true);
   }, []);
 
   const handleClick = (item) => {
